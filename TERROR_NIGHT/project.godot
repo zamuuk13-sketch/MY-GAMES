@@ -1,6 +1,6 @@
 [application]
 config/name="Terror Night"
-run/main_scene="res://TERROR_NIGHT/Main.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.3")
 
 [display]
