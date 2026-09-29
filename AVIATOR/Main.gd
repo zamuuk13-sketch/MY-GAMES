@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
     if event is InputEventKey and event.pressed and not event.echo:
-        var key := event.keycode
+        var key: Key = event.keycode
         if state == "nation":
             if key == KEY_1:
                 _choose_nation("USA")
@@ -133,8 +133,8 @@ func _start_battle() -> void:
     message_timer = 2.5
 
 func _make_plane(id: int, friendly: bool, pos: Vector2) -> Dictionary:
-    var nation_name := nation if friendly or id < 20 else enemy_nation
-    var tier := max(0,level-1)
+    var nation_name: String = nation if friendly or id < 20 else enemy_nation
+    var tier: int = max(0,level-1)
     var stats := {
         "speed": 240.0 + tier*9.0,
         "accel": 105.0 + tier*3.0,
@@ -181,8 +181,8 @@ func _battle_update(delta: float) -> void:
 
 func _update_player(delta: float) -> void:
     var dir := Input.get_vector("move_left","move_right","move_up","move_down")
-    var target := dir * player["speed"]
-    var accel := player["accel"] * delta
+    var target: Vector2 = dir * float(player["speed"])
+    var accel: float = float(player["accel"]) * delta
     player["vel"] = Vector2(
         move_toward(player["vel"].x,target.x,accel),
         move_toward(player["vel"].y,target.y,accel)
@@ -212,7 +212,7 @@ func _update_ai(group: Array[Dictionary], delta: float) -> void:
             continue
         var to_target: Vector2 = target["pos"] - p["pos"]
         var distance := to_target.length()
-        var desired := to_target.normalized() * p["speed"] * (0.65 if p["ai"] == 0 else 0.9)
+        var desired: Vector2 = to_target.normalized() * float(p["speed"]) * (0.65 if p["ai"] == 0 else 0.9)
         if p["ai"] == 2:
             var perpendicular := Vector2(-to_target.y,to_target.x).normalized()
             desired += perpendicular*sin(Time.get_ticks_msec()*0.002+p["phase"])*p["speed"]*0.35
@@ -240,7 +240,7 @@ func _nearest(pos: Vector2, group: Array[Dictionary]) -> Dictionary:
 func _fire() -> void:
     if state != "battle" or player["cooldown"] > 0 or player["ammo"] <= 0:
         return
-    var target := _nearest(player["pos"],enemies)
+    var target: Dictionary = _nearest(player["pos"],enemies)
     if target.is_empty():
         return
     _shoot_from(player,target)
@@ -257,7 +257,7 @@ func _special() -> void:
     if state != "battle" or player["special"] <= 0:
         return
     player["special"] -= 1
-    var target := _nearest(player["pos"],enemies)
+    var target: Dictionary = _nearest(player["pos"],enemies)
     if target.is_empty():
         return
     var direction: Vector2 = (target["pos"]-player["pos"]).normalized()
@@ -332,7 +332,7 @@ func _finish_mission() -> void:
     _save_game()
 
 func _upgrade(kind: String) -> void:
-    var cost := 150 + upgrades[kind]*100
+    var cost: int = 150 + int(upgrades[kind])*100
     if credits < cost:
         message = "Créditos insuficientes."
         message_timer = 2.0
@@ -427,7 +427,7 @@ func _draw_battle_background() -> void:
         draw_circle(p+Vector2(35,-4),38,Color(1,1,1,0.4))
 
 func _draw_plane(pos: Vector2, scale: float, angle: float, russian: bool) -> void:
-    var transform := Transform2D(angle,pos)
+    var transform: Transform2D = Transform2D(angle,pos)
     var body := PackedVector2Array([Vector2(35,0),Vector2(8,-10),Vector2(-24,-7),Vector2(-34,0),Vector2(-24,7),Vector2(8,10)])
     var wing := PackedVector2Array([Vector2(6,0),Vector2(-7,-28),Vector2(-18,-26),Vector2(-5,0),Vector2(-18,26),Vector2(-7,28)])
     var tail := PackedVector2Array([Vector2(-18,0),Vector2(-31,-16),Vector2(-25,-3),Vector2(-25,3),Vector2(-31,16)])
@@ -441,7 +441,7 @@ func _draw_plane(pos: Vector2, scale: float, angle: float, russian: bool) -> voi
     draw_set_transform(Vector2.ZERO,0,Vector2.ONE)
 
 func _draw_hud() -> void:
-    var hp_ratio := clamp(float(player["hp"])/float(player["max_hp"]),0.0,1.0)
+    var hp_ratio: float = clamp(float(player["hp"])/float(player["max_hp"]),0.0,1.0)
     draw_rect(Rect2(22,20,270,70),Color(0.03,0.07,0.12,0.86),true)
     draw_string(font,Vector2(38,47),"AVIATOR  •  NÍVEL %d" % level,HORIZONTAL_ALIGNMENT_LEFT,-1,18,Color.WHITE)
     draw_rect(Rect2(38,58,210,10),Color("#26394c"),true)
@@ -490,7 +490,7 @@ func _draw_gameover() -> void:
     draw_string(font,Vector2(0,340),"A missão terminou. ENTER para voltar ao menu.",HORIZONTAL_ALIGNMENT_CENTER,1280,18,Color("#b5c4d6"))
 
 func _save_game() -> void:
-    var data := {"nation":nation,"level":level,"xp":xp,"credits":credits,"research":research,"unlocked_planes":unlocked_planes,"upgrades":upgrades}
+    var data: Dictionary = {"nation":nation,"level":level,"xp":xp,"credits":credits,"research":research,"unlocked_planes":unlocked_planes,"upgrades":upgrades}
     var file := FileAccess.open(SAVE_PATH,FileAccess.WRITE)
     if file:
         file.store_string(JSON.stringify(data))
@@ -502,7 +502,7 @@ func _load_game() -> void:
     var file := FileAccess.open(SAVE_PATH,FileAccess.READ)
     if file == null:
         return
-    var parsed = JSON.parse_string(file.get_as_text())
+    var parsed: Variant = JSON.parse_string(file.get_as_text())
     file.close()
     if typeof(parsed) != TYPE_DICTIONARY:
         return
@@ -513,6 +513,6 @@ func _load_game() -> void:
     credits = int(parsed.get("credits",0))
     research = int(parsed.get("research",0))
     unlocked_planes = Array(parsed.get("unlocked_planes",[]))
-    var loaded_upgrades = parsed.get("upgrades",{})
+    var loaded_upgrades: Variant = parsed.get("upgrades",{})
     if typeof(loaded_upgrades)==TYPE_DICTIONARY:
         upgrades = loaded_upgrades
