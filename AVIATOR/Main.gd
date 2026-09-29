@@ -135,7 +135,7 @@ func _start_battle() -> void:
 func _make_plane(id: int, friendly: bool, pos: Vector2) -> Dictionary:
     var nation_name: String = nation if friendly or id < 20 else enemy_nation
     var tier: int = max(0,level-1)
-    var stats := {
+    var stats: Dictionary = {
         "speed": 240.0 + tier*9.0,
         "accel": 105.0 + tier*3.0,
         "handling": 2.2 + tier*0.08,
@@ -180,7 +180,7 @@ func _battle_update(delta: float) -> void:
         _finish_mission()
 
 func _update_player(delta: float) -> void:
-    var dir := Input.get_vector("move_left","move_right","move_up","move_down")
+    var dir: Vector2 = Input.get_vector("move_left","move_right","move_up","move_down")
     var target: Vector2 = dir * float(player["speed"])
     var accel: float = float(player["accel"]) * delta
     player["vel"] = Vector2(
@@ -198,7 +198,7 @@ func _update_player(delta: float) -> void:
 
 func _update_ai(group: Array[Dictionary], delta: float) -> void:
     for i: int in range(group.size()-1,-1,-1):
-        var p := group[i]
+        var p: Dictionary = group[i]
         if p["hp"] <= 0:
             group.remove_at(i)
             continue
@@ -211,7 +211,7 @@ func _update_ai(group: Array[Dictionary], delta: float) -> void:
         if target.is_empty():
             continue
         var to_target: Vector2 = target["pos"] - p["pos"]
-        var distance := to_target.length()
+        var distance: float = to_target.length()
         var desired: Vector2 = to_target.normalized() * float(p["speed"]) * (0.65 if p["ai"] == 0 else 0.9)
         if p["ai"] == 2:
             var perpendicular := Vector2(-to_target.y,to_target.x).normalized()
@@ -229,7 +229,7 @@ func _update_ai(group: Array[Dictionary], delta: float) -> void:
 
 func _nearest(pos: Vector2, group: Array[Dictionary]) -> Dictionary:
     var best: Dictionary = {}
-    var best_d := INF
+    var best_d: float = INF
     for p: Dictionary in group:
         var d: float = pos.distance_to(p["pos"])
         if d < best_d:
@@ -270,7 +270,7 @@ func _update_bullets(delta: float) -> void:
         var b: Dictionary = bullets[i]
         b["pos"] += b["vel"]*delta
         b["life"] -= delta
-        var hit := false
+        var hit: bool = false
         if b["friendly"]:
             for j: int in range(enemies.size()-1,-1,-1):
                 if b["pos"].distance_to(enemies[j]["pos"]) < 30:
@@ -298,14 +298,14 @@ func _damage_plane(p: Dictionary, amount: float) -> void:
     p["hp"] -= max(1.0,amount-p["armor"]*0.35)
 
 func _damage_player(amount: float) -> void:
-    var real_damage := max(1.0,amount-player["armor"]*0.35)
+    var real_damage: float = max(1.0,amount-float(player["armor"])*0.35)
     player["hp"] -= real_damage
     mission_damage += real_damage
     shake = 0.16
 
 func _explode(pos: Vector2) -> void:
     for i: int in range(22):
-        var a := rng.randf_range(0,TAU)
+        var a: float = rng.randf_range(0,TAU)
         particles.append({"pos":pos,"vel":Vector2(cos(a),sin(a))*rng.randf_range(60,240),"life":rng.randf_range(0.3,0.8),"kind":1})
     message = "INIMIGO ABATIDO!"
     message_timer = 0.7
@@ -321,7 +321,7 @@ func _update_particles(delta: float) -> void:
 func _finish_mission() -> void:
     state = "results"
     mission_started = false
-    var bonus := 250 + level*80
+    var bonus: int = 250 + level*80
     xp += bonus
     credits += bonus
     research += 25
@@ -373,10 +373,10 @@ func _draw_menu() -> void:
     draw_rect(Rect2(0,0,1280,720),Color(0,0,0,0.18))
     draw_string(font,Vector2(90,150),"AVIATOR",HORIZONTAL_ALIGNMENT_LEFT,500,72,Color("#f4f7ff"))
     draw_string(font,Vector2(94,190),"SKY RPG  •  AIR COMBAT",HORIZONTAL_ALIGNMENT_LEFT,-1,18,Color("#80a9d8"))
-    var options := ["JOGAR","HANGAR","CONFIGURAÇÕES"]
+    var options: Array[String] = ["JOGAR","HANGAR","CONFIGURAÇÕES"]
     for i: int in range(options.size()):
-        var y := 300.0+i*70
-        var selected := i==selected_menu
+        var y: float = 300.0+i*70
+        var selected: bool = i==selected_menu
         draw_rect(Rect2(88,y-38,300,54),Color("#2e75c8",0.8) if selected else Color("#172941",0.82),true)
         draw_string(font,Vector2(112,y),options[i],HORIZONTAL_ALIGNMENT_LEFT,-1,23,Color.WHITE)
     draw_string(font,Vector2(92,545),"Nação: "+("ESCOLHA PENDENTE" if nation=="" else nation),HORIZONTAL_ALIGNMENT_LEFT,-1,20,Color("#b8c8da"))
@@ -419,7 +419,7 @@ func _draw_battle_background() -> void:
     draw_rect(Rect2(0,0,1280,720),Color("#75b7e8"))
     draw_rect(Rect2(0,520,1280,200),Color("#4d6e55"))
     for i: int in range(8):
-        var x := float(i*190-50)
+        var x: float = float(i*190-50)
         draw_colored_polygon(PackedVector2Array([Vector2(x,520),Vector2(x+90,380-(i%3)*35),Vector2(x+180,520)]),Color("#3e5e55"))
     for c: Dictionary in clouds:
         var p: Vector2 = c["p"]
@@ -428,10 +428,10 @@ func _draw_battle_background() -> void:
 
 func _draw_plane(pos: Vector2, scale: float, angle: float, russian: bool) -> void:
     var transform: Transform2D = Transform2D(angle,pos)
-    var body := PackedVector2Array([Vector2(35,0),Vector2(8,-10),Vector2(-24,-7),Vector2(-34,0),Vector2(-24,7),Vector2(8,10)])
-    var wing := PackedVector2Array([Vector2(6,0),Vector2(-7,-28),Vector2(-18,-26),Vector2(-5,0),Vector2(-18,26),Vector2(-7,28)])
-    var tail := PackedVector2Array([Vector2(-18,0),Vector2(-31,-16),Vector2(-25,-3),Vector2(-25,3),Vector2(-31,16)])
-    var col := Color("#d8e0e8") if russian else Color("#d9d9d2")
+    var body: PackedVector2Array = PackedVector2Array([Vector2(35,0),Vector2(8,-10),Vector2(-24,-7),Vector2(-34,0),Vector2(-24,7),Vector2(8,10)])
+    var wing: PackedVector2Array = PackedVector2Array([Vector2(6,0),Vector2(-7,-28),Vector2(-18,-26),Vector2(-5,0),Vector2(-18,26),Vector2(-7,28)])
+    var tail: PackedVector2Array = PackedVector2Array([Vector2(-18,0),Vector2(-31,-16),Vector2(-25,-3),Vector2(-25,3),Vector2(-31,16)])
+    var col: Color = Color("#d8e0e8") if russian else Color("#d9d9d2")
     draw_set_transform(pos,angle,Vector2.ONE*scale)
     draw_colored_polygon(body,col)
     draw_colored_polygon(wing,Color("#566879"))
@@ -491,7 +491,7 @@ func _draw_gameover() -> void:
 
 func _save_game() -> void:
     var data: Dictionary = {"nation":nation,"level":level,"xp":xp,"credits":credits,"research":research,"unlocked_planes":unlocked_planes,"upgrades":upgrades}
-    var file := FileAccess.open(SAVE_PATH,FileAccess.WRITE)
+    var file: FileAccess = FileAccess.open(SAVE_PATH,FileAccess.WRITE)
     if file:
         file.store_string(JSON.stringify(data))
         file.close()
@@ -499,7 +499,7 @@ func _save_game() -> void:
 func _load_game() -> void:
     if not FileAccess.file_exists(SAVE_PATH):
         return
-    var file := FileAccess.open(SAVE_PATH,FileAccess.READ)
+    var file: FileAccess = FileAccess.open(SAVE_PATH,FileAccess.READ)
     if file == null:
         return
     var parsed: Variant = JSON.parse_string(file.get_as_text())
