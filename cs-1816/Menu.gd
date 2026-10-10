@@ -15,6 +15,8 @@ var dot_toggle: CheckButton
 var outline_toggle: CheckButton
 var static_toggle: CheckButton
 var status_label: Label
+var profile_picker: OptionButton
+var profile_name_input: LineEdit
 var crosshair_values := {
 	"color": Color(0.35, 1.0, 0.38, 1.0),
 	"size": 8.0,
@@ -52,6 +54,7 @@ func _load_settings() -> void:
 
 func _save_settings() -> void:
 	var cfg := ConfigFile.new()
+	cfg.load("user://cs1816_settings.cfg")
 	for key in crosshair_values:
 		var value = crosshair_values[key]
 		if key == "color":
@@ -88,7 +91,7 @@ func _build_menu() -> void:
 	var spacer := Control.new()
 	spacer.custom_minimum_size.y = 14
 	page.add_child(spacer)
-	_add_button("JOGAR", _start_game)
+	_add_button("JOGAR", _show_team_select)
 	_add_button("CONFIGURAÇÕES", _show_settings)
 	_add_button("SAIR", _quit_game)
 	status_label = Label.new()
@@ -104,6 +107,82 @@ func _add_button(caption: String, callback: Callable) -> void:
 	button.add_theme_font_size_override("font_size", 18)
 	button.pressed.connect(callback)
 	page.add_child(button)
+
+
+func _show_team_select() -> void:
+	for child in get_children():
+		child.queue_free()
+	var bg := ColorRect.new()
+	bg.color = Color("#11161b")
+	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(bg)
+	var outer := MarginContainer.new()
+	outer.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	outer.add_theme_constant_override("margin_left", 48)
+	outer.add_theme_constant_override("margin_right", 48)
+	outer.add_theme_constant_override("margin_top", 36)
+	outer.add_theme_constant_override("margin_bottom", 36)
+	add_child(outer)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 18)
+	outer.add_child(column)
+	var title := Label.new()
+	title.text = "ESCOLHA SUA EQUIPE"
+	title.add_theme_font_size_override("font_size", 30)
+	column.add_child(title)
+	var subtitle := Label.new()
+	subtitle.text = "Sua equipe define seu ponto de entrada e seu objetivo nesta rodada."
+	subtitle.add_theme_color_override("font_color", Color("#a5afb9"))
+	column.add_child(subtitle)
+	var cards := HBoxContainer.new()
+	cards.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	cards.add_theme_constant_override("separation", 20)
+	column.add_child(cards)
+	_add_team_card(cards, "TERRORISTAS", "ATAQUE", "Nasça no lado oeste. Plante a bomba no local A ou B.", Color("#e5b16d"), "terrorists")
+	_add_team_card(cards, "CONTRA-TERRORISTAS", "DEFESA", "Nasça no lado leste. Impeça o plantio ou desarme a bomba.", Color("#79bfff"), "counter_terrorists")
+	var back := Button.new()
+	back.text = "VOLTAR AO MENU"
+	back.custom_minimum_size = Vector2(220, 44)
+	back.pressed.connect(_build_menu)
+	column.add_child(back)
+
+func _add_team_card(parent: HBoxContainer, title_text: String, role_text: String, description: String, accent: Color, team_id: String) -> void:
+	var panel := PanelContainer.new()
+	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	parent.add_child(panel)
+	var margin := MarginContainer.new()
+	for side in ["left", "right", "top", "bottom"]:
+		margin.add_theme_constant_override("margin_" + side, 24)
+	panel.add_child(margin)
+	var content := VBoxContainer.new()
+	content.add_theme_constant_override("separation", 14)
+	margin.add_child(content)
+	var accent_label := Label.new()
+	accent_label.text = role_text
+	accent_label.add_theme_color_override("font_color", accent)
+	accent_label.add_theme_font_size_override("font_size", 16)
+	content.add_child(accent_label)
+	var team_title := Label.new()
+	team_title.text = title_text
+	team_title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	team_title.add_theme_font_size_override("font_size", 24)
+	content.add_child(team_title)
+	var detail := Label.new()
+	detail.text = description
+	detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	detail.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	detail.add_theme_color_override("font_color", Color("#c3cbd2"))
+	content.add_child(detail)
+	var choose := Button.new()
+	choose.text = "JOGAR NESTA EQUIPE"
+	choose.custom_minimum_size.y = 48
+	choose.pressed.connect(func(): _choose_team(team_id))
+	content.add_child(choose)
+
+func _choose_team(team_id: String) -> void:
+	get_tree().root.set_meta("cs1816_team", team_id)
+	_save_settings()
+	get_tree().change_scene_to_file(GAME_SCENE)
 
 func _show_settings() -> void:
 	for child in get_children():
@@ -184,6 +263,26 @@ func _show_settings() -> void:
 	static_toggle.button_pressed = bool(crosshair_values.static)
 	static_toggle.toggled.connect(func(value: bool): _set_value("static", value))
 	controls.add_child(static_toggle)
+
+	_add_section_title(controls, "PERFIS DE MIRA")
+	profile_picker = OptionButton.new()
+	profile_picker.add_item("CS clássico")
+	profile_picker.add_item("Ponto pequeno")
+	profile_picker.add_item("Mira aberta")
+	profile_picker.add_item("Minha mira salva")
+	_add_labeled_control(controls, "Predefinição", profile_picker)
+	var load_profile_button := Button.new()
+	load_profile_button.text = "APLICAR PERFIL"
+	load_profile_button.pressed.connect(_apply_selected_profile)
+	controls.add_child(load_profile_button)
+	profile_name_input = LineEdit.new()
+	profile_name_input.placeholder_text = "Nome do perfil personalizado"
+	controls.add_child(profile_name_input)
+	var save_profile_button := Button.new()
+	save_profile_button.text = "SALVAR PERFIL ATUAL"
+	save_profile_button.pressed.connect(_save_custom_profile)
+	controls.add_child(save_profile_button)
+
 	var reset := Button.new()
 	reset.text = "RESTAURAR PADRÃO"
 	reset.pressed.connect(_reset_crosshair)
@@ -243,6 +342,59 @@ func _add_slider(parent: VBoxContainer, caption: String, minimum: float, maximum
 	row.add_child(slider)
 	parent.add_child(row)
 	return slider
+
+
+func _apply_selected_profile() -> void:
+	var selected := profile_picker.get_item_text(profile_picker.selected)
+	var preset := {}
+	match selected:
+		"CS clássico":
+			preset = {"color": Color("#59ff62"), "size": 7.0, "gap": 4.0, "thickness": 2.0, "dot": false, "outline": true, "static": true, "opacity": 1.0}
+		"Ponto pequeno":
+			preset = {"color": Color("#ffffff"), "size": 2.0, "gap": 0.0, "thickness": 2.0, "dot": true, "outline": true, "static": true, "opacity": 1.0}
+		"Mira aberta":
+			preset = {"color": Color("#42e8ff"), "size": 12.0, "gap": 8.0, "thickness": 2.0, "dot": false, "outline": true, "static": true, "opacity": 1.0}
+		"Minha mira salva":
+			preset = _read_profile("Minha mira salva")
+		_:
+			preset = _read_profile(selected)
+	if preset.is_empty():
+		return
+	for key in preset:
+		crosshair_values[key] = preset[key]
+	_save_settings()
+	_show_settings()
+
+func _save_custom_profile() -> void:
+	var profile_name := profile_name_input.text.strip_edges()
+	if profile_name.is_empty():
+		profile_name = "Minha mira salva"
+	var cfg := ConfigFile.new()
+	cfg.load("user://cs1816_settings.cfg")
+	var section := "profile_" + profile_name
+	for key in crosshair_values:
+		var value = crosshair_values[key]
+		if key == "color":
+			value = value.to_html(false)
+		cfg.set_value(section, key, value)
+	cfg.save("user://cs1816_settings.cfg")
+	_show_settings()
+
+func _read_profile(profile_name: String) -> Dictionary:
+	var cfg := ConfigFile.new()
+	if cfg.load("user://cs1816_settings.cfg") != OK:
+		return {}
+	var section := "profile_" + profile_name
+	if not cfg.has_section(section):
+		return {}
+	var result := {}
+	for key in ["color", "size", "gap", "thickness", "dot", "outline", "static", "opacity"]:
+		if cfg.has_section_key(section, key):
+			var value = cfg.get_value(section, key)
+			if key == "color" and value is String:
+				value = Color.from_string(value, Color.GREEN)
+			result[key] = value
+	return result
 
 func _color_name_from_value() -> String:
 	var target: Color = crosshair_values.color
