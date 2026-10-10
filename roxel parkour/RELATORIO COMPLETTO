@@ -1,0 +1,2214 @@
+backflip in wall_RELATORIO.txt: 
+============================================================
+ARQUIVO: backflip in wall.fbx
+Caminho: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\backflip in wall.fbx
+Tamanho: 35,444,288 bytes
+Data: 2026-10-10T18:48:52.652595
+============================================================
+Formato identificado: FBX BINÁRIO
+
+--- LEITURA DO ARQUIVO ---
+Bytes lidos: 35,444,288
+Strings únicas encontradas: 414672
+
+--- NOMES RELEVANTES ---
+Total: 217
+%1&(aRm^#R
+../../../../home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Diffuse.png
+../../../../home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Glossiness.png
+../../../../home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Normal.png
+../../../../home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Specular.png
+../../../../home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Specular.pngR
+.6uhand
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Diffuse.png
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Diffuse.pngP[
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Glossiness.png
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Glossiness.pngM
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Glossiness.pnglb
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Normal.png
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Normal.png]M
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Normal.png}
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Specular.png
+/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbm/Ch36_1001_Specular.pngBy
+/lEg
+6ARM
+?naRM
+ActiveAnimStackNameS
+AnimCurveNodeS
+AnimCurveS
+AnimLayerS
+AnimStackS
+AnimationCurveJO
+AnimationCurveL
+AnimationCurveL GZ.
+AnimationCurveL O+.
+AnimationCurveL c_.
+AnimationCurveL0
+AnimationCurveL04h.
+AnimationCurveL0Ba.
+AnimationCurveL0ZX.
+AnimationCurveL0]8.
+AnimationCurveL0a&.
+AnimationCurveL0b&.
+AnimationCurveL0dW.
+AnimationCurveL0}M.
+AnimationCurveL@
+AnimationCurveL@+Y.
+AnimationCurveL@+b.
+AnimationCurveL@X_.
+AnimationCurveL@Y&.
+AnimationCurveL@Z'.
+AnimationCurveL@\i.
+AnimationCurveL@aM.
+AnimationCurveL@jj.
+AnimationCurveL@|m.
+AnimationCurveLP
+AnimationCurveLP!a.
+AnimationCurveLP+`.
+AnimationCurveLPR8.
+AnimationCurveLP_(.
+AnimationCurveLPpo.
+AnimationCurveLPv`.
+AnimationCurveLPz].
+AnimationCurveL`
+AnimationCurveL` Y.
+AnimationCurveL`%h.
+AnimationCurveL`;&.
+AnimationCurveL`OM.
+AnimationCurveL`\`.
+AnimationCurveL`jV.
+AnimationCurveL`qW.
+AnimationCurveL`r&.
+AnimationCurveL`{'.
+AnimationCurveLp
+AnimationCurveLp'+.
+AnimationCurveLp`e.
+AnimationCurveLpam.
+AnimationCurveLpfc.
+AnimationCurveLpkM.
+AnimationCurveLpnM.
+AnimationCurveNode8M
+AnimationCurveNodeL
+AnimationCurveNodeL !!.
+AnimationCurveNodeL %@.
+AnimationCurveNodeL Al.
+AnimationCurveNodeL nY.
+AnimationCurveNodeL v'.
+AnimationCurveNodeL yA.
+AnimationCurveNodeL0
+AnimationCurveNodeL0H@.
+AnimationCurveNodeL0I&.
+AnimationCurveNodeL@
+AnimationCurveNodeL@(A.
+AnimationCurveNodeL@96.
+AnimationCurveNodeL@=C.
+AnimationCurveNodeL@I8.
+AnimationCurveNodeL@k@.
+AnimationCurveNodeL@}5.
+AnimationCurveNodeLP
+AnimationCurveNodeLPB5.
+AnimationCurveNodeLPKA.
+AnimationCurveNodeLP\6.
+AnimationCurveNodeLPiC.
+AnimationCurveNodeL`
+AnimationCurveNodeL`nA.
+AnimationCurveNodeLp
+AnimationCurveNodeLp(B.
+AnimationCurveNodeLp-6.
+AnimationCurveNodeLp<Z.
+AnimationCurveNodeLpB\.
+AnimationCurveNodeLpc'.
+AnimationLayer
+AnimationLayerL
+AnimationLayerLP
+AnimationStackL
+AnimationStackL`
+AnimationStack_D
+Arm`
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_Deliverables\9-17-2019
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_deliveries\13-9-2019\Ch36\Ch36_nonPBR.ma
+DlEg
+FBXHeaderExtensiont
+FBXHeaderVersionI
+FbxAnimCurveNode
+FbxAnimLayer
+FbxAnimStackJF
+FreeRunningS
+ILeg4?>t
+Kleg
+LEg*c
+LEgu
+LlEGe
+Mixamo, Inc.
+MotionOnlyScene; Retargeted Clip; Motion Sequence; 1 motions; Skeleton mixamorig1:Hips_skin-file:/home/app/mixamo-mini/tmp/skins_5c405e55-a23f-4897-b212-8ff3c34103b8.fbx
+RUnt<
+RootNodeL
+[qLeG[q!
+]']ARm
+_gLEg;
+aRM*
+aRm*
+elEg
+lEGX
+lRUN
+mixamo.com
+mixamo.com.tak
+mixamo.com}
+mixamorig1:Head
+mixamorig1:HeadTop_End
+mixamorig1:Hips
+mixamorig1:LeftArm
+mixamorig1:LeftFoot
+mixamorig1:LeftForeArm
+mixamorig1:LeftHand
+mixamorig1:LeftHandIndex1
+mixamorig1:LeftHandIndex2
+mixamorig1:LeftHandIndex3
+mixamorig1:LeftHandIndex4
+mixamorig1:LeftHandMiddle1
+mixamorig1:LeftHandMiddle2
+mixamorig1:LeftHandMiddle3
+mixamorig1:LeftHandMiddle4
+mixamorig1:LeftHandPinky1
+mixamorig1:LeftHandPinky2
+mixamorig1:LeftHandPinky3
+mixamorig1:LeftHandPinky4
+mixamorig1:LeftHandRing1
+mixamorig1:LeftHandRing2
+mixamorig1:LeftHandRing3
+mixamorig1:LeftHandRing4
+mixamorig1:LeftHandThumb1
+mixamorig1:LeftHandThumb2
+mixamorig1:LeftHandThumb3
+mixamorig1:LeftHandThumb4
+mixamorig1:LeftLeg
+mixamorig1:LeftShoulder
+mixamorig1:LeftToeBase
+mixamorig1:LeftToe_End
+mixamorig1:LeftUpLeg
+mixamorig1:Neck
+mixamorig1:RightArm
+mixamorig1:RightFoot
+mixamorig1:RightForeArm
+mixamorig1:RightHand
+mixamorig1:RightHandIndex1
+mixamorig1:RightHandIndex2
+mixamorig1:RightHandIndex3
+mixamorig1:RightHandIndex4
+mixamorig1:RightHandMiddle1
+mixamorig1:RightHandMiddle2
+mixamorig1:RightHandMiddle3
+mixamorig1:RightHandMiddle4
+mixamorig1:RightHandPinky1
+mixamorig1:RightHandPinky2
+mixamorig1:RightHandPinky3
+mixamorig1:RightHandPinky4
+mixamorig1:RightHandRing1
+mixamorig1:RightHandRing2
+mixamorig1:RightHandRing3
+mixamorig1:RightHandRing4
+mixamorig1:RightHandThumb1
+mixamorig1:RightHandThumb2
+mixamorig1:RightHandThumb3
+mixamorig1:RightHandThumb4
+mixamorig1:RightLeg
+mixamorig1:RightShoulder
+mixamorig1:RightToeBase
+mixamorig1:RightToe_End
+mixamorig1:RightUpLeg
+mixamorig1:Spine
+mixamorig1:Spine1
+mixamorig1:Spine2
+nKrUN
+pArM
+rUnc
+runADh
+sARmT
+tLEg
+yARm#.#
+yaRm&
+}arm
+~*RUn.
+~:RUN
+
+--- LEITOR ESTRUTURAL PYUFBX ---
+Biblioteca ufbx encontrada.
+Arquivo carregado pela biblioteca.
+
+nodes: 67
+  [0] 
+  [1] Ch36
+  [2] mixamorig1:Hips
+  [3] mixamorig1:Spine
+  [4] mixamorig1:LeftUpLeg
+  [5] mixamorig1:RightUpLeg
+  [6] mixamorig1:Spine1
+  [7] mixamorig1:LeftLeg
+  [8] mixamorig1:RightLeg
+  [9] mixamorig1:Spine2
+  [10] mixamorig1:LeftFoot
+  [11] mixamorig1:RightFoot
+  [12] mixamorig1:Neck
+  [13] mixamorig1:LeftShoulder
+  [14] mixamorig1:RightShoulder
+  [15] mixamorig1:LeftToeBase
+  [16] mixamorig1:RightToeBase
+  [17] mixamorig1:Head
+  [18] mixamorig1:LeftArm
+  [19] mixamorig1:RightArm
+  [20] mixamorig1:LeftToe_End
+  [21] mixamorig1:RightToe_End
+  [22] mixamorig1:HeadTop_End
+  [23] mixamorig1:LeftForeArm
+  [24] mixamorig1:RightForeArm
+  [25] mixamorig1:LeftHand
+  [26] mixamorig1:RightHand
+  [27] mixamorig1:LeftHandThumb1
+  [28] mixamorig1:LeftHandIndex1
+  [29] mixamorig1:LeftHandMiddle1
+  [30] mixamorig1:LeftHandRing1
+  [31] mixamorig1:LeftHandPinky1
+  [32] mixamorig1:RightHandThumb1
+  [33] mixamorig1:RightHandIndex1
+  [34] mixamorig1:RightHandMiddle1
+  [35] mixamorig1:RightHandRing1
+  [36] mixamorig1:RightHandPinky1
+  [37] mixamorig1:LeftHandThumb2
+  [38] mixamorig1:LeftHandIndex2
+  [39] mixamorig1:LeftHandMiddle2
+  [40] mixamorig1:LeftHandRing2
+  [41] mixamorig1:LeftHandPinky2
+  [42] mixamorig1:RightHandThumb2
+  [43] mixamorig1:RightHandIndex2
+  [44] mixamorig1:RightHandMiddle2
+  [45] mixamorig1:RightHandRing2
+  [46] mixamorig1:RightHandPinky2
+  [47] mixamorig1:LeftHandThumb3
+  [48] mixamorig1:LeftHandIndex3
+  [49] mixamorig1:LeftHandMiddle3
+  [50] mixamorig1:LeftHandRing3
+  [51] mixamorig1:LeftHandPinky3
+  [52] mixamorig1:RightHandThumb3
+  [53] mixamorig1:RightHandIndex3
+  [54] mixamorig1:RightHandMiddle3
+  [55] mixamorig1:RightHandRing3
+  [56] mixamorig1:RightHandPinky3
+  [57] mixamorig1:LeftHandThumb4
+  [58] mixamorig1:LeftHandIndex4
+  [59] mixamorig1:LeftHandMiddle4
+  [60] mixamorig1:LeftHandRing4
+  [61] mixamorig1:LeftHandPinky4
+  [62] mixamorig1:RightHandThumb4
+  [63] mixamorig1:RightHandIndex4
+  [64] mixamorig1:RightHandMiddle4
+  [65] mixamorig1:RightHandRing4
+  [66] mixamorig1:RightHandPinky4
+
+meshes: 1
+  [0] 
+
+materials: 1
+  [0] Ch36_Body
+
+anim_stacks: 2
+  [0] Take 001
+  [1] mixamo.com
+animations: indisponível ('ufbx._ufbx.Scene' object has no attribute 'animations')
+
+--- FIM DO RELATÓRIO ---
+Salvando em: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\RELATORIOS_FBX\backflip in wall_RELATORIO.txt.
+
+perssonagem_RELATORIO.txt:
+============================================================
+ARQUIVO: perssonagem.fbx
+Caminho: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\perssonagem.fbx
+Tamanho: 35,099,440 bytes
+Data: 2026-10-10T18:48:59.602352
+============================================================
+Formato identificado: FBX BINÁRIO
+
+--- LEITURA DO ARQUIVO ---
+Bytes lidos: 35,099,440
+Strings únicas encontradas: 413880
+
+--- NOMES RELEVANTES ---
+Total: 212
+%1&(aRm^#R
+../../../../home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Diffuse.png
+../../../../home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Glossiness.png
+../../../../home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Normal.png
+../../../../home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Specular.png
+../../../../home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Specular.pngS
+.6uhand
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Diffuse.png
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Diffuse.pngQ[
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Glossiness.png
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Glossiness.pngN
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Glossiness.pngmb
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Normal.png
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Normal.png^M
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Normal.png~
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Specular.png
+/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbm/Ch36_1001_Specular.pngCy
+/lEg
+6ARM
+?naRM
+ActiveAnimStackNameS
+AnimCurveNodeS
+AnimCurveS
+AnimLayerS
+AnimStackS
+AnimationCurveJO
+AnimationCurveL
+AnimationCurveL '
+AnimationCurveL 8
+AnimationCurveL S
+AnimationCurveL U
+AnimationCurveL X
+AnimationCurveL f
+AnimationCurveL l
+AnimationCurveL0
+AnimationCurveL0;
+AnimationCurveL0H
+AnimationCurveL0J
+AnimationCurveL0K
+AnimationCurveL0L
+AnimationCurveL0R
+AnimationCurveL0e
+AnimationCurveL0r
+AnimationCurveL@
+AnimationCurveL@;
+AnimationCurveL@N}
+AnimationCurveL@O
+AnimationCurveL@V
+AnimationCurveL@\
+AnimationCurveLP
+AnimationCurveLP,
+AnimationCurveLP9
+AnimationCurveLP<
+AnimationCurveLPF
+AnimationCurveLPK
+AnimationCurveLPQ
+AnimationCurveLP_
+AnimationCurveLPz
+AnimationCurveL`
+AnimationCurveL`#
+AnimationCurveL`*
+AnimationCurveL`>
+AnimationCurveL`E
+AnimationCurveL`T~
+AnimationCurveL`a
+AnimationCurveL`z
+AnimationCurveLp
+AnimationCurveLp.
+AnimationCurveLp5
+AnimationCurveLpN
+AnimationCurveLpW
+AnimationCurveLp`
+AnimationCurveLph
+AnimationCurveNode8M
+AnimationCurveNodeL
+AnimationCurveNodeL -
+AnimationCurveNodeL A
+AnimationCurveNodeL I
+AnimationCurveNodeL `
+AnimationCurveNodeL |
+AnimationCurveNodeL0
+AnimationCurveNodeL0!
+AnimationCurveNodeL0^~
+AnimationCurveNodeL0c
+AnimationCurveNodeL0d
+AnimationCurveNodeL0w
+AnimationCurveNodeL@
+AnimationCurveNodeL@7
+AnimationCurveNodeL@D
+AnimationCurveNodeLP
+AnimationCurveNodeLPW
+AnimationCurveNodeLPg
+AnimationCurveNodeLPo
+AnimationCurveNodeL`
+AnimationCurveNodeL`)
+AnimationCurveNodeL`1
+AnimationCurveNodeL`S
+AnimationCurveNodeL`Y
+AnimationCurveNodeLp
+AnimationCurveNodeLpL
+AnimationCurveNodeLpT
+AnimationLayer
+AnimationLayerL
+AnimationLayerLP
+AnimationStackL
+AnimationStack_D
+Arm`
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_Deliverables\9-17-2019
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_deliveries\13-9-2019\Ch36\Ch36_nonPBR.ma
+DlEg
+FBXHeaderExtensiont
+FBXHeaderVersionI
+FbxAnimCurveNode
+FbxAnimLayer
+FbxAnimStackJF
+FreeRunningS
+ILeg4?>t
+Kleg
+LEg*c
+LEgu
+LlEGe
+Mixamo, Inc.
+MotionOnlyScene; Retargeted Clip; Motion Sequence; 1 motions; Skeleton mixamorig1:Hips_skin-file:/home/app/mixamo-mini/tmp/skins_146b8511-8b11-4c0e-9177-8d124f7b50b3.fbx
+RUnt<
+RootNodeL
+[qLeG[q!
+]']ARm
+_gLEg;
+aRM*
+aRm*
+elEg
+lEGX
+lRUN
+mixamo.com
+mixamo.com.tak
+mixamo.comn
+mixamorig1:Head
+mixamorig1:HeadTop_End
+mixamorig1:Hips
+mixamorig1:LeftArm
+mixamorig1:LeftFoot
+mixamorig1:LeftForeArm
+mixamorig1:LeftHand
+mixamorig1:LeftHandIndex1
+mixamorig1:LeftHandIndex2
+mixamorig1:LeftHandIndex3
+mixamorig1:LeftHandIndex4
+mixamorig1:LeftHandMiddle1
+mixamorig1:LeftHandMiddle2
+mixamorig1:LeftHandMiddle3
+mixamorig1:LeftHandMiddle4
+mixamorig1:LeftHandPinky1
+mixamorig1:LeftHandPinky2
+mixamorig1:LeftHandPinky3
+mixamorig1:LeftHandPinky4
+mixamorig1:LeftHandRing1
+mixamorig1:LeftHandRing2
+mixamorig1:LeftHandRing3
+mixamorig1:LeftHandRing4
+mixamorig1:LeftHandThumb1
+mixamorig1:LeftHandThumb2
+mixamorig1:LeftHandThumb3
+mixamorig1:LeftHandThumb4
+mixamorig1:LeftLeg
+mixamorig1:LeftShoulder
+mixamorig1:LeftToeBase
+mixamorig1:LeftToe_End
+mixamorig1:LeftUpLeg
+mixamorig1:Neck
+mixamorig1:RightArm
+mixamorig1:RightFoot
+mixamorig1:RightForeArm
+mixamorig1:RightHand
+mixamorig1:RightHandIndex1
+mixamorig1:RightHandIndex2
+mixamorig1:RightHandIndex3
+mixamorig1:RightHandIndex4
+mixamorig1:RightHandMiddle1
+mixamorig1:RightHandMiddle2
+mixamorig1:RightHandMiddle3
+mixamorig1:RightHandMiddle4
+mixamorig1:RightHandPinky1
+mixamorig1:RightHandPinky2
+mixamorig1:RightHandPinky3
+mixamorig1:RightHandPinky4
+mixamorig1:RightHandRing1
+mixamorig1:RightHandRing2
+mixamorig1:RightHandRing3
+mixamorig1:RightHandRing4
+mixamorig1:RightHandThumb1
+mixamorig1:RightHandThumb2
+mixamorig1:RightHandThumb3
+mixamorig1:RightHandThumb4
+mixamorig1:RightLeg
+mixamorig1:RightShoulder
+mixamorig1:RightToeBase
+mixamorig1:RightToe_End
+mixamorig1:RightUpLeg
+mixamorig1:Spine
+mixamorig1:Spine1
+mixamorig1:Spine2
+nKrUN
+pArM
+rUnc
+runADh
+sARmT
+tLEg
+yARm#.#
+yaRm&
+}arm
+~*RUn.
+~:RUN
+
+--- LEITOR ESTRUTURAL PYUFBX ---
+Biblioteca ufbx encontrada.
+Arquivo carregado pela biblioteca.
+
+nodes: 67
+  [0] 
+  [1] Ch36
+  [2] mixamorig1:Hips
+  [3] mixamorig1:Spine
+  [4] mixamorig1:LeftUpLeg
+  [5] mixamorig1:RightUpLeg
+  [6] mixamorig1:Spine1
+  [7] mixamorig1:LeftLeg
+  [8] mixamorig1:RightLeg
+  [9] mixamorig1:Spine2
+  [10] mixamorig1:LeftFoot
+  [11] mixamorig1:RightFoot
+  [12] mixamorig1:Neck
+  [13] mixamorig1:LeftShoulder
+  [14] mixamorig1:RightShoulder
+  [15] mixamorig1:LeftToeBase
+  [16] mixamorig1:RightToeBase
+  [17] mixamorig1:Head
+  [18] mixamorig1:LeftArm
+  [19] mixamorig1:RightArm
+  [20] mixamorig1:LeftToe_End
+  [21] mixamorig1:RightToe_End
+  [22] mixamorig1:HeadTop_End
+  [23] mixamorig1:LeftForeArm
+  [24] mixamorig1:RightForeArm
+  [25] mixamorig1:LeftHand
+  [26] mixamorig1:RightHand
+  [27] mixamorig1:LeftHandThumb1
+  [28] mixamorig1:LeftHandIndex1
+  [29] mixamorig1:LeftHandMiddle1
+  [30] mixamorig1:LeftHandRing1
+  [31] mixamorig1:LeftHandPinky1
+  [32] mixamorig1:RightHandThumb1
+  [33] mixamorig1:RightHandIndex1
+  [34] mixamorig1:RightHandMiddle1
+  [35] mixamorig1:RightHandRing1
+  [36] mixamorig1:RightHandPinky1
+  [37] mixamorig1:LeftHandThumb2
+  [38] mixamorig1:LeftHandIndex2
+  [39] mixamorig1:LeftHandMiddle2
+  [40] mixamorig1:LeftHandRing2
+  [41] mixamorig1:LeftHandPinky2
+  [42] mixamorig1:RightHandThumb2
+  [43] mixamorig1:RightHandIndex2
+  [44] mixamorig1:RightHandMiddle2
+  [45] mixamorig1:RightHandRing2
+  [46] mixamorig1:RightHandPinky2
+  [47] mixamorig1:LeftHandThumb3
+  [48] mixamorig1:LeftHandIndex3
+  [49] mixamorig1:LeftHandMiddle3
+  [50] mixamorig1:LeftHandRing3
+  [51] mixamorig1:LeftHandPinky3
+  [52] mixamorig1:RightHandThumb3
+  [53] mixamorig1:RightHandIndex3
+  [54] mixamorig1:RightHandMiddle3
+  [55] mixamorig1:RightHandRing3
+  [56] mixamorig1:RightHandPinky3
+  [57] mixamorig1:LeftHandThumb4
+  [58] mixamorig1:LeftHandIndex4
+  [59] mixamorig1:LeftHandMiddle4
+  [60] mixamorig1:LeftHandRing4
+  [61] mixamorig1:LeftHandPinky4
+  [62] mixamorig1:RightHandThumb4
+  [63] mixamorig1:RightHandIndex4
+  [64] mixamorig1:RightHandMiddle4
+  [65] mixamorig1:RightHandRing4
+  [66] mixamorig1:RightHandPinky4
+
+meshes: 1
+  [0] 
+
+materials: 1
+  [0] Ch36_Body
+
+anim_stacks: 2
+  [0] Take 001
+  [1] mixamo.com
+animations: indisponível ('ufbx._ufbx.Scene' object has no attribute 'animations')
+
+--- FIM DO RELATÓRIO ---
+Salvando em: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\RELATORIOS_FBX\perssonagem_RELATORIO.txt.
+
+running to slide_RELATORIO.txt:
+============================================================
+ARQUIVO: running to slide.fbx
+Caminho: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\running to slide.fbx
+Tamanho: 2,050,416 bytes
+Data: 2026-10-10T18:49:05.833137
+============================================================
+Formato identificado: FBX BINÁRIO
+
+--- LEITURA DO ARQUIVO ---
+Bytes lidos: 2,050,416
+Strings únicas encontradas: 11863
+
+--- NOMES RELEVANTES ---
+Total: 215
+ActiveAnimStackNameS
+AnimCurveNodeS
+AnimCurveS
+AnimLayerS
+AnimStackS
+AnimationCurve
+AnimationCurveL
+AnimationCurveL .D0
+AnimationCurveL E:0
+AnimationCurveL H;0
+AnimationCurveL MH0
+AnimationCurveL _I0
+AnimationCurveL e90
+AnimationCurveL x
+AnimationCurveL0
+AnimationCurveL0%L0
+AnimationCurveL0<R0
+AnimationCurveL0[90
+AnimationCurveL0d
+AnimationCurveL0hA0
+AnimationCurveL0l@0
+AnimationCurveL0vS0
+AnimationCurveL0{90
+AnimationCurveL@
+AnimationCurveL@)M0
+AnimationCurveL@+E0
+AnimationCurveL@+U0
+AnimationCurveL@WS0
+AnimationCurveL@vB0
+AnimationCurveL@}M0
+AnimationCurveLP
+AnimationCurveLP"T0
+AnimationCurveLP0:0
+AnimationCurveLP;L0
+AnimationCurveLPQG0
+AnimationCurveLPa@0
+AnimationCurveLP{C0
+AnimationCurveL`
+AnimationCurveL`.,0
+AnimationCurveL`0C0
+AnimationCurveL`jM0
+AnimationCurveL`xN0
+AnimationCurveL`yP0
+AnimationCurveLp
+AnimationCurveLp">0
+AnimationCurveLp"D0
+AnimationCurveLp>I0
+AnimationCurveLpAH0
+AnimationCurveLpCL0
+AnimationCurveLpFG0
+AnimationCurveLpXN0
+AnimationCurveLp\N0
+AnimationCurveNodeL
+AnimationCurveNodeL 6H0
+AnimationCurveNodeL0
+AnimationCurveNodeL0690
+AnimationCurveNodeL0~F0
+AnimationCurveNodeL@
+AnimationCurveNodeLP
+AnimationCurveNodeLPO90
+AnimationCurveNodeL`490
+AnimationCurveNodeL`xE0
+AnimationCurveNodeLp
+AnimationCurveNodeLp/G0
+AnimationCurveNodehA
+AnimationLayer
+AnimationLayerL
+AnimationStackL
+AnimationStackq;
+Beta_Joints
+Beta_Joints_MAT1
+C:\Users\zachary\Dropbox (Adobe)\Mixamo\Characters\X Bot\clean.ma
+C:\Users\zachary\Dropbox (Adobe)\Mixamo\Characters\X Bot]
+Cluster mixamorig:Head
+Cluster mixamorig:HeadTop_End
+Cluster mixamorig:Hips
+Cluster mixamorig:LeftArm
+Cluster mixamorig:LeftFoot
+Cluster mixamorig:LeftForeArm
+Cluster mixamorig:LeftHand
+Cluster mixamorig:LeftHandIndex1
+Cluster mixamorig:LeftHandIndex2
+Cluster mixamorig:LeftHandIndex3
+Cluster mixamorig:LeftHandIndex4
+Cluster mixamorig:LeftHandMiddle1
+Cluster mixamorig:LeftHandMiddle2
+Cluster mixamorig:LeftHandMiddle3
+Cluster mixamorig:LeftHandMiddle4
+Cluster mixamorig:LeftHandPinky1
+Cluster mixamorig:LeftHandPinky2
+Cluster mixamorig:LeftHandPinky3
+Cluster mixamorig:LeftHandPinky4
+Cluster mixamorig:LeftHandRing1
+Cluster mixamorig:LeftHandRing2
+Cluster mixamorig:LeftHandRing3
+Cluster mixamorig:LeftHandRing4
+Cluster mixamorig:LeftHandThumb1
+Cluster mixamorig:LeftHandThumb2
+Cluster mixamorig:LeftHandThumb3
+Cluster mixamorig:LeftHandThumb4
+Cluster mixamorig:LeftLeg
+Cluster mixamorig:LeftShoulder
+Cluster mixamorig:LeftToeBase
+Cluster mixamorig:LeftToe_End
+Cluster mixamorig:LeftUpLeg
+Cluster mixamorig:Neck
+Cluster mixamorig:RightArm
+Cluster mixamorig:RightFoot
+Cluster mixamorig:RightForeArm
+Cluster mixamorig:RightHand
+Cluster mixamorig:RightHandIndex1
+Cluster mixamorig:RightHandIndex2
+Cluster mixamorig:RightHandIndex3
+Cluster mixamorig:RightHandIndex4
+Cluster mixamorig:RightHandMiddle1
+Cluster mixamorig:RightHandMiddle2
+Cluster mixamorig:RightHandMiddle3
+Cluster mixamorig:RightHandMiddle4
+Cluster mixamorig:RightHandPinky1
+Cluster mixamorig:RightHandPinky2
+Cluster mixamorig:RightHandPinky3
+Cluster mixamorig:RightHandPinky4
+Cluster mixamorig:RightHandRing1
+Cluster mixamorig:RightHandRing2
+Cluster mixamorig:RightHandRing3
+Cluster mixamorig:RightHandRing4
+Cluster mixamorig:RightHandThumb1
+Cluster mixamorig:RightHandThumb2
+Cluster mixamorig:RightHandThumb3
+Cluster mixamorig:RightHandThumb4
+Cluster mixamorig:RightLeg
+Cluster mixamorig:RightShoulder
+Cluster mixamorig:RightToeBase
+Cluster mixamorig:RightToe_End
+Cluster mixamorig:RightUpLeg
+Cluster mixamorig:Spine
+Cluster mixamorig:Spine1
+Cluster mixamorig:Spine2
+FBXHeaderExtensiont
+FBXHeaderVersionI
+FbxAnimCurveNode
+FbxAnimLayer
+FbxAnimStack\=
+Mixamo, Inc.
+MotionOnlyScene; Retargeted Clip; Motion Sequence; 1 motions; Skeleton mixamorig:Hips_skin-file:/home/app/mixamo-mini/tmp/skins_8c702017-22cc-432a-abfa-30c3886aa83b.fbx
+RootNodeL
+Skin Beta_Joints
+X\aRm
+mixamo.com
+mixamo.com.takIH
+mixamorig:Head
+mixamorig:HeadTop_End
+mixamorig:Hips
+mixamorig:LeftArm
+mixamorig:LeftFoot
+mixamorig:LeftForeArm
+mixamorig:LeftHand
+mixamorig:LeftHandIndex1
+mixamorig:LeftHandIndex2
+mixamorig:LeftHandIndex3
+mixamorig:LeftHandIndex4
+mixamorig:LeftHandMiddle1
+mixamorig:LeftHandMiddle2
+mixamorig:LeftHandMiddle3
+mixamorig:LeftHandMiddle4
+mixamorig:LeftHandPinky1
+mixamorig:LeftHandPinky2
+mixamorig:LeftHandPinky3
+mixamorig:LeftHandPinky4
+mixamorig:LeftHandRing1
+mixamorig:LeftHandRing2
+mixamorig:LeftHandRing3
+mixamorig:LeftHandRing4
+mixamorig:LeftHandThumb1
+mixamorig:LeftHandThumb2
+mixamorig:LeftHandThumb3
+mixamorig:LeftHandThumb4
+mixamorig:LeftLeg
+mixamorig:LeftShoulder
+mixamorig:LeftToeBase
+mixamorig:LeftToe_End
+mixamorig:LeftUpLeg
+mixamorig:Neck
+mixamorig:RightArm
+mixamorig:RightFoot
+mixamorig:RightForeArm
+mixamorig:RightHand
+mixamorig:RightHandIndex1
+mixamorig:RightHandIndex2
+mixamorig:RightHandIndex3
+mixamorig:RightHandIndex4
+mixamorig:RightHandMiddle1
+mixamorig:RightHandMiddle2
+mixamorig:RightHandMiddle3
+mixamorig:RightHandMiddle4
+mixamorig:RightHandPinky1
+mixamorig:RightHandPinky2
+mixamorig:RightHandPinky3
+mixamorig:RightHandPinky4
+mixamorig:RightHandRing1
+mixamorig:RightHandRing2
+mixamorig:RightHandRing3
+mixamorig:RightHandRing4
+mixamorig:RightHandThumb1
+mixamorig:RightHandThumb2
+mixamorig:RightHandThumb3
+mixamorig:RightHandThumb4
+mixamorig:RightLeg
+mixamorig:RightShoulder
+mixamorig:RightToeBase
+mixamorig:RightToe_End
+mixamorig:RightUpLeg
+mixamorig:Spine
+mixamorig:Spine1
+mixamorig:Spine2
+
+--- LEITOR ESTRUTURAL PYUFBX ---
+Biblioteca ufbx encontrada.
+Arquivo carregado pela biblioteca.
+
+nodes: 68
+  [0] 
+  [1] mixamorig:Hips
+  [2] Beta_Surface
+  [3] Beta_Joints
+  [4] mixamorig:Spine
+  [5] mixamorig:RightUpLeg
+  [6] mixamorig:LeftUpLeg
+  [7] mixamorig:Spine1
+  [8] mixamorig:RightLeg
+  [9] mixamorig:LeftLeg
+  [10] mixamorig:Spine2
+  [11] mixamorig:RightFoot
+  [12] mixamorig:LeftFoot
+  [13] mixamorig:Neck
+  [14] mixamorig:RightShoulder
+  [15] mixamorig:LeftShoulder
+  [16] mixamorig:RightToeBase
+  [17] mixamorig:LeftToeBase
+  [18] mixamorig:Head
+  [19] mixamorig:RightArm
+  [20] mixamorig:LeftArm
+  [21] mixamorig:RightToe_End
+  [22] mixamorig:LeftToe_End
+  [23] mixamorig:HeadTop_End
+  [24] mixamorig:RightForeArm
+  [25] mixamorig:LeftForeArm
+  [26] mixamorig:RightHand
+  [27] mixamorig:LeftHand
+  [28] mixamorig:RightHandThumb1
+  [29] mixamorig:RightHandIndex1
+  [30] mixamorig:RightHandMiddle1
+  [31] mixamorig:RightHandRing1
+  [32] mixamorig:RightHandPinky1
+  [33] mixamorig:LeftHandThumb1
+  [34] mixamorig:LeftHandIndex1
+  [35] mixamorig:LeftHandMiddle1
+  [36] mixamorig:LeftHandRing1
+  [37] mixamorig:LeftHandPinky1
+  [38] mixamorig:RightHandThumb2
+  [39] mixamorig:RightHandIndex2
+  [40] mixamorig:RightHandMiddle2
+  [41] mixamorig:RightHandRing2
+  [42] mixamorig:RightHandPinky2
+  [43] mixamorig:LeftHandThumb2
+  [44] mixamorig:LeftHandIndex2
+  [45] mixamorig:LeftHandMiddle2
+  [46] mixamorig:LeftHandRing2
+  [47] mixamorig:LeftHandPinky2
+  [48] mixamorig:RightHandThumb3
+  [49] mixamorig:RightHandIndex3
+  [50] mixamorig:RightHandMiddle3
+  [51] mixamorig:RightHandRing3
+  [52] mixamorig:RightHandPinky3
+  [53] mixamorig:LeftHandThumb3
+  [54] mixamorig:LeftHandIndex3
+  [55] mixamorig:LeftHandMiddle3
+  [56] mixamorig:LeftHandRing3
+  [57] mixamorig:LeftHandPinky3
+  [58] mixamorig:RightHandThumb4
+  [59] mixamorig:RightHandIndex4
+  [60] mixamorig:RightHandMiddle4
+  [61] mixamorig:RightHandRing4
+  [62] mixamorig:RightHandPinky4
+  [63] mixamorig:LeftHandThumb4
+  [64] mixamorig:LeftHandIndex4
+  [65] mixamorig:LeftHandMiddle4
+  [66] mixamorig:LeftHandRing4
+  [67] mixamorig:LeftHandPinky4
+
+meshes: 2
+  [0] Beta_Surface
+  [1] Beta_Joints
+
+materials: 2
+  [0] Beta_HighLimbsGeoSG3
+  [1] Beta_Joints_MAT1
+
+anim_stacks: 2
+  [0] Take 001
+  [1] mixamo.com
+animations: indisponível ('ufbx._ufbx.Scene' object has no attribute 'animations')
+
+--- FIM DO RELATÓRIO ---
+Salvando em: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\RELATORIOS_FBX\running to slide_RELATORIO.txt.
+
+Running_RELATORIO.txt:
+============================================================
+ARQUIVO: Running.fbx
+Caminho: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\Running.fbx
+Tamanho: 35,228,832 bytes
+Data: 2026-10-10T18:49:06.263168
+============================================================
+Formato identificado: FBX BINÁRIO
+
+--- LEITURA DO ARQUIVO ---
+Bytes lidos: 35,228,832
+Strings únicas encontradas: 414012
+
+--- NOMES RELEVANTES ---
+Total: 211
+%1&(aRm^#R
+../../../../home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Diffuse.png
+../../../../home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Glossiness.png
+../../../../home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Normal.png
+../../../../home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Specular.png
+../../../../home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Specular.pngT
+.6uhand
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Diffuse.png
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Diffuse.pngR[
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Glossiness.png
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Glossiness.pngO
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Glossiness.pngnb
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Normal.png
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Normal.png_M
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Specular.png
+/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbm/Ch36_1001_Specular.pngDy
+/lEg
+6ARM
+?naRM
+ActiveAnimStackNameS
+AnimCurveNodeS
+AnimCurveS
+AnimLayerS
+AnimStackS
+AnimationCurveL
+AnimationCurveL 1z
+AnimationCurveL 2
+AnimationCurveL 5
+AnimationCurveL T
+AnimationCurveL ~
+AnimationCurveL0
+AnimationCurveL0 |
+AnimationCurveL0&
+AnimationCurveL07
+AnimationCurveL0;
+AnimationCurveL0>
+AnimationCurveL0Q
+AnimationCurveL0V
+AnimationCurveL0[
+AnimationCurveL0c
+AnimationCurveL0x
+AnimationCurveL@
+AnimationCurveL@+
+AnimationCurveL@=
+AnimationCurveL@D
+AnimationCurveL@T
+AnimationCurveL@c
+AnimationCurveLO
+AnimationCurveLP
+AnimationCurveLP3
+AnimationCurveLP9
+AnimationCurveLPE
+AnimationCurveLPP
+AnimationCurveLPg
+AnimationCurveLPh
+AnimationCurveLPn
+AnimationCurveL`
+AnimationCurveL`7
+AnimationCurveL`I
+AnimationCurveL`R
+AnimationCurveL`d
+AnimationCurveL`k
+AnimationCurveLp
+AnimationCurveLp)
+AnimationCurveLp=
+AnimationCurveLpE
+AnimationCurveLpG
+AnimationCurveLpz
+AnimationCurveLp}
+AnimationCurveNode:M
+AnimationCurveNodeL
+AnimationCurveNodeL "
+AnimationCurveNodeL &
+AnimationCurveNodeL a
+AnimationCurveNodeL n
+AnimationCurveNodeL ~
+AnimationCurveNodeL0
+AnimationCurveNodeL0.
+AnimationCurveNodeL0E
+AnimationCurveNodeL0I
+AnimationCurveNodeL0s
+AnimationCurveNodeL@
+AnimationCurveNodeL@%
+AnimationCurveNodeL@)
+AnimationCurveNodeL@E
+AnimationCurveNodeL@g
+AnimationCurveNodeL@h
+AnimationCurveNodeL@l
+AnimationCurveNodeLP
+AnimationCurveNodeLP3
+AnimationCurveNodeLPL
+AnimationCurveNodeLPb
+AnimationCurveNodeL`
+AnimationCurveNodeL`9
+AnimationCurveNodeL`V
+AnimationCurveNodeL`o
+AnimationCurveNodeLp
+AnimationCurveNodeLp<|
+AnimationCurveNodeLp>
+AnimationCurveNodeLpP
+AnimationCurveNodeLpy
+AnimationLayer
+AnimationLayerL
+AnimationStackL
+AnimationStackaD
+Arm`
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_Deliverables\9-17-2019
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_deliveries\13-9-2019\Ch36\Ch36_nonPBR.ma
+DlEg
+FBXHeaderExtensiont
+FBXHeaderVersionI
+FbxAnimCurveNode
+FbxAnimLayer
+FbxAnimStackLF
+FreeRunningS
+ILeg4?>t
+Kleg
+LEg*c
+LEgu
+LlEGe
+Mixamo, Inc.
+MotionOnlyScene; Retargeted Clip; Motion Sequence; 1 motions; Skeleton mixamorig1:Hips_skin-file:/home/app/mixamo-mini/tmp/skins_5939099b-b63d-408d-966e-f7054e07af5d.fbx
+RUnt<
+RootNodeL
+[qLeG[q!
+]']ARm
+_gLEg;
+aRM*
+aRm*
+elEg
+lEGX
+lRUN
+mixamo.com
+mixamo.com.tako
+mixamo.com;
+mixamorig1:Head
+mixamorig1:HeadTop_End
+mixamorig1:Hips
+mixamorig1:LeftArm
+mixamorig1:LeftFoot
+mixamorig1:LeftForeArm
+mixamorig1:LeftHand
+mixamorig1:LeftHandIndex1
+mixamorig1:LeftHandIndex2
+mixamorig1:LeftHandIndex3
+mixamorig1:LeftHandIndex4
+mixamorig1:LeftHandMiddle1
+mixamorig1:LeftHandMiddle2
+mixamorig1:LeftHandMiddle3
+mixamorig1:LeftHandMiddle4
+mixamorig1:LeftHandPinky1
+mixamorig1:LeftHandPinky2
+mixamorig1:LeftHandPinky3
+mixamorig1:LeftHandPinky4
+mixamorig1:LeftHandRing1
+mixamorig1:LeftHandRing2
+mixamorig1:LeftHandRing3
+mixamorig1:LeftHandRing4
+mixamorig1:LeftHandThumb1
+mixamorig1:LeftHandThumb2
+mixamorig1:LeftHandThumb3
+mixamorig1:LeftHandThumb4
+mixamorig1:LeftLeg
+mixamorig1:LeftShoulder
+mixamorig1:LeftToeBase
+mixamorig1:LeftToe_End
+mixamorig1:LeftUpLeg
+mixamorig1:Neck
+mixamorig1:RightArm
+mixamorig1:RightFoot
+mixamorig1:RightForeArm
+mixamorig1:RightHand
+mixamorig1:RightHandIndex1
+mixamorig1:RightHandIndex2
+mixamorig1:RightHandIndex3
+mixamorig1:RightHandIndex4
+mixamorig1:RightHandMiddle1
+mixamorig1:RightHandMiddle2
+mixamorig1:RightHandMiddle3
+mixamorig1:RightHandMiddle4
+mixamorig1:RightHandPinky1
+mixamorig1:RightHandPinky2
+mixamorig1:RightHandPinky3
+mixamorig1:RightHandPinky4
+mixamorig1:RightHandRing1
+mixamorig1:RightHandRing2
+mixamorig1:RightHandRing3
+mixamorig1:RightHandRing4
+mixamorig1:RightHandThumb1
+mixamorig1:RightHandThumb2
+mixamorig1:RightHandThumb3
+mixamorig1:RightHandThumb4
+mixamorig1:RightLeg
+mixamorig1:RightShoulder
+mixamorig1:RightToeBase
+mixamorig1:RightToe_End
+mixamorig1:RightUpLeg
+mixamorig1:Spine
+mixamorig1:Spine1
+mixamorig1:Spine2
+nKrUN
+pArM
+rUnc
+runADh
+sARmT
+tLEg
+yARm#.#
+yaRm&
+}arm
+~*RUn.
+~:RUN
+
+--- LEITOR ESTRUTURAL PYUFBX ---
+Biblioteca ufbx encontrada.
+Arquivo carregado pela biblioteca.
+
+nodes: 67
+  [0] 
+  [1] Ch36
+  [2] mixamorig1:Hips
+  [3] mixamorig1:Spine
+  [4] mixamorig1:LeftUpLeg
+  [5] mixamorig1:RightUpLeg
+  [6] mixamorig1:Spine1
+  [7] mixamorig1:LeftLeg
+  [8] mixamorig1:RightLeg
+  [9] mixamorig1:Spine2
+  [10] mixamorig1:LeftFoot
+  [11] mixamorig1:RightFoot
+  [12] mixamorig1:Neck
+  [13] mixamorig1:LeftShoulder
+  [14] mixamorig1:RightShoulder
+  [15] mixamorig1:LeftToeBase
+  [16] mixamorig1:RightToeBase
+  [17] mixamorig1:Head
+  [18] mixamorig1:LeftArm
+  [19] mixamorig1:RightArm
+  [20] mixamorig1:LeftToe_End
+  [21] mixamorig1:RightToe_End
+  [22] mixamorig1:HeadTop_End
+  [23] mixamorig1:LeftForeArm
+  [24] mixamorig1:RightForeArm
+  [25] mixamorig1:LeftHand
+  [26] mixamorig1:RightHand
+  [27] mixamorig1:LeftHandThumb1
+  [28] mixamorig1:LeftHandIndex1
+  [29] mixamorig1:LeftHandMiddle1
+  [30] mixamorig1:LeftHandRing1
+  [31] mixamorig1:LeftHandPinky1
+  [32] mixamorig1:RightHandThumb1
+  [33] mixamorig1:RightHandIndex1
+  [34] mixamorig1:RightHandMiddle1
+  [35] mixamorig1:RightHandRing1
+  [36] mixamorig1:RightHandPinky1
+  [37] mixamorig1:LeftHandThumb2
+  [38] mixamorig1:LeftHandIndex2
+  [39] mixamorig1:LeftHandMiddle2
+  [40] mixamorig1:LeftHandRing2
+  [41] mixamorig1:LeftHandPinky2
+  [42] mixamorig1:RightHandThumb2
+  [43] mixamorig1:RightHandIndex2
+  [44] mixamorig1:RightHandMiddle2
+  [45] mixamorig1:RightHandRing2
+  [46] mixamorig1:RightHandPinky2
+  [47] mixamorig1:LeftHandThumb3
+  [48] mixamorig1:LeftHandIndex3
+  [49] mixamorig1:LeftHandMiddle3
+  [50] mixamorig1:LeftHandRing3
+  [51] mixamorig1:LeftHandPinky3
+  [52] mixamorig1:RightHandThumb3
+  [53] mixamorig1:RightHandIndex3
+  [54] mixamorig1:RightHandMiddle3
+  [55] mixamorig1:RightHandRing3
+  [56] mixamorig1:RightHandPinky3
+  [57] mixamorig1:LeftHandThumb4
+  [58] mixamorig1:LeftHandIndex4
+  [59] mixamorig1:LeftHandMiddle4
+  [60] mixamorig1:LeftHandRing4
+  [61] mixamorig1:LeftHandPinky4
+  [62] mixamorig1:RightHandThumb4
+  [63] mixamorig1:RightHandIndex4
+  [64] mixamorig1:RightHandMiddle4
+  [65] mixamorig1:RightHandRing4
+  [66] mixamorig1:RightHandPinky4
+
+meshes: 1
+  [0] 
+
+materials: 1
+  [0] Ch36_Body
+
+anim_stacks: 2
+  [0] Take 001
+  [1] mixamo.com
+animations: indisponível ('ufbx._ufbx.Scene' object has no attribute 'animations')
+
+--- FIM DO RELATÓRIO ---
+Salvando em: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\RELATORIOS_FBX\Running_RELATORIO.txt.
+
+Start Walking_RELATORIO.txt:
+============================================================
+ARQUIVO: Start Walking.fbx
+Caminho: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\Start Walking.fbx
+Tamanho: 35,554,576 bytes
+Data: 2026-10-10T18:49:12.498358
+============================================================
+Formato identificado: FBX BINÁRIO
+
+--- LEITURA DO ARQUIVO ---
+Bytes lidos: 35,554,576
+Strings únicas encontradas: 414750
+
+--- NOMES RELEVANTES ---
+Total: 214
+%1&(aRm^#R
+../../../../home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Diffuse.png
+../../../../home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Glossiness.png
+../../../../home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Normal.png
+../../../../home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Specular.png
+../../../../home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Specular.pngT
+.6uhand
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Diffuse.png
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Diffuse.pngR[
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Glossiness.png
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Glossiness.pngO
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Glossiness.pngnb
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Normal.png
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Normal.png_M
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Specular.png
+/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbm/Ch36_1001_Specular.pngDy
+/lEg
+6ARM
+?naRM
+ActiveAnimStackNameS
+AnimCurveNodeS
+AnimCurveS
+AnimLayerS
+AnimStackS
+AnimationCurveL
+AnimationCurveL $f
+AnimationCurveL $n
+AnimationCurveL )*
+AnimationCurveL )j
+AnimationCurveL b
+AnimationCurveL j&
+AnimationCurveL jY
+AnimationCurveL mr
+AnimationCurveL z'
+AnimationCurveL0
+AnimationCurveL0"j
+AnimationCurveL0)i
+AnimationCurveL02^
+AnimationCurveL04T
+AnimationCurveL0:d
+AnimationCurveL0?Y
+AnimationCurveL0Ag
+AnimationCurveL0Lo
+AnimationCurveL0TX
+AnimationCurveL0c7
+AnimationCurveL0h&
+AnimationCurveL@
+AnimationCurveL@L
+AnimationCurveL@^e
+AnimationCurveL@of
+AnimationCurveLO
+AnimationCurveLP
+AnimationCurveLP2s
+AnimationCurveLPSd
+AnimationCurveLPX7
+AnimationCurveLP\L
+AnimationCurveLPxW
+AnimationCurveL`
+AnimationCurveL` r
+AnimationCurveL`(e
+AnimationCurveL`7c
+AnimationCurveL`@]
+AnimationCurveL`Cr
+AnimationCurveL`il
+AnimationCurveL`o[
+AnimationCurveLp
+AnimationCurveLp7\
+AnimationCurveLpJL
+AnimationCurveLpMU
+AnimationCurveLpcr
+AnimationCurveLpib
+AnimationCurveLprH
+AnimationCurveLpx
+AnimationCurveNode:M
+AnimationCurveNodeL
+AnimationCurveNodeL &4
+AnimationCurveNodeL +?
+AnimationCurveNodeL T4
+AnimationCurveNodeL }Z
+AnimationCurveNodeL0
+AnimationCurveNodeL0 B
+AnimationCurveNodeL06'
+AnimationCurveNodeL0N?
+AnimationCurveNodeL0f%
+AnimationCurveNodeL@
+AnimationCurveNodeL@.@
+AnimationCurveNodeL@CB
+AnimationCurveNodeL@H4
+AnimationCurveNodeL@q?
+AnimationCurveNodeLP
+AnimationCurveNodeLP14
+AnimationCurveNodeLP?5
+AnimationCurveNodeLPF\
+AnimationCurveNodeLPN7
+AnimationCurveNodeLPQ@
+AnimationCurveNodeLPoB
+AnimationCurveNodeL`
+AnimationCurveNodeL`B)
+AnimationCurveNodeL`b5
+AnimationCurveNodeL`t@
+AnimationCurveNodeLp
+AnimationCurveNodeLp.A
+AnimationCurveNodeLpW)
+AnimationLayer
+AnimationLayerL
+AnimationStackL@
+AnimationStackLP
+AnimationStackaD
+Arm`
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_Deliverables\9-17-2019
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_deliveries\13-9-2019\Ch36\Ch36_nonPBR.ma
+DlEg
+FBXHeaderExtensiont
+FBXHeaderVersionI
+FbxAnimCurveNode
+FbxAnimLayer
+FbxAnimStackLF
+FreeRunningS
+ILeg4?>t
+Kleg
+LEg*c
+LEgu
+LlEGe
+Mixamo, Inc.
+MotionOnlyScene; Retargeted Clip; Motion Sequence; 1 motions; Skeleton mixamorig1:Hips_skin-file:/home/app/mixamo-mini/tmp/skins_bfc7f300-cb5e-43a3-b665-550af5f75053.fbx
+RUnt<
+RootNodeL
+[qLeG[q!
+]']ARm
+_gLEg;
+aRM*
+aRm*
+elEg
+lEGX
+lRUN
+mixamo.com
+mixamo.com.tak
+mixamo.comV
+mixamorig1:Head
+mixamorig1:HeadTop_End
+mixamorig1:Hips
+mixamorig1:LeftArm
+mixamorig1:LeftFoot
+mixamorig1:LeftForeArm
+mixamorig1:LeftHand
+mixamorig1:LeftHandIndex1
+mixamorig1:LeftHandIndex2
+mixamorig1:LeftHandIndex3
+mixamorig1:LeftHandIndex4
+mixamorig1:LeftHandMiddle1
+mixamorig1:LeftHandMiddle2
+mixamorig1:LeftHandMiddle3
+mixamorig1:LeftHandMiddle4
+mixamorig1:LeftHandPinky1
+mixamorig1:LeftHandPinky2
+mixamorig1:LeftHandPinky3
+mixamorig1:LeftHandPinky4
+mixamorig1:LeftHandRing1
+mixamorig1:LeftHandRing2
+mixamorig1:LeftHandRing3
+mixamorig1:LeftHandRing4
+mixamorig1:LeftHandThumb1
+mixamorig1:LeftHandThumb2
+mixamorig1:LeftHandThumb3
+mixamorig1:LeftHandThumb4
+mixamorig1:LeftLeg
+mixamorig1:LeftShoulder
+mixamorig1:LeftToeBase
+mixamorig1:LeftToe_End
+mixamorig1:LeftUpLeg
+mixamorig1:Neck
+mixamorig1:RightArm
+mixamorig1:RightFoot
+mixamorig1:RightForeArm
+mixamorig1:RightHand
+mixamorig1:RightHandIndex1
+mixamorig1:RightHandIndex2
+mixamorig1:RightHandIndex3
+mixamorig1:RightHandIndex4
+mixamorig1:RightHandMiddle1
+mixamorig1:RightHandMiddle2
+mixamorig1:RightHandMiddle3
+mixamorig1:RightHandMiddle4
+mixamorig1:RightHandPinky1
+mixamorig1:RightHandPinky2
+mixamorig1:RightHandPinky3
+mixamorig1:RightHandPinky4
+mixamorig1:RightHandRing1
+mixamorig1:RightHandRing2
+mixamorig1:RightHandRing3
+mixamorig1:RightHandRing4
+mixamorig1:RightHandThumb1
+mixamorig1:RightHandThumb2
+mixamorig1:RightHandThumb3
+mixamorig1:RightHandThumb4
+mixamorig1:RightLeg
+mixamorig1:RightShoulder
+mixamorig1:RightToeBase
+mixamorig1:RightToe_End
+mixamorig1:RightUpLeg
+mixamorig1:Spine
+mixamorig1:Spine1
+mixamorig1:Spine2
+nKrUN
+pArM
+rUnc
+runADh
+sARmT
+tLEg
+yARm#.#
+yaRm&
+}arm
+~*RUn.
+~:RUN
+
+--- LEITOR ESTRUTURAL PYUFBX ---
+Biblioteca ufbx encontrada.
+Arquivo carregado pela biblioteca.
+
+nodes: 67
+  [0] 
+  [1] Ch36
+  [2] mixamorig1:Hips
+  [3] mixamorig1:Spine
+  [4] mixamorig1:LeftUpLeg
+  [5] mixamorig1:RightUpLeg
+  [6] mixamorig1:Spine1
+  [7] mixamorig1:LeftLeg
+  [8] mixamorig1:RightLeg
+  [9] mixamorig1:Spine2
+  [10] mixamorig1:LeftFoot
+  [11] mixamorig1:RightFoot
+  [12] mixamorig1:Neck
+  [13] mixamorig1:LeftShoulder
+  [14] mixamorig1:RightShoulder
+  [15] mixamorig1:LeftToeBase
+  [16] mixamorig1:RightToeBase
+  [17] mixamorig1:Head
+  [18] mixamorig1:LeftArm
+  [19] mixamorig1:RightArm
+  [20] mixamorig1:LeftToe_End
+  [21] mixamorig1:RightToe_End
+  [22] mixamorig1:HeadTop_End
+  [23] mixamorig1:LeftForeArm
+  [24] mixamorig1:RightForeArm
+  [25] mixamorig1:LeftHand
+  [26] mixamorig1:RightHand
+  [27] mixamorig1:LeftHandThumb1
+  [28] mixamorig1:LeftHandIndex1
+  [29] mixamorig1:LeftHandMiddle1
+  [30] mixamorig1:LeftHandRing1
+  [31] mixamorig1:LeftHandPinky1
+  [32] mixamorig1:RightHandThumb1
+  [33] mixamorig1:RightHandIndex1
+  [34] mixamorig1:RightHandMiddle1
+  [35] mixamorig1:RightHandRing1
+  [36] mixamorig1:RightHandPinky1
+  [37] mixamorig1:LeftHandThumb2
+  [38] mixamorig1:LeftHandIndex2
+  [39] mixamorig1:LeftHandMiddle2
+  [40] mixamorig1:LeftHandRing2
+  [41] mixamorig1:LeftHandPinky2
+  [42] mixamorig1:RightHandThumb2
+  [43] mixamorig1:RightHandIndex2
+  [44] mixamorig1:RightHandMiddle2
+  [45] mixamorig1:RightHandRing2
+  [46] mixamorig1:RightHandPinky2
+  [47] mixamorig1:LeftHandThumb3
+  [48] mixamorig1:LeftHandIndex3
+  [49] mixamorig1:LeftHandMiddle3
+  [50] mixamorig1:LeftHandRing3
+  [51] mixamorig1:LeftHandPinky3
+  [52] mixamorig1:RightHandThumb3
+  [53] mixamorig1:RightHandIndex3
+  [54] mixamorig1:RightHandMiddle3
+  [55] mixamorig1:RightHandRing3
+  [56] mixamorig1:RightHandPinky3
+  [57] mixamorig1:LeftHandThumb4
+  [58] mixamorig1:LeftHandIndex4
+  [59] mixamorig1:LeftHandMiddle4
+  [60] mixamorig1:LeftHandRing4
+  [61] mixamorig1:LeftHandPinky4
+  [62] mixamorig1:RightHandThumb4
+  [63] mixamorig1:RightHandIndex4
+  [64] mixamorig1:RightHandMiddle4
+  [65] mixamorig1:RightHandRing4
+  [66] mixamorig1:RightHandPinky4
+
+meshes: 1
+  [0] 
+
+materials: 1
+  [0] Ch36_Body
+
+anim_stacks: 2
+  [0] Take 001
+  [1] mixamo.com
+animations: indisponível ('ufbx._ufbx.Scene' object has no attribute 'animations')
+
+--- FIM DO RELATÓRIO ---
+Salvando em: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\RELATORIOS_FBX\Start Walking_RELATORIO.txt.
+
+Stop Walking_RELATORIO:
+============================================================
+ARQUIVO: Stop Walking.fbx
+Caminho: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\Stop Walking.fbx
+Tamanho: 35,565,120 bytes
+Data: 2026-10-10T18:49:18.992375
+============================================================
+Formato identificado: FBX BINÁRIO
+
+--- LEITURA DO ARQUIVO ---
+Bytes lidos: 35,565,120
+Strings únicas encontradas: 414681
+
+--- NOMES RELEVANTES ---
+Total: 205
+%1&(aRm^#R
+../../../../home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Diffuse.png
+../../../../home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Glossiness.png
+../../../../home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Normal.png
+../../../../home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Specular.png
+../../../../home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Specular.pngT
+.6uhand
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Diffuse.png
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Diffuse.pngR[
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Glossiness.png
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Glossiness.pngO
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Glossiness.pngnb
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Normal.png
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Normal.png_M
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Specular.png
+/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbm/Ch36_1001_Specular.pngDy
+/lEg
+6ARM
+?naRM
+ActiveAnimStackNameS
+AnimCurveNodeS
+AnimCurveS
+AnimLayerS
+AnimStackS
+AnimationCurveL
+AnimationCurveL /
+AnimationCurveL 1
+AnimationCurveL Y
+AnimationCurveL c
+AnimationCurveL o
+AnimationCurveL y
+AnimationCurveL {
+AnimationCurveL0
+AnimationCurveL0b
+AnimationCurveL0d
+AnimationCurveL@
+AnimationCurveL@)
+AnimationCurveL@*
+AnimationCurveL@<
+AnimationCurveL@X
+AnimationCurveLO
+AnimationCurveLP
+AnimationCurveLP6
+AnimationCurveLPS
+AnimationCurveLPY
+AnimationCurveLP_
+AnimationCurveLPd
+AnimationCurveLPr
+AnimationCurveLPs
+AnimationCurveL`
+AnimationCurveL`-
+AnimationCurveL`7
+AnimationCurveL`>
+AnimationCurveL`Q
+AnimationCurveL`\
+AnimationCurveL`l
+AnimationCurveL`w
+AnimationCurveLp
+AnimationCurveLp+
+AnimationCurveLp4
+AnimationCurveLpU
+AnimationCurveLp^
+AnimationCurveLpj
+AnimationCurveLpw
+AnimationCurveNode:M
+AnimationCurveNodeL
+AnimationCurveNodeL K
+AnimationCurveNodeL q
+AnimationCurveNodeL |
+AnimationCurveNodeL0
+AnimationCurveNodeL0&
+AnimationCurveNodeL0+
+AnimationCurveNodeL0:
+AnimationCurveNodeL0[
+AnimationCurveNodeL0n
+AnimationCurveNodeL0u
+AnimationCurveNodeL@
+AnimationCurveNodeL@,
+AnimationCurveNodeL@5
+AnimationCurveNodeL@G
+AnimationCurveNodeL@N
+AnimationCurveNodeL@]
+AnimationCurveNodeL@i
+AnimationCurveNodeLP
+AnimationCurveNodeLPX
+AnimationCurveNodeLP^
+AnimationCurveNodeLPq
+AnimationCurveNodeL`
+AnimationCurveNodeL`!
+AnimationCurveNodeL`@
+AnimationCurveNodeL`{
+AnimationCurveNodeLp
+AnimationCurveNodeLp$
+AnimationCurveNodeLp/
+AnimationCurveNodeLpR
+AnimationCurveNodeLpc
+AnimationLayer
+AnimationLayerL
+AnimationStackL
+AnimationStackaD
+Arm`
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_Deliverables\9-17-2019
+C:\Users\Tai\Dropbox (Euclid-Team)\Adobe_Art_Repo\Mixamo\Spring_Onion_2019\_deliveries\13-9-2019\Ch36\Ch36_nonPBR.ma
+DlEg
+FBXHeaderExtensiont
+FBXHeaderVersionI
+FbxAnimCurveNode
+FbxAnimLayer
+FbxAnimStackLF
+FreeRunningS
+ILeg4?>t
+Kleg
+LEg*c
+LEgu
+LlEGe
+Mixamo, Inc.
+MotionOnlyScene; Retargeted Clip; Motion Sequence; 1 motions; Skeleton mixamorig1:Hips_skin-file:/home/app/mixamo-mini/tmp/skins_ba22a24c-60cd-4700-aae7-4ca6cb8a4cc7.fbx
+RUnt<
+RootNodeL
+[qLeG[q!
+]']ARm
+_gLEg;
+aRM*
+aRm*
+elEg
+lEGX
+lRUN
+mixamo.com
+mixamo.com.tak
+mixamorig1:Head
+mixamorig1:HeadTop_End
+mixamorig1:Hips
+mixamorig1:LeftArm
+mixamorig1:LeftFoot
+mixamorig1:LeftForeArm
+mixamorig1:LeftHand
+mixamorig1:LeftHandIndex1
+mixamorig1:LeftHandIndex2
+mixamorig1:LeftHandIndex3
+mixamorig1:LeftHandIndex4
+mixamorig1:LeftHandMiddle1
+mixamorig1:LeftHandMiddle2
+mixamorig1:LeftHandMiddle3
+mixamorig1:LeftHandMiddle4
+mixamorig1:LeftHandPinky1
+mixamorig1:LeftHandPinky2
+mixamorig1:LeftHandPinky3
+mixamorig1:LeftHandPinky4
+mixamorig1:LeftHandRing1
+mixamorig1:LeftHandRing2
+mixamorig1:LeftHandRing3
+mixamorig1:LeftHandRing4
+mixamorig1:LeftHandThumb1
+mixamorig1:LeftHandThumb2
+mixamorig1:LeftHandThumb3
+mixamorig1:LeftHandThumb4
+mixamorig1:LeftLeg
+mixamorig1:LeftShoulder
+mixamorig1:LeftToeBase
+mixamorig1:LeftToe_End
+mixamorig1:LeftUpLeg
+mixamorig1:Neck
+mixamorig1:RightArm
+mixamorig1:RightFoot
+mixamorig1:RightForeArm
+mixamorig1:RightHand
+mixamorig1:RightHandIndex1
+mixamorig1:RightHandIndex2
+mixamorig1:RightHandIndex3
+mixamorig1:RightHandIndex4
+mixamorig1:RightHandMiddle1
+mixamorig1:RightHandMiddle2
+mixamorig1:RightHandMiddle3
+mixamorig1:RightHandMiddle4
+mixamorig1:RightHandPinky1
+mixamorig1:RightHandPinky2
+mixamorig1:RightHandPinky3
+mixamorig1:RightHandPinky4
+mixamorig1:RightHandRing1
+mixamorig1:RightHandRing2
+mixamorig1:RightHandRing3
+mixamorig1:RightHandRing4
+mixamorig1:RightHandThumb1
+mixamorig1:RightHandThumb2
+mixamorig1:RightHandThumb3
+mixamorig1:RightHandThumb4
+mixamorig1:RightLeg
+mixamorig1:RightShoulder
+mixamorig1:RightToeBase
+mixamorig1:RightToe_End
+mixamorig1:RightUpLeg
+mixamorig1:Spine
+mixamorig1:Spine1
+mixamorig1:Spine2
+nKrUN
+pArM
+rUnc
+runADh
+sARmT
+tLEg
+yARm#.#
+yaRm&
+}arm
+~*RUn.
+~:RUN
+
+--- LEITOR ESTRUTURAL PYUFBX ---
+Biblioteca ufbx encontrada.
+Arquivo carregado pela biblioteca.
+
+nodes: 67
+  [0] 
+  [1] Ch36
+  [2] mixamorig1:Hips
+  [3] mixamorig1:Spine
+  [4] mixamorig1:LeftUpLeg
+  [5] mixamorig1:RightUpLeg
+  [6] mixamorig1:Spine1
+  [7] mixamorig1:LeftLeg
+  [8] mixamorig1:RightLeg
+  [9] mixamorig1:Spine2
+  [10] mixamorig1:LeftFoot
+  [11] mixamorig1:RightFoot
+  [12] mixamorig1:Neck
+  [13] mixamorig1:LeftShoulder
+  [14] mixamorig1:RightShoulder
+  [15] mixamorig1:LeftToeBase
+  [16] mixamorig1:RightToeBase
+  [17] mixamorig1:Head
+  [18] mixamorig1:LeftArm
+  [19] mixamorig1:RightArm
+  [20] mixamorig1:LeftToe_End
+  [21] mixamorig1:RightToe_End
+  [22] mixamorig1:HeadTop_End
+  [23] mixamorig1:LeftForeArm
+  [24] mixamorig1:RightForeArm
+  [25] mixamorig1:LeftHand
+  [26] mixamorig1:RightHand
+  [27] mixamorig1:LeftHandThumb1
+  [28] mixamorig1:LeftHandIndex1
+  [29] mixamorig1:LeftHandMiddle1
+  [30] mixamorig1:LeftHandRing1
+  [31] mixamorig1:LeftHandPinky1
+  [32] mixamorig1:RightHandThumb1
+  [33] mixamorig1:RightHandIndex1
+  [34] mixamorig1:RightHandMiddle1
+  [35] mixamorig1:RightHandRing1
+  [36] mixamorig1:RightHandPinky1
+  [37] mixamorig1:LeftHandThumb2
+  [38] mixamorig1:LeftHandIndex2
+  [39] mixamorig1:LeftHandMiddle2
+  [40] mixamorig1:LeftHandRing2
+  [41] mixamorig1:LeftHandPinky2
+  [42] mixamorig1:RightHandThumb2
+  [43] mixamorig1:RightHandIndex2
+  [44] mixamorig1:RightHandMiddle2
+  [45] mixamorig1:RightHandRing2
+  [46] mixamorig1:RightHandPinky2
+  [47] mixamorig1:LeftHandThumb3
+  [48] mixamorig1:LeftHandIndex3
+  [49] mixamorig1:LeftHandMiddle3
+  [50] mixamorig1:LeftHandRing3
+  [51] mixamorig1:LeftHandPinky3
+  [52] mixamorig1:RightHandThumb3
+  [53] mixamorig1:RightHandIndex3
+  [54] mixamorig1:RightHandMiddle3
+  [55] mixamorig1:RightHandRing3
+  [56] mixamorig1:RightHandPinky3
+  [57] mixamorig1:LeftHandThumb4
+  [58] mixamorig1:LeftHandIndex4
+  [59] mixamorig1:LeftHandMiddle4
+  [60] mixamorig1:LeftHandRing4
+  [61] mixamorig1:LeftHandPinky4
+  [62] mixamorig1:RightHandThumb4
+  [63] mixamorig1:RightHandIndex4
+  [64] mixamorig1:RightHandMiddle4
+  [65] mixamorig1:RightHandRing4
+  [66] mixamorig1:RightHandPinky4
+
+meshes: 1
+  [0] 
+
+materials: 1
+  [0] Ch36_Body
+
+anim_stacks: 2
+  [0] Take 001
+  [1] mixamo.com
+animations: indisponível ('ufbx._ufbx.Scene' object has no attribute 'animations')
+
+--- FIM DO RELATÓRIO ---
+Salvando em: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\RELATORIOS_FBX\Stop Walking_RELATORIO.txt.
+
+Walking_RELATORIO.txt:
+============================================================
+ARQUIVO: Walking.fbx
+Caminho: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\Walking.fbx
+Tamanho: 1,940,000 bytes
+Data: 2026-10-10T18:49:25.279969
+============================================================
+Formato identificado: FBX BINÁRIO
+
+--- LEITURA DO ARQUIVO ---
+Bytes lidos: 1,940,000
+Strings únicas encontradas: 11747
+
+--- NOMES RELEVANTES ---
+Total: 214
+ActiveAnimStackNameS
+AnimCurveNodeS
+AnimCurveS
+AnimLayerS
+AnimStackS
+AnimationCurve
+AnimationCurveL
+AnimationCurveL /
+AnimationCurveL @z)
+AnimationCurveL ir)
+AnimationCurveL ix)
+AnimationCurveL t
+AnimationCurveL }
+AnimationCurveL0
+AnimationCurveL0's)
+AnimationCurveL0Jt)
+AnimationCurveL0S|)
+AnimationCurveL0`q)
+AnimationCurveL0a
+AnimationCurveL0dl)
+AnimationCurveL0rs)
+AnimationCurveL0}i)
+AnimationCurveL@
+AnimationCurveL@)|)
+AnimationCurveL@DU)
+AnimationCurveL@[|)
+AnimationCurveLP
+AnimationCurveLP8u)
+AnimationCurveLP@y)
+AnimationCurveLPE])
+AnimationCurveLPUq)
+AnimationCurveLP`
+AnimationCurveLPgs)
+AnimationCurveL`
+AnimationCurveL`!
+AnimationCurveL`:
+AnimationCurveL`^x)
+AnimationCurveL`h
+AnimationCurveL`k
+AnimationCurveLp
+AnimationCurveLp%~)
+AnimationCurveLp-u)
+AnimationCurveLp/])
+AnimationCurveLp7
+AnimationCurveLp8})
+AnimationCurveLp;r)
+AnimationCurveLpEw)
+AnimationCurveLpdv)
+AnimationCurveLpt
+AnimationCurveNodeL
+AnimationCurveNodeL <])
+AnimationCurveNodeL KV)
+AnimationCurveNodeL0
+AnimationCurveNodeL@
+AnimationCurveNodeL@bu)
+AnimationCurveNodeLP
+AnimationCurveNodeL`
+AnimationCurveNodeL`W])
+AnimationCurveNodeLp
+AnimationCurveNodeLp+
+AnimationCurveNodeLp-])
+AnimationCurveNodefA
+AnimationLayer
+AnimationLayerL
+AnimationStackL
+AnimationStackL07Z)
+AnimationStacko;
+Beta_Joints
+Beta_Joints_MAT1
+C:\Users\zachary\Dropbox (Adobe)\Mixamo\Characters\X Bot[
+C:\Users\zachary\Dropbox (Adobe)\Mixamo\Characters\X Bot\clean.ma
+Cluster mixamorig:Head
+Cluster mixamorig:HeadTop_End
+Cluster mixamorig:Hips
+Cluster mixamorig:LeftArm
+Cluster mixamorig:LeftFoot
+Cluster mixamorig:LeftForeArm
+Cluster mixamorig:LeftHand
+Cluster mixamorig:LeftHandIndex1
+Cluster mixamorig:LeftHandIndex2
+Cluster mixamorig:LeftHandIndex3
+Cluster mixamorig:LeftHandIndex4
+Cluster mixamorig:LeftHandMiddle1
+Cluster mixamorig:LeftHandMiddle2
+Cluster mixamorig:LeftHandMiddle3
+Cluster mixamorig:LeftHandMiddle4
+Cluster mixamorig:LeftHandPinky1
+Cluster mixamorig:LeftHandPinky2
+Cluster mixamorig:LeftHandPinky3
+Cluster mixamorig:LeftHandPinky4
+Cluster mixamorig:LeftHandRing1
+Cluster mixamorig:LeftHandRing2
+Cluster mixamorig:LeftHandRing3
+Cluster mixamorig:LeftHandRing4
+Cluster mixamorig:LeftHandThumb1
+Cluster mixamorig:LeftHandThumb2
+Cluster mixamorig:LeftHandThumb3
+Cluster mixamorig:LeftHandThumb4
+Cluster mixamorig:LeftLeg
+Cluster mixamorig:LeftShoulder
+Cluster mixamorig:LeftToeBase
+Cluster mixamorig:LeftToe_End
+Cluster mixamorig:LeftUpLeg
+Cluster mixamorig:Neck
+Cluster mixamorig:RightArm
+Cluster mixamorig:RightFoot
+Cluster mixamorig:RightForeArm
+Cluster mixamorig:RightHand
+Cluster mixamorig:RightHandIndex1
+Cluster mixamorig:RightHandIndex2
+Cluster mixamorig:RightHandIndex3
+Cluster mixamorig:RightHandIndex4
+Cluster mixamorig:RightHandMiddle1
+Cluster mixamorig:RightHandMiddle2
+Cluster mixamorig:RightHandMiddle3
+Cluster mixamorig:RightHandMiddle4
+Cluster mixamorig:RightHandPinky1
+Cluster mixamorig:RightHandPinky2
+Cluster mixamorig:RightHandPinky3
+Cluster mixamorig:RightHandPinky4
+Cluster mixamorig:RightHandRing1
+Cluster mixamorig:RightHandRing2
+Cluster mixamorig:RightHandRing3
+Cluster mixamorig:RightHandRing4
+Cluster mixamorig:RightHandThumb1
+Cluster mixamorig:RightHandThumb2
+Cluster mixamorig:RightHandThumb3
+Cluster mixamorig:RightHandThumb4
+Cluster mixamorig:RightLeg
+Cluster mixamorig:RightShoulder
+Cluster mixamorig:RightToeBase
+Cluster mixamorig:RightToe_End
+Cluster mixamorig:RightUpLeg
+Cluster mixamorig:Spine
+Cluster mixamorig:Spine1
+Cluster mixamorig:Spine2
+FBXHeaderExtensiont
+FBXHeaderVersionI
+FbxAnimCurveNode
+FbxAnimLayer
+FbxAnimStackZ=
+Mixamo, Inc.
+MotionOnlyScene; Retargeted Clip; Motion Sequence; 1 motions; Skeleton mixamorig:Hips_skin-file:/home/app/mixamo-mini/tmp/skins_1808cae3-dd98-4cc7-b28c-b1cd45b11aac.fbx
+RootNodeL
+Skin Beta_Joints
+X\aRm
+mixamo.com
+mixamo.com.tak
+mixamo.comg
+mixamorig:Head
+mixamorig:HeadTop_End
+mixamorig:Hips
+mixamorig:LeftArm
+mixamorig:LeftFoot
+mixamorig:LeftForeArm
+mixamorig:LeftHand
+mixamorig:LeftHandIndex1
+mixamorig:LeftHandIndex2
+mixamorig:LeftHandIndex3
+mixamorig:LeftHandIndex4
+mixamorig:LeftHandMiddle1
+mixamorig:LeftHandMiddle2
+mixamorig:LeftHandMiddle3
+mixamorig:LeftHandMiddle4
+mixamorig:LeftHandPinky1
+mixamorig:LeftHandPinky2
+mixamorig:LeftHandPinky3
+mixamorig:LeftHandPinky4
+mixamorig:LeftHandRing1
+mixamorig:LeftHandRing2
+mixamorig:LeftHandRing3
+mixamorig:LeftHandRing4
+mixamorig:LeftHandThumb1
+mixamorig:LeftHandThumb2
+mixamorig:LeftHandThumb3
+mixamorig:LeftHandThumb4
+mixamorig:LeftLeg
+mixamorig:LeftShoulder
+mixamorig:LeftToeBase
+mixamorig:LeftToe_End
+mixamorig:LeftUpLeg
+mixamorig:Neck
+mixamorig:RightArm
+mixamorig:RightFoot
+mixamorig:RightForeArm
+mixamorig:RightHand
+mixamorig:RightHandIndex1
+mixamorig:RightHandIndex2
+mixamorig:RightHandIndex3
+mixamorig:RightHandIndex4
+mixamorig:RightHandMiddle1
+mixamorig:RightHandMiddle2
+mixamorig:RightHandMiddle3
+mixamorig:RightHandMiddle4
+mixamorig:RightHandPinky1
+mixamorig:RightHandPinky2
+mixamorig:RightHandPinky3
+mixamorig:RightHandPinky4
+mixamorig:RightHandRing1
+mixamorig:RightHandRing2
+mixamorig:RightHandRing3
+mixamorig:RightHandRing4
+mixamorig:RightHandThumb1
+mixamorig:RightHandThumb2
+mixamorig:RightHandThumb3
+mixamorig:RightHandThumb4
+mixamorig:RightLeg
+mixamorig:RightShoulder
+mixamorig:RightToeBase
+mixamorig:RightToe_End
+mixamorig:RightUpLeg
+mixamorig:Spine
+mixamorig:Spine1
+mixamorig:Spine2
+
+--- LEITOR ESTRUTURAL PYUFBX ---
+Biblioteca ufbx encontrada.
+Arquivo carregado pela biblioteca.
+
+nodes: 68
+  [0] 
+  [1] mixamorig:Hips
+  [2] Beta_Surface
+  [3] Beta_Joints
+  [4] mixamorig:Spine
+  [5] mixamorig:RightUpLeg
+  [6] mixamorig:LeftUpLeg
+  [7] mixamorig:Spine1
+  [8] mixamorig:RightLeg
+  [9] mixamorig:LeftLeg
+  [10] mixamorig:Spine2
+  [11] mixamorig:RightFoot
+  [12] mixamorig:LeftFoot
+  [13] mixamorig:Neck
+  [14] mixamorig:RightShoulder
+  [15] mixamorig:LeftShoulder
+  [16] mixamorig:RightToeBase
+  [17] mixamorig:LeftToeBase
+  [18] mixamorig:Head
+  [19] mixamorig:RightArm
+  [20] mixamorig:LeftArm
+  [21] mixamorig:RightToe_End
+  [22] mixamorig:LeftToe_End
+  [23] mixamorig:HeadTop_End
+  [24] mixamorig:RightForeArm
+  [25] mixamorig:LeftForeArm
+  [26] mixamorig:RightHand
+  [27] mixamorig:LeftHand
+  [28] mixamorig:RightHandThumb1
+  [29] mixamorig:RightHandIndex1
+  [30] mixamorig:RightHandMiddle1
+  [31] mixamorig:RightHandRing1
+  [32] mixamorig:RightHandPinky1
+  [33] mixamorig:LeftHandThumb1
+  [34] mixamorig:LeftHandIndex1
+  [35] mixamorig:LeftHandMiddle1
+  [36] mixamorig:LeftHandRing1
+  [37] mixamorig:LeftHandPinky1
+  [38] mixamorig:RightHandThumb2
+  [39] mixamorig:RightHandIndex2
+  [40] mixamorig:RightHandMiddle2
+  [41] mixamorig:RightHandRing2
+  [42] mixamorig:RightHandPinky2
+  [43] mixamorig:LeftHandThumb2
+  [44] mixamorig:LeftHandIndex2
+  [45] mixamorig:LeftHandMiddle2
+  [46] mixamorig:LeftHandRing2
+  [47] mixamorig:LeftHandPinky2
+  [48] mixamorig:RightHandThumb3
+  [49] mixamorig:RightHandIndex3
+  [50] mixamorig:RightHandMiddle3
+  [51] mixamorig:RightHandRing3
+  [52] mixamorig:RightHandPinky3
+  [53] mixamorig:LeftHandThumb3
+  [54] mixamorig:LeftHandIndex3
+  [55] mixamorig:LeftHandMiddle3
+  [56] mixamorig:LeftHandRing3
+  [57] mixamorig:LeftHandPinky3
+  [58] mixamorig:RightHandThumb4
+  [59] mixamorig:RightHandIndex4
+  [60] mixamorig:RightHandMiddle4
+  [61] mixamorig:RightHandRing4
+  [62] mixamorig:RightHandPinky4
+  [63] mixamorig:LeftHandThumb4
+  [64] mixamorig:LeftHandIndex4
+  [65] mixamorig:LeftHandMiddle4
+  [66] mixamorig:LeftHandRing4
+  [67] mixamorig:LeftHandPinky4
+
+meshes: 2
+  [0] Beta_Surface
+  [1] Beta_Joints
+
+materials: 2
+  [0] Beta_HighLimbsGeoSG3
+  [1] Beta_Joints_MAT1
+
+anim_stacks: 2
+  [0] Take 001
+  [1] mixamo.com
+animations: indisponível ('ufbx._ufbx.Scene' object has no attribute 'animations')
+
+--- FIM DO RELATÓRIO ---
+Salvando em: C:\Users\Administrator\Documents\pastas\descobrir animações de assets\roxel parkour\fbx\RELATORIOS_FBX\Walking_RELATORIO.txt
