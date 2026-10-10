@@ -12,7 +12,7 @@ window/stretch/mode="canvas_items"
 [rendering]
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.68, 0.76, 0.82, 1)
+environment/defaults/default_clear_color=Color(0.067, 0.086, 0.106, 1)
 
 [input]
 move_forward={
