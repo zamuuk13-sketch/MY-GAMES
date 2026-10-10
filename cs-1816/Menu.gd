@@ -60,6 +60,8 @@ func _save_settings() -> void:
 	cfg.save("user://cs1816_settings.cfg")
 
 func _build_menu() -> void:
+	for child in get_children():
+		child.queue_free()
 	var bg := ColorRect.new()
 	bg.color = Color("#11161b")
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -163,7 +165,7 @@ func _show_settings() -> void:
 	custom_color_button.custom_minimum_size.y = 38
 	custom_color_button.color_changed.connect(func(value: Color): _set_value("color", value))
 	controls.add_child(custom_color_button)
-	size_slider = _add_slider(controls, "Tamanho", 2, 20, 1, float(crosshair_values.size))
+	size_slider = _add_slider(controls, "Tamanho", 2, 20, 1, float(crosshair_values["size"]))
 	gap_slider = _add_slider(controls, "Espaçamento", 0, 16, 1, float(crosshair_values.gap))
 	thickness_slider = _add_slider(controls, "Espessura", 1, 6, 0.5, float(crosshair_values.thickness))
 	opacity_slider = _add_slider(controls, "Opacidade", 0.2, 1.0, 0.05, float(crosshair_values.opacity))
