@@ -39,8 +39,12 @@ const COLORS := {
 }
 
 func _ready() -> void:
+	# Build the first frame immediately so the window never stays visually empty.
+	visible = true
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_load_settings()
 	_build_menu()
+	print("CS-1816: menu initialized")
 
 func _load_settings() -> void:
 	var cfg := ConfigFile.new()
@@ -66,17 +70,24 @@ func _build_menu() -> void:
 	for child in get_children():
 		child.queue_free()
 	var bg := ColorRect.new()
+	bg.name = "MenuBackground"
 	bg.color = Color("#11161b")
+	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	bg.z_index = -1
 	add_child(bg)
 	var margin := MarginContainer.new()
 	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	margin.add_theme_constant_override("margin_left", 56)
 	margin.add_theme_constant_override("margin_right", 56)
 	margin.add_theme_constant_override("margin_top", 38)
 	margin.add_theme_constant_override("margin_bottom", 38)
 	add_child(margin)
 	page = VBoxContainer.new()
+	page.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	page.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	page.add_theme_constant_override("separation", 18)
 	margin.add_child(page)
 	var brand := Label.new()
@@ -182,7 +193,10 @@ func _add_team_card(parent: HBoxContainer, title_text: String, role_text: String
 func _choose_team(team_id: String) -> void:
 	get_tree().root.set_meta("cs1816_team", team_id)
 	_save_settings()
-	get_tree().change_scene_to_file(GAME_SCENE)
+	var error := get_tree().change_scene_to_file(GAME_SCENE)
+	if error != OK:
+		push_error("CS-1816: não foi possível abrir Main.tscn. Código: %s" % error)
+		_build_menu()
 
 func _show_settings() -> void:
 	for child in get_children():
