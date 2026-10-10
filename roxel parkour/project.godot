@@ -1,0 +1,20 @@
+; Roxel Parkour — Godot 4 project
+; Initial blockout: a large orange base platform only.
+
+config_version=5
+
+[application]
+config/name="Roxel Parkour"
+run/main_scene="res://Main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.12, 0.14, 0.17, 1)
