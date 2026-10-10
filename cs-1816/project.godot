@@ -2,7 +2,7 @@ config_version=5
 
 [application]
 config/name="CS-1816"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Menu.tscn"
 
 [display]
 window/size/viewport_width=1280
