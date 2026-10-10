@@ -270,6 +270,7 @@ func _show_settings() -> void:
 	profile_picker.add_item("Ponto pequeno")
 	profile_picker.add_item("Mira aberta")
 	profile_picker.add_item("Minha mira salva")
+	_populate_custom_profiles()
 	_add_labeled_control(controls, "Predefinição", profile_picker)
 	var load_profile_button := Button.new()
 	load_profile_button.text = "APLICAR PERFIL"
@@ -343,6 +344,17 @@ func _add_slider(parent: VBoxContainer, caption: String, minimum: float, maximum
 	parent.add_child(row)
 	return slider
 
+
+
+func _populate_custom_profiles() -> void:
+	var cfg := ConfigFile.new()
+	if cfg.load("user://cs1816_settings.cfg") != OK:
+		return
+	for section in cfg.get_sections():
+		if section.begins_with("profile_"):
+			var profile_name := section.trim_prefix("profile_")
+			if profile_name not in ["CS clássico", "Ponto pequeno", "Mira aberta", "Minha mira salva"]:
+				profile_picker.add_item(profile_name)
 
 func _apply_selected_profile() -> void:
 	var selected := profile_picker.get_item_text(profile_picker.selected)
