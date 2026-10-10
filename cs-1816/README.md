@@ -22,4 +22,9 @@ Protótipo de FPS tático em Godot 4.7, com mapa de deserto original inspirado n
 - Escadas e patamares nas rotas laterais.
 - Marcações visuais pintadas para as zonas de plantio A e B.
 - Placas 3D de orientação e coberturas adicionais.
-- Menu principal com entrada para jogar e configurações.\n- Editor de mira com prévia ao vivo, cor personalizada, tamanho, espaçamento, espessura, opacidade, ponto, contorno e modo estático/dinâmico.\n- Configurações da mira salvas localmente e aplicadas à mira durante a partida.\n- Próximas etapas: armas, bots, rounds, HUD e modelos detalhados.
+- Menu principal com entrada para jogar e configurações.
+- Editor de mira com prévia ao vivo, cor personalizada, tamanho, espaçamento, espessura, opacidade, ponto, contorno e modo estático/dinâmico.
+- Configurações da mira salvas localmente e aplicadas à mira durante a partida.
+- Seleção de equipe antes da partida, com pontos de spawn e objetivos diferentes para ataque e defesa.
+- Perfis de mira predefinidos e perfil personalizado salvo localmente.
+- Próximas etapas: bomba plantável/desarmável, armas, bots, rounds e HUD completo.
