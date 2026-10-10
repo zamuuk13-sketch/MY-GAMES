@@ -6,6 +6,7 @@ const GAME_SCENE := "res://Main.tscn"
 var page: Control
 var preview: Control
 var color_picker: OptionButton
+var custom_color_button: ColorPickerButton
 var size_slider: HSlider
 var gap_slider: HSlider
 var thickness_slider: HSlider
@@ -155,7 +156,13 @@ func _show_settings() -> void:
 	var color_names := COLORS.keys()
 	color_picker.select(color_names.find(_color_name_from_value()))
 	color_picker.item_selected.connect(_on_color_selected)
-	_add_labeled_control(controls, "Cor da mira", color_picker)
+	_add_labeled_control(controls, "Cor predefinida", color_picker)
+	custom_color_button = ColorPickerButton.new()
+	custom_color_button.color = crosshair_values.color
+	custom_color_button.text = "Escolher cor personalizada"
+	custom_color_button.custom_minimum_size.y = 38
+	custom_color_button.color_changed.connect(func(value: Color): _set_value("color", value))
+	controls.add_child(custom_color_button)
 	size_slider = _add_slider(controls, "Tamanho", 2, 20, 1, float(crosshair_values.size))
 	gap_slider = _add_slider(controls, "Espaçamento", 0, 16, 1, float(crosshair_values.gap))
 	thickness_slider = _add_slider(controls, "Espessura", 1, 6, 0.5, float(crosshair_values.thickness))
