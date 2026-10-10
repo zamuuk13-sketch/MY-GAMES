@@ -5,7 +5,7 @@ Protótipo de FPS tático em Godot 4.7, com mapa de deserto original inspirado n
 ## Como abrir
 1. Baixe ou clone o repositório.
 2. Abra a pasta `cs-1816` no Godot 4.7 ou mais recente.
-3. Execute `Main.tscn`.
+3. Execute `Menu.tscn` (ou pressione F6 no projeto aberto para testar uma cena específica).
 
 ## Controles
 - WASD: movimentar
@@ -22,4 +22,4 @@ Protótipo de FPS tático em Godot 4.7, com mapa de deserto original inspirado n
 - Escadas e patamares nas rotas laterais.
 - Marcações visuais pintadas para as zonas de plantio A e B.
 - Placas 3D de orientação e coberturas adicionais.
-- Próximas etapas: armas, bots, rounds, HUD, materiais e modelos detalhados.
+- Menu principal com entrada para jogar e configurações.\n- Editor de mira com prévia ao vivo, cor personalizada, tamanho, espaçamento, espessura, opacidade, ponto, contorno e modo estático/dinâmico.\n- Configurações da mira salvas localmente e aplicadas à mira durante a partida.\n- Próximas etapas: armas, bots, rounds, HUD e modelos detalhados.
