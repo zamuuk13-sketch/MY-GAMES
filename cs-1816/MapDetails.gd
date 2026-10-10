@@ -38,6 +38,16 @@ func _material(color: Color, roughness: float, metallic: float = 0.0) -> Standar
 	mat.roughness = roughness
 	mat.metallic = metallic
 	mat.uv1_scale = Vector3(2.0, 2.0, 2.0)
+	var noise := FastNoiseLite.new()
+	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX
+	noise.frequency = 0.08
+	noise.fractal_octaves = 3
+	var texture := NoiseTexture2D.new()
+	texture.width = 128
+	texture.height = 128
+	texture.seamless = true
+	texture.noise = noise
+	mat.albedo_texture = texture
 	return mat
 
 func _style_existing_geometry() -> void:
@@ -73,8 +83,8 @@ func _add_mid_details() -> void:
 
 func _add_sites() -> void:
 	# Painted floor borders and center symbols; these are visual markings, not bomb logic yet.
-	_site_paint("A", Vector3(27, 0.015, -7), paint_a_mat)
-	_site_paint("B", Vector3(27, 0.015, 7), paint_b_mat)
+	_site_paint("A", Vector3(27, 0.27, -7), paint_a_mat)
+	_site_paint("B", Vector3(27, 0.27, 7), paint_b_mat)
 	_label("A  /  PLANT ZONE", Vector3(27, 0.42, -7), 22, Color("#f2c85f"))
 	_label("B  /  PLANT ZONE", Vector3(27, 0.42, 7), 22, Color("#f4eee0"))
 	# Industrial crates, with visible bands.
