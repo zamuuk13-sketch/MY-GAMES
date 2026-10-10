@@ -12,19 +12,29 @@ extends Node3D
 @export var min_pitch_degrees: float = -35.0
 @export var max_pitch_degrees: float = 22.0
 
+@export_group("Motion blur")
+@export_range(0.0, 0.08, 0.002) var max_blur_uv: float = 0.025
+@export_range(1.0, 30.0, 0.5) var blur_fade_speed: float = 12.0
+@export_range(0.0, 1.0, 0.05) var blur_intensity: float = 0.65
+
 @onready var anchor: Node3D = $CharacterAnchor
 @onready var camera: Camera3D = $Camera3D
+@onready var blur_overlay: ColorRect = get_node_or_null("../MotionBlurLayer/BlurOverlay")
 
 var yaw: float = 0.0
 var pitch: float = -0.10
 var target_yaw: float = 0.0
 var target_pitch: float = -0.10
 var initialized: bool = false
+var blur_vector: Vector2 = Vector2.ZERO
+var blur_level: float = 0.0
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
+	if blur_overlay != null and blur_overlay.material is ShaderMaterial:
+		blur_overlay.material.set_shader_parameter("blur_amount", 0.0)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -36,6 +46,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			deg_to_rad(min_pitch_degrees),
 			deg_to_rad(max_pitch_degrees)
 		)
+
+		var viewport_size := get_viewport().get_visible_rect().size
+		if viewport_size.x > 0.0 and viewport_size.y > 0.0:
+			# A subtle screen-space trail follows camera rotation, then quickly fades.
+			blur_vector = Vector2(
+				-event.relative.x / viewport_size.x,
+				-event.relative.y / viewport_size.y
+			) * max_blur_uv
+			blur_level = min(blur_intensity, blur_level + event.relative.length() * 0.0018)
 
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_ESCAPE:
@@ -72,3 +91,8 @@ func _process(delta: float) -> void:
 	aim_point += yaw_basis * Vector3(0.0, 0.0, -look_ahead)
 	aim_point.y += sin(pitch) * 2.0
 	camera.look_at(aim_point, Vector3.UP)
+
+	blur_level = move_toward(blur_level, 0.0, blur_fade_speed * delta)
+	if blur_overlay != null and blur_overlay.material is ShaderMaterial:
+		blur_overlay.material.set_shader_parameter("blur_vector", blur_vector)
+		blur_overlay.material.set_shader_parameter("blur_amount", blur_level)
