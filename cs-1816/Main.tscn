@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_player"]
+[ext_resource type="Script" path="res://MapDetails.gd" id="2_map_details"]
 
 [sub_resource type="Environment" id="Environment_desert"]
 background_mode = 1
@@ -9,6 +10,10 @@ ambient_light_source = 3
 ambient_light_color = Color(0.92, 0.83, 0.69, 1)
 ambient_light_energy = 0.8
 tonemap_mode = 2
+
+[sub_resource type="CapsuleShape3D" id="PlayerCapsule"]
+radius = 0.35
+height = 1.8
 
 [node name="CS1816" type="Node3D"]
 
@@ -25,7 +30,6 @@ shadow_enabled = true
 size = Vector3(100, 1, 100)
 position = Vector3(0, -0.5, 0)
 use_collision = true
-material = StandardMaterial3D.new()
 
 [node name="Player" type="CharacterBody3D" parent="."]
 position = Vector3(-38, 1.2, 0)
@@ -40,6 +44,7 @@ fov = 90.0
 current = true
 
 [node name="MapGeometry" type="Node3D" parent="."]
+script = ExtResource("2_map_details")
 
 [node name="SpawnWestWall" type="CSGBox3D" parent="MapGeometry"]
 position = Vector3(-43, 2, 0)
@@ -174,7 +179,3 @@ text = "SITE B"
 font_size = 48
 pixel_size = 0.01
 modulate = Color(1, 0.82, 0.45, 1)
-
-[sub_resource type="CapsuleShape3D" id="PlayerCapsule"]
-radius = 0.35
-height = 1.8
