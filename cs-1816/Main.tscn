@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_player"]
 [ext_resource type="Script" path="res://MapDetails.gd" id="2_map_details"]
+[ext_resource type="Script" path="res://CrosshairDisplay.gd" id="3_crosshair"]
 
 [sub_resource type="Environment" id="Environment_desert"]
 background_mode = 1
@@ -179,3 +180,14 @@ text = "SITE B"
 font_size = 48
 pixel_size = 0.01
 modulate = Color(1, 0.82, 0.45, 1)
+
+[node name="CrosshairLayer" type="CanvasLayer" parent="."]
+
+[node name="Crosshair" type="Control" parent="CrosshairLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_crosshair")
