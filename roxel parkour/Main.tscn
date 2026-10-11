@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://CameraController.gd" id="1_camera_controller"]
 [ext_resource type="Shader" path="res://MotionBlur.gdshader" id="2_motion_blur"]
+[ext_resource type="Script" path="res://PlayerController.gd" id="3_player_controller"]
+[ext_resource type="PackedScene" path="res://assets/personagem asset/personagem.fbx" id="4_player_model"]
 
 [sub_resource type="StandardMaterial3D" id="Material_Orange"]
 albedo_color = Color(1, 0.32, 0.055, 1)
@@ -24,6 +26,10 @@ ambient_light_energy = 0.65
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_MotionBlur"]
 shader = ExtResource("2_motion_blur")
 
+[sub_resource type="CapsuleShape3D" id="Capsule_Player"]
+radius = 0.35
+height = 1.8
+
 [node name="RoxelParkour" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -43,12 +49,18 @@ mesh = SubResource("BoxMesh_Ground")
 [node name="Collision" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape_Ground")
 
+[node name="Player" type="CharacterBody3D"]
+position = Vector3(-1, 0, 0)
+script = ExtResource("3_player_controller")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+position = Vector3(0, 0.9, 0)
+shape = SubResource("Capsule_Player")
+
+[node name="Model" parent="Player" instance=ExtResource("4_player_model")]
+
 [node name="CameraRig" type="Node3D"]
 script = ExtResource("1_camera_controller")
-
-[node name="CharacterAnchor" type="Marker3D" parent="CameraRig"]
-position = Vector3(-1, 0, 0)
-gizmo_extents = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig"]
 current = true
