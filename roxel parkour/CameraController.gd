@@ -1,5 +1,5 @@
 extends Node3D
-## Independent third-person orbit camera: full horizontal orbit, restrained vertical look.
+## Third-person orbit camera, kept independent from the player's facing direction.
 
 @export var mouse_sensitivity: float = 0.0022
 @export var rotation_smoothness: float = 14.0
@@ -32,9 +32,6 @@ func _ready() -> void:
 		spring_arm.add_excluded_object(anchor.get_rid())
 		yaw = anchor.global_rotation.y
 		target_yaw = yaw
-	# Keep the camera orbit in world space instead of inheriting the player's turning.
-	global_rotation = Vector3.ZERO
-	global_rotation.y = yaw
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if blur_overlay != null and blur_overlay.material is ShaderMaterial:
 		blur_overlay.material.set_shader_parameter("blur_amount", 0.0)
@@ -63,8 +60,13 @@ func _process(delta: float) -> void:
 	var weight := 1.0 - exp(-rotation_smoothness * delta)
 	yaw = lerp_angle(yaw, target_yaw, weight)
 	pitch = lerpf(pitch, target_pitch, weight)
-	# global_rotation keeps the orbit independent from PlayerController's body rotation.
-	global_rotation = Vector3(pitch, yaw, 0.0)
+
+	# Preserve the orbit's world yaw even while the player turns underneath it.
+	if anchor != null:
+		rotation.y = yaw - anchor.global_rotation.y
+	else:
+		rotation.y = yaw
+	rotation.x = pitch
 
 	blur_level = move_toward(blur_level, 0.0, blur_fade_speed * delta)
 	if blur_overlay != null and blur_overlay.material is ShaderMaterial:
