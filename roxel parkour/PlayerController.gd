@@ -108,7 +108,7 @@ func _play_animation(key: String) -> void:
 func _load_mixamo_animation(key: String, path: String, loop: bool) -> void:
 	if animation_player == null or not ResourceLoader.exists(path):
 		return
-	var packed := load(path) as PackedScene
+	var packed := ResourceLoader.load(path, "PackedScene", ResourceLoader.CACHE_MODE_IGNORE) as PackedScene
 	if packed == null:
 		push_warning("Could not load animation scene: " + path)
 		return
