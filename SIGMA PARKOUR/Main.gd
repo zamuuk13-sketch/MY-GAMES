@@ -20,7 +20,7 @@ func _ready() -> void:
 	_make_lighting()
 	_make_map()
 	_make_clouds()
-	_make_preview_camera()
+	_make_player()
 
 func _make_materials() -> void:
 	mat_ground = _material(Color(0.045, 0.20, 0.52), 0.82)
@@ -170,13 +170,17 @@ func _make_clouds() -> void:
 			puff_mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 			cloud.add_child(puff_mesh)
 
-func _make_preview_camera() -> void:
-	var camera := Camera3D.new()
-	camera.name = "MapPreviewCamera"
-	camera.position = Vector3(18.0, 15.5, 22.0)
-	camera.fov = 62.0
-	camera.near = 0.1
-	camera.far = 250.0
-	add_child(camera)
-	camera.look_at(Vector3(0.0, 1.0, 0.0), Vector3.UP)
-	camera.current = true
+
+func _make_player() -> void:
+	var spawn := get_node_or_null("PlayerSpawn") as Marker3D
+	if spawn == null:
+		push_error("Sigma Parkour: PlayerSpawn não foi encontrado.")
+		return
+	var controller_script := load("res://PlayerController.gd") as Script
+	if controller_script == null:
+		push_error("Sigma Parkour: PlayerController.gd não foi encontrado.")
+		return
+	var player := CharacterBody3D.new()
+	player.set_script(controller_script)
+	player.position = spawn.position
+	add_child(player)
