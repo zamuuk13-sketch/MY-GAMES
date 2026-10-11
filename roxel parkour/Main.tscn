@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://CameraController.gd" id="1_camera_controller"]
 [ext_resource type="Shader" path="res://MotionBlur.gdshader" id="2_motion_blur"]
@@ -63,17 +63,17 @@ rotation = Vector3(0, 0, 0)
 scale = Vector3(1, 1, 1)
 
 [node name="CameraRig" type="Node3D" parent="Player"]
-position = Vector3(0.8, 1.4, 0)
+position = Vector3(0.45, 1.55, 0)
 script = ExtResource("1_camera_controller")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player/CameraRig"]
-spring_length = 3.0
+spring_length = 3.8
 margin = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraRig/SpringArm3D"]
 current = true
 fov = 75.0
-near = 0.05
+near = 0.08
 far = 500.0
 
 [node name="MotionBlurLayer" type="CanvasLayer" parent="."]
