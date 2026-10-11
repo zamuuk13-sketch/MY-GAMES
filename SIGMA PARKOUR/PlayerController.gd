@@ -122,8 +122,8 @@ func _find_animation_player(root: Node) -> AnimationPlayer:
 func _setup_camera() -> void:
 	camera_rig = Node3D.new()
 	camera_rig.name = "SmoothCameraRig"
-	get_parent().call_deferred("add_child", camera_rig)
-	camera_rig.position = global_position + Vector3(0.0, camera_height, 0.0)
+	camera_rig.position = Vector3(0.0, camera_height, 0.0)
+	add_child(camera_rig)
 	camera_rig.rotation.y = camera_yaw
 
 	spring_arm = SpringArm3D.new()
@@ -157,7 +157,7 @@ func _setup_motion_blur() -> void:
 	layer.name = "MotionBlurLayer"
 	layer.layer = 20
 	layer.add_child(blur_rect)
-	get_parent().call_deferred("add_child", layer)
+	add_child(layer)
 	blur_material.set_shader_parameter("blur_direction", Vector2.ZERO)
 	blur_material.set_shader_parameter("blur_strength", 0.0)
 
@@ -222,9 +222,9 @@ func _update_facing(direction: Vector3, delta: float) -> void:
 func _update_camera(delta: float) -> void:
 	if not is_instance_valid(camera_rig):
 		return
-	var target_position := global_position + Vector3(0.0, camera_height, 0.0)
+	var target_position := Vector3(0.0, camera_height, 0.0)
 	var follow_weight := 1.0 - exp(-camera_smoothness * delta)
-	camera_rig.global_position = camera_rig.global_position.lerp(target_position, follow_weight)
+	camera_rig.position = camera_rig.position.lerp(target_position, follow_weight)
 	camera_rig.rotation.y = lerp_angle(camera_rig.rotation.y, camera_yaw, follow_weight)
 	camera_rig.rotation.x = lerp_angle(camera_rig.rotation.x, camera_pitch, follow_weight)
 
