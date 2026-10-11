@@ -1,17 +1,16 @@
 extends Node3D
-## Roxel Parkour — third-person camera controller.
-## CharacterAnchor is only a placeholder; no character is instantiated.
+## Roxel Parkour — close third-person camera.
 
 @export var mouse_sensitivity: float = 0.0022
-@export var follow_smoothness: float = 4.5
-@export var rotation_smoothness: float = 5.0
-@export var camera_inertia: float = 0.18
-@export var camera_distance: float = 6.2
-@export var camera_height: float = 2.15
-@export var camera_right_offset: float = 2.0
-@export var look_ahead: float = 1.4
-@export var min_pitch_degrees: float = -35.0
-@export var max_pitch_degrees: float = 22.0
+@export var follow_smoothness: float = 12.0
+@export var rotation_smoothness: float = 8.0
+@export var camera_inertia: float = 0.04
+@export var camera_distance: float = 3.0
+@export var camera_height: float = 1.45
+@export var camera_right_offset: float = 0.65
+@export var look_ahead: float = 0.35
+@export var min_pitch_degrees: float = -45.0
+@export var max_pitch_degrees: float = 35.0
 
 @export_group("Motion blur")
 @export_range(0.0, 0.08, 0.002) var max_blur_uv: float = 0.025
@@ -44,19 +43,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		target_yaw -= event.relative.x * mouse_sensitivity
 		target_pitch -= event.relative.y * mouse_sensitivity
-		target_pitch = clamp(
-			target_pitch,
-			deg_to_rad(min_pitch_degrees),
-			deg_to_rad(max_pitch_degrees)
-		)
-
+		target_pitch = clamp(target_pitch, deg_to_rad(min_pitch_degrees), deg_to_rad(max_pitch_degrees))
 		var viewport_size := get_viewport().get_visible_rect().size
 		if viewport_size.x > 0.0 and viewport_size.y > 0.0:
-			# A subtle screen-space trail follows camera rotation, then quickly fades.
-			blur_vector = Vector2(
-				-event.relative.x / viewport_size.x,
-				-event.relative.y / viewport_size.y
-			) * max_blur_uv
+			blur_vector = Vector2(-event.relative.x / viewport_size.x, -event.relative.y / viewport_size.y) * max_blur_uv
 			blur_level = min(blur_intensity, blur_level + event.relative.length() * 0.0018)
 
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -65,13 +55,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.keycode == KEY_TAB:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _process(delta: float) -> void:
-	# Spring-like damping adds a subtle inertial lag without making the camera feel sluggish.
 	var yaw_error := wrapf(target_yaw - yaw, -PI, PI)
 	var pitch_error := target_pitch - pitch
 	var spring_strength := rotation_smoothness * rotation_smoothness
@@ -94,12 +82,11 @@ func _process(delta: float) -> void:
 	else:
 		var follow_weight := 1.0 - exp(-follow_smoothness * delta)
 		camera.global_position = camera.global_position.lerp(desired_position, follow_weight)
-		# Tiny extra positional lag reinforces the feeling of camera mass.
 		camera.global_position += Vector3(-yaw_velocity, -pitch_velocity, 0.0) * camera_inertia * delta
 
-	var aim_point := anchor_position + Vector3(0.0, 1.25, 0.0)
+	var aim_point := anchor_position + Vector3(0.0, 1.0, 0.0)
 	aim_point += yaw_basis * Vector3(0.0, 0.0, -look_ahead)
-	aim_point.y += sin(pitch) * 2.0
+	aim_point.y += sin(pitch) * 1.0
 	camera.look_at(aim_point, Vector3.UP)
 
 	blur_level = move_toward(blur_level, 0.0, blur_fade_speed * delta)
