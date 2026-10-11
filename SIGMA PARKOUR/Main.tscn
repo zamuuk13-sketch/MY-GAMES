@@ -4,3 +4,9 @@
 
 [node name="SigmaParkour" type="Node3D"]
 script = ExtResource("1_main")
+
+[node name="FallbackCamera" type="Camera3D" parent="."]
+position = Vector3(0, 5, 17)
+rotation_degrees = Vector3(-12, 0, 0)
+current = true
+fov = 75.0
