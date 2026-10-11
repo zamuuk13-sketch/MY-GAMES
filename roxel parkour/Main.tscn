@@ -67,12 +67,12 @@ position = Vector3(0.45, 1.55, 0)
 script = ExtResource("1_camera_controller")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player/CameraRig"]
-spring_length = 3.8
+spring_length = 3.4
 margin = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraRig/SpringArm3D"]
 current = true
-fov = 75.0
+fov = 65.0
 near = 0.08
 far = 500.0
 
