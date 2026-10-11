@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://CameraController.gd" id="1_camera_controller"]
+[ext_resource type="Shader" path="res://MotionBlur.gdshader" id="2_motion_blur"]
+
+[sub_resource type="StandardMaterial3D" id="Material_Orange"]
+albedo_color = Color(1, 0.32, 0.055, 1)
+roughness = 0.92
+
+[sub_resource type="BoxMesh" id="BoxMesh_Ground"]
+material = SubResource("Material_Orange")
+size = Vector3(200, 1, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape_Ground"]
+size = Vector3(200, 1, 200)
+
+[sub_resource type="Environment" id="Environment_Clear"]
+background_mode = 1
+background_color = Color(0.55, 0.68, 0.82, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.8, 0.84, 0.9, 1)
+ambient_light_energy = 0.65
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_MotionBlur"]
+shader = ExtResource("2_motion_blur")
+
+[node name="RoxelParkour" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_Clear")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, -30, 0)
+shadow_enabled = true
+light_energy = 1.1
+
+[node name="Ground" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_Ground")
+
+[node name="Collision" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape_Ground")
+
+[node name="CameraRig" type="Node3D"]
+script = ExtResource("1_camera_controller")
+
+[node name="CharacterAnchor" type="Marker3D" parent="CameraRig"]
+position = Vector3(-1, 0, 0)
+gizmo_extents = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+current = true
+fov = 75.0
+near = 0.05
+far = 500.0
+
+[node name="MotionBlurLayer" type="CanvasLayer" parent="."]
+
+[node name="BlurOverlay" type="ColorRect" parent="MotionBlurLayer"]
+material = SubResource("ShaderMaterial_MotionBlur")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
