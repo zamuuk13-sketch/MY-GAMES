@@ -95,7 +95,7 @@ func _link_idle_animation() -> void:
 			if library.has_animation(unique_name):
 				unique_name = String(source_library_name) + "_" + unique_name
 			library.add_animation(unique_name, animation)
-			if "idle" in unique_name.to_lower() or "breathing" in unique_name.to_lower():
+			if unique_name.to_lower().contains("idle") or unique_name.to_lower().contains("breathing"):
 				idle_names.append(StringName(unique_name))
 	if library.get_animation_list().is_empty():
 		push_warning("Sigma Parkour: nenhuma animação foi encontrada no FBX de idle.")
@@ -122,7 +122,7 @@ func _find_animation_player(root: Node) -> AnimationPlayer:
 func _setup_camera() -> void:
 	camera_rig = Node3D.new()
 	camera_rig.name = "SmoothCameraRig"
-	get_parent().add_child.call_deferred(camera_rig)
+	get_parent().call_deferred("add_child", camera_rig)
 	camera_rig.position = global_position + Vector3(0.0, camera_height, 0.0)
 	camera_rig.rotation.y = camera_yaw
 
@@ -140,6 +140,7 @@ func _setup_camera() -> void:
 	camera.far = 180.0
 	spring_arm.add_child(camera)
 	camera.current = true
+	camera.call_deferred("make_current")
 
 func _setup_motion_blur() -> void:
 	var shader := load("res://CameraMotionBlur.gdshader") as Shader
@@ -156,7 +157,7 @@ func _setup_motion_blur() -> void:
 	layer.name = "MotionBlurLayer"
 	layer.layer = 20
 	layer.add_child(blur_rect)
-	get_parent().add_child.call_deferred(layer)
+	get_parent().call_deferred("add_child", layer)
 	blur_material.set_shader_parameter("blur_direction", Vector2.ZERO)
 	blur_material.set_shader_parameter("blur_strength", 0.0)
 
