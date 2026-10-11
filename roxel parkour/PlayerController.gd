@@ -1,5 +1,5 @@
 extends CharacterBody3D
-## Responsive third-person controller. Animations intentionally remain disabled.
+## Third-person movement controller. Camera limits never limit player movement.
 
 @export var walk_speed: float = 6.0
 @export var run_speed: float = 10.5
@@ -64,7 +64,6 @@ func _fit_character_model() -> void:
 		-bounds.position.y * fit_scale,
 		-bounds_center_z * fit_scale
 	)
-	# The imported FBX faces the opposite local direction to Godot's -Z forward.
 	# Rotate only the visual model; keep the physics body and movement axes consistent.
 	model.rotation.y = PI
 
@@ -89,19 +88,24 @@ func _physics_process(delta: float) -> void:
 	elif velocity.y < 0.0:
 		velocity.y = 0.0
 
+	# Direct keyboard input: no Input Map setup is required for WASD or Shift.
 	var x_input := float(Input.is_key_pressed(KEY_D)) - float(Input.is_key_pressed(KEY_A))
 	var forward_input := float(Input.is_key_pressed(KEY_W)) - float(Input.is_key_pressed(KEY_S))
 	var input_vector := Vector2(x_input, forward_input)
 	if input_vector.length() > 1.0:
 		input_vector = input_vector.normalized()
 
-	# Use the camera rig's yaw only, so looking up/down never weakens movement.
-	var camera_yaw := float(camera_rig.get("yaw"))
-	var move_forward := Vector3(sin(camera_yaw), 0.0, -cos(camera_yaw))
-	var move_right := Vector3(cos(camera_yaw), 0.0, sin(camera_yaw))
-	var move_direction := move_right * input_vector.x + move_forward * input_vector.y
-	if move_direction.length() > 0.001:
-		move_direction = move_direction.normalized()
+	# Use the actual camera's horizontal facing direction, flattened onto the ground.
+	# This keeps WASD movement aligned with the view and independent of camera pitch/limits.
+	var move_direction := Vector3.ZERO
+	if input_vector.length_squared() > 0.001:
+		var move_forward := -camera.global_basis.z
+		move_forward.y = 0.0
+		move_forward = move_forward.normalized()
+		var move_right := camera.global_basis.x
+		move_right.y = 0.0
+		move_right = move_right.normalized()
+		move_direction = (move_right * input_vector.x + move_forward * input_vector.y).normalized()
 
 	var running := Input.is_key_pressed(KEY_SHIFT)
 	var desired_speed := run_speed if running else walk_speed
@@ -110,7 +114,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, target_velocity.x, acceleration * delta)
 	velocity.z = move_toward(velocity.z, target_velocity.z, acceleration * delta)
 
-	if move_direction.length() > 0.1:
+	if move_direction.length_squared() > 0.01:
 		var desired_yaw := atan2(-move_direction.x, -move_direction.z)
 		var turn_weight := 1.0 - exp(-turn_smoothness * delta)
 		facing_yaw = lerp_angle(facing_yaw, desired_yaw, turn_weight)
@@ -119,4 +123,5 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and Input.is_key_pressed(KEY_SPACE):
 		velocity.y = jump_velocity
 
+	# There are no invisible movement boundaries here: physics collisions alone block movement.
 	move_and_slide()
