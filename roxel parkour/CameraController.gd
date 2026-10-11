@@ -1,12 +1,12 @@
 extends Node3D
-## Roxel Parkour — player-mounted third-person orbit camera.
-## The SpringArm handles world obstacles but explicitly ignores the player's own collider.
+## Roxel Parkour — smooth, player-mounted third-person camera with restrained look limits.
 
-@export var mouse_sensitivity: float = 0.0022
-@export var rotation_smoothness: float = 14.0
-@export var min_pitch_degrees: float = -50.0
-@export var max_pitch_degrees: float = 50.0
-@export var camera_distance: float = 3.8
+@export var mouse_sensitivity: float = 0.0020
+@export var rotation_smoothness: float = 12.0
+@export_range(60.0, 150.0, 5.0) var horizontal_limit_degrees: float = 105.0
+@export_range(15.0, 60.0, 1.0) var look_up_limit_degrees: float = 42.0
+@export_range(15.0, 60.0, 1.0) var look_down_limit_degrees: float = 38.0
+@export var camera_distance: float = 3.4
 
 @export_group("Motion blur")
 @export_range(0.0, 0.08, 0.002) var max_blur_uv: float = 0.025
@@ -18,9 +18,11 @@ extends Node3D
 @onready var camera: Camera3D = $SpringArm3D/Camera3D
 @onready var blur_overlay: ColorRect = get_node_or_null("../../MotionBlurLayer/BlurOverlay")
 
+# World yaw is read by PlayerController for camera-relative movement.
 var yaw: float = 0.0
+var yaw_offset: float = 0.0
+var target_yaw_offset: float = 0.0
 var pitch: float = 0.0
-var target_yaw: float = 0.0
 var target_pitch: float = 0.0
 var blur_vector: Vector2 = Vector2.ZERO
 var blur_level: float = 0.0
@@ -29,12 +31,10 @@ var blur_level: float = 0.0
 func _ready() -> void:
 	camera.current = true
 	spring_arm.spring_length = camera_distance
-	# Critical: without this, the SpringArm can hit the player's own capsule
-	# and pull the camera into the character's body.
 	if anchor != null:
+		# Prevent the camera arm from colliding with the player's own physics body.
 		spring_arm.add_excluded_object(anchor.get_rid())
 		yaw = anchor.global_rotation.y
-		target_yaw = yaw
 	rotation = Vector3.ZERO
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if blur_overlay != null and blur_overlay.material is ShaderMaterial:
@@ -43,9 +43,18 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		target_yaw -= event.relative.x * mouse_sensitivity
+		target_yaw_offset -= event.relative.x * mouse_sensitivity
+		var horizontal_limit := deg_to_rad(horizontal_limit_degrees)
+		target_yaw_offset = clampf(target_yaw_offset, -horizontal_limit, horizontal_limit)
+
+		# A small, deliberate vertical range: look up/down without tipping the view over.
 		target_pitch -= event.relative.y * mouse_sensitivity
-		target_pitch = clampf(target_pitch, deg_to_rad(min_pitch_degrees), deg_to_rad(max_pitch_degrees))
+		target_pitch = clampf(
+			target_pitch,
+			deg_to_rad(-look_down_limit_degrees),
+			deg_to_rad(look_up_limit_degrees)
+		)
+
 		var viewport_size := get_viewport().get_visible_rect().size
 		if viewport_size.x > 0.0 and viewport_size.y > 0.0:
 			blur_vector = Vector2(-event.relative.x / viewport_size.x, -event.relative.y / viewport_size.y) * max_blur_uv
@@ -63,12 +72,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	var weight := 1.0 - exp(-rotation_smoothness * delta)
-	yaw = lerp_angle(yaw, target_yaw, weight)
+	yaw_offset = lerpf(yaw_offset, target_yaw_offset, weight)
 	pitch = lerpf(pitch, target_pitch, weight)
 
-	# Keep yaw world-relative while the character turns to face its movement.
+	# Keep the camera's horizontal range relative to the character, not to the map.
 	if anchor != null:
-		rotation.y = wrapf(yaw - anchor.global_rotation.y, -PI, PI)
+		yaw = anchor.global_rotation.y + yaw_offset
+	rotation.y = yaw_offset
 	rotation.x = pitch
 
 	blur_level = move_toward(blur_level, 0.0, blur_fade_speed * delta)
