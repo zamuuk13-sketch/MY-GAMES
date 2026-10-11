@@ -73,7 +73,6 @@ func _make_lighting() -> void:
 	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
 	sun.directional_shadow_max_distance = 100.0
 	sun.directional_shadow_blend_splits = true
-	sun.directional_shadow_fade_start = 0.82
 	add_child(sun)
 
 func _make_map() -> void:
