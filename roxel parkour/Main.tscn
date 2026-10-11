@@ -49,7 +49,7 @@ mesh = SubResource("BoxMesh_Ground")
 [node name="Collision" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape_Ground")
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" parent="."]
 position = Vector3(-1, 0, 0)
 script = ExtResource("3_player_controller")
 
@@ -62,7 +62,7 @@ position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
 scale = Vector3(1, 1, 1)
 
-[node name="CameraRig" type="Node3D"]
+[node name="CameraRig" type="Node3D" parent="."]
 script = ExtResource("1_camera_controller")
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig"]
