@@ -1,14 +1,9 @@
 extends Node3D
-## Roxel Parkour — player-mounted third-person orbit camera.
-## The rig is a child of Player; mouse movement orbits around the player.
+## Roxel Parkour — conventional player-mounted third-person orbit camera.
+## CameraRig is a child of Player; SpringArm3D handles camera distance and collision.
 
 @export var mouse_sensitivity: float = 0.0022
-@export var follow_smoothness: float = 18.0
 @export var rotation_smoothness: float = 14.0
-@export var camera_distance: float = 3.0
-@export var camera_height: float = 1.4
-@export var camera_right_offset: float = 0.8
-@export var look_ahead: float = 0.35
 @export var min_pitch_degrees: float = -55.0
 @export var max_pitch_degrees: float = 55.0
 
@@ -17,30 +12,26 @@ extends Node3D
 @export_range(1.0, 30.0, 0.5) var blur_fade_speed: float = 12.0
 @export_range(0.0, 1.0, 0.05) var blur_intensity: float = 0.65
 
-@onready var anchor: Node3D = get_node("../Player")
-@onready var camera: Camera3D = $Camera3D
-@onready var blur_overlay: ColorRect = get_node_or_null("../MotionBlurLayer/BlurOverlay")
+@onready var anchor: CharacterBody3D = get_parent() as CharacterBody3D
+@onready var spring_arm: SpringArm3D = $SpringArm3D
+@onready var camera: Camera3D = $SpringArm3D/Camera3D
+@onready var blur_overlay: ColorRect = get_node_or_null("../../MotionBlurLayer/BlurOverlay")
 
+# World-space yaw is also used by PlayerController for camera-relative movement.
 var yaw: float = 0.0
 var pitch: float = 0.0
 var target_yaw: float = 0.0
 var target_pitch: float = 0.0
-var initialized: bool = false
 var blur_vector: Vector2 = Vector2.ZERO
 var blur_level: float = 0.0
 
 
 func _ready() -> void:
-	# Keep the scene file simple to load, then attach this rig to the actual Player at runtime.
-	var saved_global_transform := global_transform
-	if get_parent() != anchor:
-		reparent(anchor, true)
-		global_transform = saved_global_transform
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
-	# Start from the player's facing direction, then let the mouse orbit freely.
 	yaw = anchor.global_rotation.y
 	target_yaw = yaw
+	rotation = Vector3.ZERO
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if blur_overlay != null and blur_overlay.material is ShaderMaterial:
 		blur_overlay.material.set_shader_parameter("blur_amount", 0.0)
 
@@ -48,7 +39,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		target_yaw -= event.relative.x * mouse_sensitivity
-		# Vertical mouse motion changes the orbit angle, not the camera's height.
+		# Mouse up looks up; the camera pivot rotates, its height stays fixed.
 		target_pitch -= event.relative.y * mouse_sensitivity
 		target_pitch = clampf(target_pitch, deg_to_rad(min_pitch_degrees), deg_to_rad(max_pitch_degrees))
 		var viewport_size := get_viewport().get_visible_rect().size
@@ -67,28 +58,15 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	var rotation_weight := 1.0 - exp(-rotation_smoothness * delta)
-	yaw = lerp_angle(yaw, target_yaw, rotation_weight)
-	pitch = lerpf(pitch, target_pitch, rotation_weight)
+	var weight := 1.0 - exp(-rotation_smoothness * delta)
+	yaw = lerp_angle(yaw, target_yaw, weight)
+	pitch = lerpf(pitch, target_pitch, weight)
 
-	# Orbit around the player in world space, like a conventional third-person camera.
-	var yaw_basis := Basis(Vector3.UP, yaw)
-	var horizontal_back := yaw_basis * Vector3(0.0, 0.0, camera_distance)
-	var right := yaw_basis * Vector3.RIGHT * camera_right_offset
-	var anchor_position := anchor.global_position
-	var desired_position := anchor_position + Vector3.UP * camera_height + horizontal_back + right
-
-	if not initialized:
-		camera.global_position = desired_position
-		initialized = true
-	else:
-		var follow_weight := 1.0 - exp(-follow_smoothness * delta)
-		camera.global_position = camera.global_position.lerp(desired_position, follow_weight)
-
-	var forward := yaw_basis * Vector3(0.0, 0.0, -1.0)
-	var aim_point := anchor_position + Vector3.UP * 1.1 + forward * look_ahead
-	aim_point.y += tan(pitch) * maxf(camera_distance, 1.0)
-	camera.look_at(aim_point, Vector3.UP)
+	# Since Player rotates to face movement, compensate locally so camera yaw remains world-relative.
+	rotation.y = wrapf(yaw - anchor.global_rotation.y, -PI, PI)
+	rotation.x = pitch
+	# CameraRig is physically parented to Player, so its pivot follows the player automatically.
+	# SpringArm3D keeps the camera behind the player and shortens the arm near obstacles.
 
 	blur_level = move_toward(blur_level, 0.0, blur_fade_speed * delta)
 	if blur_overlay != null and blur_overlay.material is ShaderMaterial:
