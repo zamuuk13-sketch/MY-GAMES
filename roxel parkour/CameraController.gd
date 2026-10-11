@@ -1,16 +1,16 @@
 extends Node3D
-## Roxel Parkour — close third-person camera.
+## Roxel Parkour — stable right-shoulder third-person camera.
+## Mouse vertical movement changes the viewing angle, not camera height.
 
 @export var mouse_sensitivity: float = 0.0022
-@export var follow_smoothness: float = 12.0
-@export var rotation_smoothness: float = 8.0
-@export var camera_inertia: float = 0.04
+@export var follow_smoothness: float = 14.0
+@export var rotation_smoothness: float = 10.0
 @export var camera_distance: float = 3.0
-@export var camera_height: float = 1.45
-@export var camera_right_offset: float = 0.65
+@export var camera_height: float = 1.4
+@export var camera_right_offset: float = 0.8
 @export var look_ahead: float = 0.35
-@export var min_pitch_degrees: float = -45.0
-@export var max_pitch_degrees: float = 35.0
+@export var min_pitch_degrees: float = -55.0
+@export var max_pitch_degrees: float = 55.0
 
 @export_group("Motion blur")
 @export_range(0.0, 0.08, 0.002) var max_blur_uv: float = 0.025
@@ -22,14 +22,12 @@ extends Node3D
 @onready var blur_overlay: ColorRect = get_node_or_null("../MotionBlurLayer/BlurOverlay")
 
 var yaw: float = 0.0
-var pitch: float = -0.10
+var pitch: float = 0.0
 var target_yaw: float = 0.0
-var target_pitch: float = -0.10
+var target_pitch: float = 0.0
 var initialized: bool = false
 var blur_vector: Vector2 = Vector2.ZERO
 var blur_level: float = 0.0
-var yaw_velocity: float = 0.0
-var pitch_velocity: float = 0.0
 
 
 func _ready() -> void:
@@ -42,12 +40,13 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		target_yaw -= event.relative.x * mouse_sensitivity
+		# Mouse up looks up; mouse down looks down.
 		target_pitch -= event.relative.y * mouse_sensitivity
-		target_pitch = clamp(target_pitch, deg_to_rad(min_pitch_degrees), deg_to_rad(max_pitch_degrees))
+		target_pitch = clampf(target_pitch, deg_to_rad(min_pitch_degrees), deg_to_rad(max_pitch_degrees))
 		var viewport_size := get_viewport().get_visible_rect().size
 		if viewport_size.x > 0.0 and viewport_size.y > 0.0:
 			blur_vector = Vector2(-event.relative.x / viewport_size.x, -event.relative.y / viewport_size.y) * max_blur_uv
-			blur_level = min(blur_intensity, blur_level + event.relative.length() * 0.0018)
+			blur_level = minf(blur_intensity, blur_level + event.relative.length() * 0.0018)
 
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_ESCAPE:
@@ -60,21 +59,16 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	var yaw_error := wrapf(target_yaw - yaw, -PI, PI)
-	var pitch_error := target_pitch - pitch
-	var spring_strength := rotation_smoothness * rotation_smoothness
-	var damping := 2.0 * rotation_smoothness
-	yaw_velocity += (yaw_error * spring_strength - yaw_velocity * damping) * delta
-	pitch_velocity += (pitch_error * spring_strength - pitch_velocity * damping) * delta
-	yaw += yaw_velocity * delta
-	pitch += pitch_velocity * delta
+	# Smooth mouse rotation without adding positional inertia that can make the camera wobble.
+	var rotation_weight := 1.0 - exp(-rotation_smoothness * delta)
+	yaw = lerp_angle(yaw, target_yaw, rotation_weight)
+	pitch = lerpf(pitch, target_pitch, rotation_weight)
 
 	var anchor_position: Vector3 = anchor.global_position
 	var yaw_basis := Basis(Vector3.UP, yaw)
 	var horizontal_back := yaw_basis * Vector3(0.0, 0.0, camera_distance)
 	var right := yaw_basis * Vector3.RIGHT * camera_right_offset
-	var desired_position := anchor_position + horizontal_back + right
-	desired_position.y += camera_height + sin(pitch) * camera_distance * 0.25
+	var desired_position := anchor_position + Vector3.UP * camera_height + horizontal_back + right
 
 	if not initialized:
 		camera.global_position = desired_position
@@ -82,11 +76,12 @@ func _process(delta: float) -> void:
 	else:
 		var follow_weight := 1.0 - exp(-follow_smoothness * delta)
 		camera.global_position = camera.global_position.lerp(desired_position, follow_weight)
-		camera.global_position += Vector3(-yaw_velocity, -pitch_velocity, 0.0) * camera_inertia * delta
 
-	var aim_point := anchor_position + Vector3(0.0, 1.0, 0.0)
-	aim_point += yaw_basis * Vector3(0.0, 0.0, -look_ahead)
-	aim_point.y += sin(pitch) * 1.0
+	# Keep camera height fixed. Pitch moves the look target vertically instead.
+	var forward := yaw_basis * Vector3(0.0, 0.0, -1.0)
+	var aim_point := anchor_position + Vector3.UP * 1.1 + forward * look_ahead
+	var pitch_reach := maxf(camera_distance, 1.0)
+	aim_point.y += tan(pitch) * pitch_reach
 	camera.look_at(aim_point, Vector3.UP)
 
 	blur_level = move_toward(blur_level, 0.0, blur_fade_speed * delta)
