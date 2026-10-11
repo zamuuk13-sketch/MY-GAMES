@@ -17,7 +17,8 @@ var facing_yaw: float = 0.0
 
 func _ready() -> void:
 	facing_yaw = rotation.y
-	_fit_character_model()
+	# Wait until Godot resolves the imported FBX scene and transforms.
+	call_deferred("_fit_character_model")
 
 
 func _fit_character_model() -> void:
@@ -29,10 +30,12 @@ func _fit_character_model() -> void:
 		return
 
 	model.visible = true
+	_set_tree_visible(model)
 	var meshes: Array[MeshInstance3D] = []
 	_collect_meshes(model, meshes)
+	print("Roxel Parkour: FBX descendants = ", model.get_child_count(), "; mesh nodes found = ", meshes.size())
 	if meshes.is_empty():
-		push_warning("Roxel Parkour: no MeshInstance3D found inside personagem.fbx.")
+		push_error("Roxel Parkour: personagem.fbx loaded without MeshInstance3D nodes. Reimport the FBX or convert it to GLB.")
 		return
 
 	var bounds := AABB()
@@ -50,8 +53,9 @@ func _fit_character_model() -> void:
 			bounds = bounds.merge(mesh_bounds)
 
 	if not has_bounds or bounds.size.y <= 0.001:
-		push_warning("Roxel Parkour: personagem.fbx has no usable mesh bounds.")
+		push_error("Roxel Parkour: personagem.fbx has no usable mesh bounds.")
 		return
+	print("Roxel Parkour: imported FBX bounds = ", bounds)
 
 	var target_height := 1.7
 	var fit_scale := target_height / bounds.size.y
@@ -63,6 +67,13 @@ func _fit_character_model() -> void:
 		-bounds.position.y * fit_scale,
 		-bounds_center_z * fit_scale
 	)
+
+
+func _set_tree_visible(node: Node) -> void:
+	if node is GeometryInstance3D:
+		(node as GeometryInstance3D).visible = true
+	for child in node.get_children():
+		_set_tree_visible(child)
 
 
 func _collect_meshes(node: Node, result: Array[MeshInstance3D]) -> void:
