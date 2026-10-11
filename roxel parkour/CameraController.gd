@@ -17,9 +17,9 @@ extends Node3D
 @export_range(1.0, 30.0, 0.5) var blur_fade_speed: float = 12.0
 @export_range(0.0, 1.0, 0.05) var blur_intensity: float = 0.65
 
-@onready var anchor: Node3D = get_parent() as Node3D
+@onready var anchor: Node3D = get_node("../Player")
 @onready var camera: Camera3D = $Camera3D
-@onready var blur_overlay: ColorRect = get_node_or_null("../../MotionBlurLayer/BlurOverlay")
+@onready var blur_overlay: ColorRect = get_node_or_null("../MotionBlurLayer/BlurOverlay")
 
 var yaw: float = 0.0
 var pitch: float = 0.0
@@ -31,6 +31,11 @@ var blur_level: float = 0.0
 
 
 func _ready() -> void:
+	# Keep the scene file simple to load, then attach this rig to the actual Player at runtime.
+	var saved_global_transform := global_transform
+	if get_parent() != anchor:
+		reparent(anchor, true)
+		global_transform = saved_global_transform
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
 	# Start from the player's facing direction, then let the mouse orbit freely.
