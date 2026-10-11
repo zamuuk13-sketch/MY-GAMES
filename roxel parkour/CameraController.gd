@@ -18,7 +18,7 @@ extends Node3D
 @export_range(1.0, 30.0, 0.5) var blur_fade_speed: float = 12.0
 @export_range(0.0, 1.0, 0.05) var blur_intensity: float = 0.65
 
-@onready var anchor: Node3D = $CharacterAnchor
+@onready var anchor: Node3D = get_node("../Player")
 @onready var camera: Camera3D = $Camera3D
 @onready var blur_overlay: ColorRect = get_node_or_null("../MotionBlurLayer/BlurOverlay")
 
