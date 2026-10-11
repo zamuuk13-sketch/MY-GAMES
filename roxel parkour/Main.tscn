@@ -62,7 +62,7 @@ position = Vector3(0, 0, 0)
 rotation = Vector3(0, 0, 0)
 scale = Vector3(1, 1, 1)
 
-[node name="CameraRig" type="Node3D" parent="Player"]
+[node name="CameraRig" type="Node3D" parent="."]
 script = ExtResource("1_camera_controller")
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig"]
