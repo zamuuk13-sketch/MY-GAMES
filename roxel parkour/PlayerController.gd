@@ -8,8 +8,8 @@ extends CharacterBody3D
 @export var jump_velocity: float = 5.8
 @export var turn_smoothness: float = 10.0
 
-@onready var camera: Camera3D = get_node("CameraRig/Camera3D")
-@onready var camera_rig: Node3D = get_node("CameraRig")
+@onready var camera: Camera3D = get_node("../CameraRig/Camera3D")
+@onready var camera_rig: Node3D = get_node("../CameraRig")
 
 var gravity: float = float(ProjectSettings.get_setting("physics/3d/default_gravity"))
 var facing_yaw: float = 0.0
