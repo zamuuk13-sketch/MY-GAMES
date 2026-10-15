@@ -173,9 +173,9 @@ func _build_player() -> void:
     shin_r = _limb("ShinR", thigh_r, Vector3(0,-0.53,0), 0.50, 0.105, Color(0.46,0.33,0.26))
     foot_r = _foot("FootR", shin_r, Vector3(0,-0.49,-0.07), toes_r)
 
-    # Replace the procedural placeholder with Roxel Parkour's imported character.
-    # Keep the procedural rig hidden so its existing physics/parkour code remains intact.
-    rig.visible = false
+    # Keep the procedural character visible as a safe fallback.
+    # Hide it only if the imported Roxel model actually contains mesh geometry.
+    rig.visible = true
     var character_scene: PackedScene = load("res://assets/personagem.scn") as PackedScene
     if character_scene != null:
         imported_model = character_scene.instantiate() as Node3D
@@ -183,10 +183,16 @@ func _build_player() -> void:
             imported_model.name = "RoxelCharacterModel"
             player.add_child(imported_model)
             _fit_imported_model(imported_model)
-            imported_animation_player = _find_animation_player(imported_model)
-            _update_imported_model_animation(true)
+            if _has_imported_meshes(imported_model):
+                rig.visible = false
+                imported_animation_player = _find_animation_player(imported_model)
+                _update_imported_model_animation(true)
+            else:
+                push_warning("Real Parkour: imported Roxel scene has no MeshInstance3D; showing procedural fallback")
+                imported_model.queue_free()
+                imported_model = null
     else:
-        push_warning("Real Parkour: could not load res://assets/personagem.scn")
+        push_warning("Real Parkour: could not load res://assets/personagem.scn; showing procedural fallback")
 
     camera = Camera3D.new()
     camera.name = "ThirdPersonCamera"
@@ -498,6 +504,14 @@ func _process(delta: float) -> void:
     _update_imported_model_animation()
     _update_camera(delta)
     _update_ui()
+
+func _has_imported_meshes(root: Node) -> bool:
+    if root is MeshInstance3D and (root as MeshInstance3D).mesh != null:
+        return true
+    for child: Node in root.get_children():
+        if _has_imported_meshes(child):
+            return true
+    return false
 
 func _fit_imported_model(model: Node3D) -> void:
     var meshes: Array[MeshInstance3D] = []
