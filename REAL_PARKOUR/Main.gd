@@ -192,9 +192,10 @@ func _foot(n: String, parent: Node3D, pos: Vector3, out_toes: Array[Node3D]) -> 
     foot.name = n
     foot.position = pos
     parent.add_child(foot)
-    _box_visual(n + "Shoe", foot, Vector3(0,0,-0.08), Vector3(0.22,0.13,0.43), Color(0.075,0.08,0.085))
+    _box_visual(n + "Shoe", foot, Vector3(0,0,-0.10), Vector3(0.22,0.13,0.43), Color(0.075,0.08,0.085))
+    # Godot characters face -Z; keep the toe line clearly at the front of the shoe.
     for i: int in range(4):
-        var toe: Node3D = _limb(n + "Toe" + str(i), foot, Vector3((float(i)-1.5)*0.045,-0.02,-0.25), 0.09, 0.018, Color(0.43,0.31,0.25))
+        var toe: Node3D = _limb(n + "Toe" + str(i), foot, Vector3((float(i)-1.5)*0.045,-0.02,-0.29), 0.09, 0.018, Color(0.43,0.31,0.25))
         out_toes.append(toe)
     return foot
 
@@ -643,8 +644,8 @@ func _update_camera(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:
-        camera_yaw += event.relative.x*0.0026
-        camera_pitch = clamp(camera_pitch+event.relative.y*0.0020,-0.75,0.35)
+        camera_yaw -= event.relative.x*0.0026
+        camera_pitch = clamp(camera_pitch-event.relative.y*0.0020,-0.75,0.35)
     if event.is_action_pressed("reset"):
         _reset_player()
 
