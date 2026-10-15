@@ -27,6 +27,9 @@ var fingers_l: Array[Node3D] = []
 var fingers_r: Array[Node3D] = []
 var toes_l: Array[Node3D] = []
 var toes_r: Array[Node3D] = []
+var imported_model: Node3D
+var imported_animation_player: AnimationPlayer
+var imported_animation_name: String = ""
 
 var camera: Camera3D
 var camera_yaw: float = 0.0
@@ -169,6 +172,21 @@ func _build_player() -> void:
     thigh_r = _limb("ThighR", pelvis, Vector3(0.17,-0.10,0), 0.53, 0.135, Color(0.13,0.14,0.15))
     shin_r = _limb("ShinR", thigh_r, Vector3(0,-0.53,0), 0.50, 0.105, Color(0.46,0.33,0.26))
     foot_r = _foot("FootR", shin_r, Vector3(0,-0.49,-0.07), toes_r)
+
+    # Replace the procedural placeholder with Roxel Parkour's imported character.
+    # Keep the procedural rig hidden so its existing physics/parkour code remains intact.
+    rig.visible = false
+    var character_scene: PackedScene = load("res://assets/personagem.scn") as PackedScene
+    if character_scene != null:
+        imported_model = character_scene.instantiate() as Node3D
+        if imported_model != null:
+            imported_model.name = "RoxelCharacterModel"
+            player.add_child(imported_model)
+            _fit_imported_model(imported_model)
+            imported_animation_player = _find_animation_player(imported_model)
+            _update_imported_model_animation(true)
+    else:
+        push_warning("Real Parkour: could not load res://assets/personagem.scn")
 
     camera = Camera3D.new()
     camera.name = "ThirdPersonCamera"
@@ -477,8 +495,101 @@ func _process(delta: float) -> void:
     if landing_timer > 0.0:
         landing_timer -= delta
     _animate_character(delta)
+    _update_imported_model_animation()
     _update_camera(delta)
     _update_ui()
+
+func _fit_imported_model(model: Node3D) -> void:
+    var meshes: Array[MeshInstance3D] = []
+    _collect_imported_meshes(model, meshes)
+    var bounds := AABB()
+    var has_bounds := false
+    var model_inverse := model.global_transform.affine_inverse()
+    for mesh_instance in meshes:
+        if mesh_instance.mesh == null:
+            continue
+        var mesh_transform := model_inverse * mesh_instance.global_transform
+        var mesh_bounds: AABB = mesh_instance.get_aabb() * mesh_transform
+        if not has_bounds:
+            bounds = mesh_bounds
+            has_bounds = true
+        else:
+            bounds = bounds.merge(mesh_bounds)
+    if not has_bounds or bounds.size.y <= 0.001:
+        push_warning("Real Parkour: imported character has no usable mesh bounds.")
+        return
+    var fit_scale: float = 1.7 / bounds.size.y
+    model.scale = Vector3.ONE * fit_scale
+    model.position = Vector3(
+        -(bounds.position.x + bounds.size.x * 0.5) * fit_scale,
+        -bounds.position.y * fit_scale,
+        -(bounds.position.z + bounds.size.z * 0.5) * fit_scale
+    )
+
+func _collect_imported_meshes(node: Node, result: Array[MeshInstance3D]) -> void:
+    if node is MeshInstance3D:
+        result.append(node as MeshInstance3D)
+    for child in node.get_children():
+        _collect_imported_meshes(child, result)
+
+func _find_animation_player(node: Node) -> AnimationPlayer:
+    if node is AnimationPlayer:
+        return node as AnimationPlayer
+    for child in node.get_children():
+        var found := _find_animation_player(child)
+        if found != null:
+            return found
+    return null
+
+func _update_imported_model_animation(force: bool = false) -> void:
+    if imported_animation_player == null:
+        return
+    var hint := "idle"
+    var speed := Vector2(velocity.x, velocity.z).length()
+    if climbing:
+        hint = "climb"
+    elif vaulting:
+        hint = "vault"
+    elif wall_running:
+        hint = "run"
+    elif not player.is_on_floor():
+        hint = "jump"
+    elif speed > 6.8:
+        hint = "run"
+    elif speed > 0.35:
+        hint = "walk"
+    var animations := imported_animation_player.get_animation_list()
+    var selected := ""
+    var fallback := ""
+    for animation in animations:
+        var lower := animation.to_lower()
+        if fallback.is_empty():
+            fallback = animation
+        if hint == "idle" and (lower.contains("idle") or lower.contains("breath")):
+            selected = animation
+            break
+        if hint == "walk" and (lower.contains("walk") or lower.contains("locomotion")):
+            selected = animation
+            break
+        if hint == "run" and lower.contains("run"):
+            selected = animation
+            break
+        if hint == "jump" and lower.contains("jump"):
+            selected = animation
+            break
+        if hint == "climb" and lower.contains("climb"):
+            selected = animation
+            break
+        if hint == "vault" and (lower.contains("vault") or lower.contains("jump")):
+            selected = animation
+            break
+    if selected.is_empty() and hint == "idle":
+        selected = fallback
+    if selected.is_empty():
+        return
+    if force or selected != imported_animation_name:
+        imported_animation_name = selected
+        imported_animation_player.play(selected)
 
 func _animate_character(delta: float) -> void:
     if rig == null:
