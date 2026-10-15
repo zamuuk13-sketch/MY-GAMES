@@ -176,7 +176,7 @@ func _build_player() -> void:
     # Keep the procedural character visible as a safe fallback.
     # Hide it only if the imported Roxel model actually contains mesh geometry.
     rig.visible = true
-    var character_scene: PackedScene = load("res://assets/personagem.scn") as PackedScene
+    var character_scene: PackedScene = load("res://assets/personagem.fbx") as PackedScene
     if character_scene != null:
         imported_model = character_scene.instantiate() as Node3D
         if imported_model != null:
@@ -192,7 +192,7 @@ func _build_player() -> void:
                 imported_model.queue_free()
                 imported_model = null
     else:
-        push_warning("Real Parkour: could not load res://assets/personagem.scn; showing procedural fallback")
+        push_warning("Real Parkour: could not load res://assets/personagem.fbx; showing procedural fallback")
 
     camera = Camera3D.new()
     camera.name = "ThirdPersonCamera"
