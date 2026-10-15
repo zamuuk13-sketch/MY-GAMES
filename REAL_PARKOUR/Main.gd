@@ -286,7 +286,7 @@ func _physics_process(delta: float) -> void:
     var input_vec: Vector2 = Input.get_vector("move_left","move_right","move_forward","move_back")
     var cam_forward: Vector3 = -Basis(Vector3.UP,camera_yaw).z
     var cam_right: Vector3 = Basis(Vector3.UP,camera_yaw).x
-    var move_dir: Vector3 = (cam_right * input_vec.x + cam_forward * input_vec.y).normalized()
+    var move_dir: Vector3 = (cam_right * input_vec.x - cam_forward * input_vec.y).normalized()
 
     if Input.is_action_just_pressed("reset"):
         _reset_player()
@@ -643,8 +643,8 @@ func _update_camera(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:
-        camera_yaw -= event.relative.x*0.0026
-        camera_pitch = clamp(camera_pitch-event.relative.y*0.0020,-0.75,0.35)
+        camera_yaw += event.relative.x*0.0026
+        camera_pitch = clamp(camera_pitch+event.relative.y*0.0020,-0.75,0.35)
     if event.is_action_pressed("reset"):
         _reset_player()
 
