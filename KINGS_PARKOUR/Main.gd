@@ -25,9 +25,18 @@ func _build_background() -> void:
 	add_child(rooftop)
 
 func _build_level() -> void:
-	# The rooftop is currently one continuous, walkable starting area.
-	# Artwork floor begins at y=600 after 4x scaling.
-	_add_platform(Vector2(640, 660), Vector2(1280, 120), Color("#777f91"))
+	# Invisible collision follows the artwork so the detailed pixel floor stays visible.
+	var rooftop_floor := StaticBody2D.new()
+	rooftop_floor.position = Vector2(640, 660)
+	rooftop_floor.collision_layer = 1
+	rooftop_floor.collision_mask = 1
+	add_child(rooftop_floor)
+
+	var floor_collision := CollisionShape2D.new()
+	var floor_shape := RectangleShape2D.new()
+	floor_shape.size = Vector2(1280, 120)
+	floor_collision.shape = floor_shape
+	rooftop_floor.add_child(floor_collision)
 	finish_x = 999999.0
 
 func _add_platform(center: Vector2, dimensions: Vector2, tint: Color) -> void:
