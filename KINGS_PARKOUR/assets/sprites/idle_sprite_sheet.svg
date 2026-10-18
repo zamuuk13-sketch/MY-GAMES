@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="288" height="64" viewBox="0 0 288 64" shape-rendering="crispEdges">
+<!-- Kings Parkour: 6-frame idle loop, 48x64 per frame. Transparent background. -->
+<defs>
+  <g id="body">
+    <!-- back leg -->
+    <rect x="17" y="39" width="6" height="9" fill="#20202f"/>
+    <rect x="16" y="46" width="7" height="8" fill="#29283b"/>
+    <rect x="14" y="53" width="10" height="4" fill="#e8eaf4"/>
+    <rect x="13" y="56" width="12" height="2" fill="#aeb6d0"/>
+    <!-- front leg -->
+    <rect x="23" y="39" width="7" height="9" fill="#242337"/>
+    <rect x="24" y="47" width="6" height="7" fill="#303047"/>
+    <rect x="23" y="53" width="11" height="4" fill="#f2f3fa"/>
+    <rect x="22" y="56" width="12" height="2" fill="#b9c2dc"/>
+    <!-- hoodie silhouette and highlights -->
+    <rect x="15" y="20" width="16" height="17" fill="#252436"/>
+    <rect x="13" y="23" width="4" height="10" fill="#252436"/>
+    <rect x="29" y="23" width="5" height="10" fill="#252436"/>
+    <rect x="16" y="21" width="14" height="14" fill="#39364f"/>
+    <rect x="17" y="22" width="11" height="11" fill="#45405f"/>
+    <rect x="18" y="23" width="3" height="9" fill="#5b527b"/>
+    <rect x="23" y="25" width="5" height="2" fill="#8d69d6"/>
+    <rect x="23" y="27" width="2" height="5" fill="#7560a9"/>
+    <rect x="20" y="33" width="8" height="2" fill="#29263d"/>
+    <!-- neck -->
+    <rect x="20" y="17" width="7" height="5" fill="#b97855"/>
+    <rect x="20" y="18" width="6" height="3" fill="#d9946c"/>
+    <!-- face -->
+    <rect x="18" y="8" width="12" height="11" fill="#c9825d"/>
+    <rect x="20" y="7" width="8" height="2" fill="#d9946c"/>
+    <rect x="18" y="11" width="2" height="5" fill="#b56c4e"/>
+    <rect x="21" y="10" width="7" height="6" fill="#d9946c"/>
+    <rect x="27" y="12" width="3" height="3" fill="#c9825d"/>
+    <!-- hair -->
+    <rect x="17" y="6" width="13" height="4" fill="#171722"/>
+    <rect x="16" y="8" width="4" height="5" fill="#171722"/>
+    <rect x="19" y="5" width="8" height="2" fill="#252433"/>
+    <rect x="22" y="6" width="5" height="2" fill="#302d43"/>
+    <!-- eye -->
+    <rect x="26" y="11" width="2" height="2" fill="#30202a"/>
+    <rect x="27" y="11" width="1" height="1" fill="#f8e7d8"/>
+    <!-- hood edge + arm -->
+    <rect x="12" y="24" width="4" height="7" fill="#39364f"/>
+    <rect x="11" y="29" width="4" height="5" fill="#c9825d"/>
+    <rect x="30" y="24" width="4" height="7" fill="#39364f"/>
+    <rect x="31" y="30" width="4" height="4" fill="#d9946c"/>
+    <rect x="14" y="24" width="2" height="5" fill="#51486f"/>
+    <rect x="30" y="24" width="2" height="5" fill="#51486f"/>
+    <!-- little purple chest emblem -->
+    <rect x="24" y="29" width="3" height="2" fill="#b18cff"/>
+  </g>
+</defs>
+<!-- Each frame is a 48x64 cell. Feet remain on the same baseline; chest/head shift subtly for breathing. -->
+<g transform="translate(0,0)"><use href="#body"/></g>
+<g transform="translate(48,0)">
+  <use href="#body" transform="translate(0,-1)"/>
+  <rect x="68" y="23" width="2" height="3" fill="#8d69d6"/>
+</g>
+<g transform="translate(96,0)">
+  <use href="#body" transform="translate(0,-1)"/>
+  <rect x="116" y="22" width="3" height="2" fill="#b18cff"/>
+</g>
+<g transform="translate(144,0)">
+  <use href="#body"/>
+  <rect x="164" y="24" width="2" height="2" fill="#8d69d6"/>
+</g>
+<g transform="translate(192,0)">
+  <use href="#body" transform="translate(0,1)"/>
+  <rect x="212" y="26" width="2" height="2" fill="#8d69d6"/>
+</g>
+<g transform="translate(240,0)"><use href="#body"/></g>
+</svg>
