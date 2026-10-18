@@ -8,7 +8,7 @@ const JUMP_SPEED := -610.0
 var player: CharacterBody2D
 var camera: Camera2D
 var status_label: Label
-var finish_x := 0.0
+var finish_x := 999999.0
 var respawn_point := Vector2(100, 480)
 
 func _ready() -> void:
@@ -18,37 +18,17 @@ func _ready() -> void:
 	_build_hud()
 
 func _build_background() -> void:
-	var bg := ColorRect.new()
-	bg.color = Color("#0b1228")
-	bg.position = Vector2(-2000, -1500)
-	bg.size = Vector2(9000, 3000)
-	bg.z_index = -100
-	add_child(bg)
-
-	# Decorative skyline in the distance.
-	for i in range(30):
-		var building := ColorRect.new()
-		var h := 100.0 + float((i * 47) % 190)
-		building.color = Color("#111d3b")
-		building.position = Vector2(i * 260.0 - 100.0, 600.0 - h)
-		building.size = Vector2(130.0, h)
-		building.z_index = -50
-		add_child(building)
+	# Detailed pixel-art rooftop scene; the artwork is authored at 320x180.
+	var rooftop := preload("res://rooftop_start.tscn").instantiate()
+	rooftop.scale = Vector2(4.0, 4.0)
+	rooftop.z_index = -20
+	add_child(rooftop)
 
 func _build_level() -> void:
-	_add_platform(Vector2(300, 620), Vector2(700, 80), Color("#263b5e"))
-	_add_platform(Vector2(850, 530), Vector2(180, 28), Color("#19c6b4"))
-	_add_platform(Vector2(1110, 450), Vector2(170, 28), Color("#19c6b4"))
-	_add_platform(Vector2(1370, 370), Vector2(170, 28), Color("#19c6b4"))
-	_add_platform(Vector2(1630, 470), Vector2(190, 28), Color("#ffb84d"))
-	_add_platform(Vector2(1930, 390), Vector2(170, 28), Color("#19c6b4"))
-	_add_platform(Vector2(2200, 310), Vector2(180, 28), Color("#19c6b4"))
-	_add_platform(Vector2(2480, 430), Vector2(240, 28), Color("#ffb84d"))
-	_add_platform(Vector2(2810, 350), Vector2(190, 28), Color("#19c6b4"))
-	_add_platform(Vector2(3140, 270), Vector2(240, 28), Color("#19c6b4"))
-	_add_platform(Vector2(3510, 500), Vector2(650, 80), Color("#263b5e"))
-	finish_x = 3750.0
-	_add_finish_flag(Vector2(finish_x, 430))
+	# The rooftop is currently one continuous, walkable starting area.
+	# Artwork floor begins at y=600 after 4x scaling.
+	_add_platform(Vector2(640, 660), Vector2(1280, 120), Color("#777f91"))
+	finish_x = 999999.0
 
 func _add_platform(center: Vector2, dimensions: Vector2, tint: Color) -> void:
 	var body := StaticBody2D.new()
@@ -171,5 +151,3 @@ func _physics_process(delta: float) -> void:
 		player.position = respawn_point
 		player.velocity = Vector2.ZERO
 
-	if player.position.x >= finish_x - 30:
-		status_label.text = "VOCÊ VENCEU! KING DO PARKOUR!  —  Continue correndo para explorar."
