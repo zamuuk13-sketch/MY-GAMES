@@ -1,77 +1,98 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="384" height="64" viewBox="0 0 384 64" shape-rendering="crispEdges">
-<!-- Kings Parkour | Idle loop: 8 frames, 48x64 each. Transparent background. -->
+<!-- Kings Parkour | 8-frame pixel-art idle loop, 48x64 per frame, transparent -->
 <defs>
  <g id="legs">
-  <!-- Back leg joins beneath hoodie at y=35 -->
-  <rect x="16" y="34" width="9" height="12" fill="#20202f"/>
-  <rect x="17" y="43" width="8" height="10" fill="#302e45"/>
-  <rect x="14" y="51" width="12" height="5" fill="#e8eaf4"/>
-  <rect x="13" y="55" width="13" height="2" fill="#aeb6d0"/>
-  <rect x="15" y="52" width="5" height="2" fill="#ffffff"/>
-  <!-- Front leg overlaps the back leg and meets the torso -->
-  <rect x="23" y="34" width="8" height="13" fill="#29283d"/>
-  <rect x="24" y="44" width="7" height="9" fill="#39364f"/>
-  <rect x="22" y="51" width="12" height="5" fill="#f2f3fa"/>
-  <rect x="21" y="55" width="14" height="2" fill="#b9c2dc"/>
-  <rect x="24" y="52" width="5" height="2" fill="#ffffff"/>
+  <!-- Hips/waist connect both legs; the legs are visibly separated below the upper thighs -->
+  <rect x="17" y="34" width="14" height="5" fill="#29283d"/>
+  <!-- back leg -->
+  <rect x="17" y="37" width="7" height="8" fill="#29283d"/>
+  <rect x="16" y="43" width="7" height="9" fill="#39364f"/>
+  <rect x="17" y="45" width="2" height="6" fill="#51486f"/>
+  <rect x="14" y="50" width="11" height="5" fill="#e8eaf4"/>
+  <rect x="13" y="54" width="13" height="3" fill="#aeb6d0"/>
+  <rect x="15" y="51" width="5" height="2" fill="#ffffff"/>
+  <rect x="22" y="53" width="3" height="1" fill="#d5daea"/>
+  <!-- front leg, spaced apart from the back leg -->
+  <rect x="25" y="37" width="7" height="8" fill="#252436"/>
+  <rect x="26" y="43" width="7" height="9" fill="#39364f"/>
+  <rect x="30" y="44" width="2" height="6" fill="#51486f"/>
+  <rect x="24" y="50" width="11" height="5" fill="#f2f3fa"/>
+  <rect x="23" y="54" width="13" height="3" fill="#b9c2dc"/>
+  <rect x="25" y="51" width="5" height="2" fill="#ffffff"/>
+  <rect x="31" y="53" width="3" height="1" fill="#d5daea"/>
  </g>
  <g id="torso">
-  <!-- sleeves -->
-  <rect x="12" y="23" width="7" height="12" fill="#252436"/>
-  <rect x="28" y="23" width="7" height="12" fill="#252436"/>
-  <rect x="11" y="28" width="5" height="6" fill="#39364f"/>
-  <rect x="30" y="28" width="5" height="6" fill="#39364f"/>
-  <rect x="11" y="32" width="4" height="4" fill="#c9825d"/>
-  <rect x="31" y="32" width="4" height="4" fill="#d9946c"/>
-  <!-- hoodie body overlaps top of legs so the silhouette is connected -->
-  <rect x="15" y="19" width="17" height="20" fill="#252436"/>
-  <rect x="16" y="20" width="15" height="17" fill="#39364f"/>
-  <rect x="17" y="21" width="11" height="14" fill="#45405f"/>
+  <!-- hoodie sleeves -->
+  <rect x="12" y="23" width="7" height="11" fill="#252436"/>
+  <rect x="28" y="23" width="7" height="11" fill="#252436"/>
+  <rect x="11" y="26" width="5" height="7" fill="#39364f"/>
+  <rect x="30" y="26" width="5" height="7" fill="#39364f"/>
+  <!-- bare hands, skin-toned with small finger pixels; no gloves -->
+  <rect x="10" y="32" width="5" height="5" fill="#c9825d"/>
+  <rect x="11" y="34" width="4" height="3" fill="#d9946c"/>
+  <rect x="12" y="36" width="1" height="2" fill="#b97855"/>
+  <rect x="32" y="32" width="5" height="5" fill="#c9825d"/>
+  <rect x="32" y="34" width="4" height="3" fill="#d9946c"/>
+  <rect x="35" y="36" width="1" height="2" fill="#b97855"/>
+  <!-- hoodie body overlaps the waistband and upper thighs -->
+  <rect x="15" y="19" width="18" height="20" fill="#252436"/>
+  <rect x="16" y="20" width="16" height="17" fill="#39364f"/>
+  <rect x="17" y="21" width="12" height="14" fill="#45405f"/>
   <rect x="18" y="22" width="3" height="11" fill="#5b527b"/>
-  <rect x="22" y="24" width="6" height="2" fill="#8d69d6"/>
-  <rect x="23" y="26" width="2" height="6" fill="#7560a9"/>
-  <rect x="20" y="33" width="9" height="3" fill="#29263d"/>
-  <rect x="24" y="28" width="4" height="3" fill="#b18cff"/>
-  <!-- cuffs and seams -->
-  <rect x="12" y="34" width="4" height="2" fill="#51486f"/>
-  <rect x="31" y="34" width="4" height="2" fill="#51486f"/>
+  <rect x="22" y="23" width="7" height="2" fill="#8d69d6"/>
+  <rect x="23" y="25" width="2" height="7" fill="#7560a9"/>
+  <rect x="25" y="27" width="4" height="3" fill="#b18cff"/>
+  <rect x="20" y="33" width="10" height="3" fill="#29263d"/>
+  <!-- hood seam, pocket, drawstrings and hem -->
+  <rect x="19" y="20" width="2" height="3" fill="#6c5b91"/>
+  <rect x="21" y="31" width="8" height="3" fill="#302d45"/>
+  <rect x="22" y="31" width="1" height="2" fill="#c5a8ff"/>
+  <rect x="27" y="31" width="1" height="2" fill="#c5a8ff"/>
+  <rect x="16" y="36" width="16" height="2" fill="#242332"/>
+  <!-- cuffs, kept above the bare hands -->
+  <rect x="11" y="31" width="4" height="2" fill="#51486f"/>
+  <rect x="32" y="31" width="4" height="2" fill="#51486f"/>
  </g>
  <g id="head">
-  <!-- neck sits inside hood/torso -->
-  <rect x="20" y="16" width="8" height="6" fill="#b97855"/>
-  <rect x="21" y="17" width="6" height="4" fill="#d9946c"/>
-  <!-- face -->
+  <!-- neck tucked into hood -->
+  <rect x="20" y="16" width="9" height="6" fill="#b97855"/>
+  <rect x="21" y="17" width="7" height="4" fill="#d9946c"/>
+  <!-- face, nose, jaw and ear -->
   <rect x="18" y="8" width="13" height="11" fill="#c9825d"/>
   <rect x="20" y="8" width="9" height="9" fill="#d9946c"/>
   <rect x="18" y="11" width="2" height="5" fill="#b56c4e"/>
   <rect x="28" y="12" width="3" height="3" fill="#c9825d"/>
-  <!-- hair -->
+  <rect x="29" y="13" width="2" height="2" fill="#b97855"/>
+  <rect x="23" y="16" width="5" height="1" fill="#b97855"/>
+  <!-- layered dark hair and fringe -->
   <rect x="17" y="6" width="14" height="4" fill="#171722"/>
   <rect x="16" y="8" width="4" height="5" fill="#171722"/>
   <rect x="19" y="5" width="9" height="2" fill="#252433"/>
   <rect x="22" y="6" width="6" height="2" fill="#302d43"/>
-  <!-- visible eye and eyebrow -->
-  <rect x="26" y="10" width="3" height="1" fill="#30202a"/>
+  <rect x="27" y="7" width="4" height="3" fill="#171722"/>
+  <rect x="20" y="8" width="4" height="1" fill="#39364f"/>
+  <!-- eye and eyebrow -->
+  <rect x="25" y="10" width="4" height="1" fill="#30202a"/>
   <rect x="27" y="11" width="2" height="2" fill="#30202a"/>
   <rect x="28" y="11" width="1" height="1" fill="#fff0df"/>
-  <!-- ear -->
-  <rect x="29" y="13" width="2" height="2" fill="#b97855"/>
+  <!-- subtle cheek highlight -->
+  <rect x="22" y="14" width="2" height="1" fill="#e5a17a"/>
  </g>
 </defs>
 <!-- frame 1: relaxed, eyes open -->
 <g transform="translate(0,0)"><use href="#legs"/><use href="#torso"/><use href="#head"/></g>
-<!-- frame 2: gentle inhale, chest/shoulders lift a pixel; feet remain fixed -->
+<!-- frame 2: inhale -->
 <g transform="translate(48,0)"><use href="#legs"/><use href="#torso" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
-<!-- frame 3: breathing in, shoulders relaxed high -->
+<!-- frame 3: top of breath -->
 <g transform="translate(96,0)"><use href="#legs"/><use href="#torso" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
 <!-- frame 4: blink begins -->
-<g transform="translate(144,0)"><use href="#legs"/><use href="#torso"/><use href="#head"/><rect x="26" y="10" width="4" height="4" fill="#d9946c"/><rect x="26" y="12" width="4" height="1" fill="#30202a"/></g>
+<g transform="translate(144,0)"><use href="#legs"/><use href="#torso"/><use href="#head"/><rect x="25" y="10" width="5" height="4" fill="#d9946c"/><rect x="26" y="12" width="4" height="1" fill="#30202a"/></g>
 <!-- frame 5: eyes closed -->
-<g transform="translate(192,0)"><use href="#legs"/><use href="#torso"/><use href="#head"/><rect x="26" y="10" width="4" height="4" fill="#d9946c"/><rect x="26" y="12" width="4" height="1" fill="#30202a"/></g>
-<!-- frame 6: eyes open, exhale starts -->
+<g transform="translate(192,0)"><use href="#legs"/><use href="#torso"/><use href="#head"/><rect x="25" y="10" width="5" height="4" fill="#d9946c"/><rect x="26" y="12" width="4" height="1" fill="#30202a"/></g>
+<!-- frame 6: eyes open -->
 <g transform="translate(240,0)"><use href="#legs"/><use href="#torso"/><use href="#head"/></g>
-<!-- frame 7: soft exhale, shoulders settle a pixel -->
+<!-- frame 7: exhale -->
 <g transform="translate(288,0)"><use href="#legs"/><use href="#torso" transform="translate(0,1)"/><use href="#head" transform="translate(0,1)"/></g>
-<!-- frame 8: return to neutral -->
+<!-- frame 8: neutral -->
 <g transform="translate(336,0)"><use href="#legs"/><use href="#torso"/><use href="#head"/></g>
 </svg>
