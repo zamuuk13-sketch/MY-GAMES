@@ -76,14 +76,24 @@ func _link_idle_animation() -> void:
 		return
 	var idle_root := idle_packed.instantiate()
 	var source_player := _find_animation_player(idle_root)
+	var target_skeleton := _find_skeleton(visual)
 	if source_player == null:
 		push_warning("Sigma Parkour: o FBX Breathing Idle não expôs um AnimationPlayer importado.")
-		idle_root.queue_free()
+		idle_root.free()
+		return
+	if target_skeleton == null:
+		push_warning("Sigma Parkour: não encontrei Skeleton3D no personagem para aplicar o idle.")
+		idle_root.free()
 		return
 	if animation_player == null:
 		animation_player = AnimationPlayer.new()
 		animation_player.name = "AnimationPlayer"
 		visual.add_child(animation_player)
+
+	# As animações importadas do FBX apontam para o esqueleto do próprio arquivo.
+	# Redireciona as trilhas de ossos para o Skeleton3D do personagem jogável.
+	animation_player.root_node = animation_player.get_path_to(visual)
+	var target_skeleton_path := visual.get_path_to(target_skeleton)
 	var library_name := "sigma_idle"
 	var library := AnimationLibrary.new()
 	var idle_names: Array[StringName] = []
@@ -94,6 +104,12 @@ func _link_idle_animation() -> void:
 			var unique_name := String(animation_name)
 			if library.has_animation(unique_name):
 				unique_name = String(source_library_name) + "_" + unique_name
+			for track_index in range(animation.get_track_count()):
+				var old_path := String(animation.track_get_path(track_index))
+				var colon_index := old_path.find(":")
+				if colon_index >= 0:
+					var bone_subpath := old_path.substr(colon_index)
+					animation.track_set_path(track_index, NodePath(String(target_skeleton_path) + bone_subpath))
 			library.add_animation(unique_name, animation)
 			if unique_name.to_lower().contains("idle") or unique_name.to_lower().contains("breathing"):
 				idle_names.append(StringName(unique_name))
@@ -109,6 +125,15 @@ func _link_idle_animation() -> void:
 		animation_player.play(StringName(library_name + "/" + String(chosen)))
 		animation_player.speed_scale = 1.0
 	idle_root.free()
+
+func _find_skeleton(root: Node) -> Skeleton3D:
+	if root is Skeleton3D:
+		return root as Skeleton3D
+	for child in root.get_children():
+		var found := _find_skeleton(child)
+		if found != null:
+			return found
+	return null
 
 func _find_animation_player(root: Node) -> AnimationPlayer:
 	if root is AnimationPlayer:
