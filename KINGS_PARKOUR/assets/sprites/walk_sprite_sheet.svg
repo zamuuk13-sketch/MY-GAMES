@@ -1,128 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="384" height="64" viewBox="0 0 384 64" shape-rendering="crispEdges">
-<!-- Kings Parkour | Walk cycle: 8 frames, 48x64 each, transparent background -->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="64" viewBox="0 0 512 64" shape-rendering="crispEdges">
+<!-- Kings Parkour | More readable 8-frame walk cycle, 64x64 per frame, transparent -->
 <defs>
  <g id="head">
-  <rect x="20" y="16" width="9" height="6" fill="#b97855"/>
-  <rect x="21" y="17" width="7" height="4" fill="#d9946c"/>
-  <rect x="18" y="8" width="13" height="11" fill="#c9825d"/>
-  <rect x="20" y="8" width="9" height="9" fill="#d9946c"/>
-  <rect x="18" y="11" width="2" height="5" fill="#b56c4e"/>
-  <rect x="28" y="12" width="3" height="3" fill="#c9825d"/>
-  <rect x="29" y="13" width="2" height="2" fill="#b97855"/>
-  <rect x="23" y="16" width="5" height="1" fill="#b97855"/>
-  <rect x="17" y="6" width="14" height="4" fill="#171722"/>
-  <rect x="16" y="8" width="4" height="5" fill="#171722"/>
-  <rect x="19" y="5" width="9" height="2" fill="#252433"/>
-  <rect x="22" y="6" width="6" height="2" fill="#302d43"/>
-  <rect x="27" y="7" width="4" height="3" fill="#171722"/>
-  <rect x="20" y="8" width="4" height="1" fill="#39364f"/>
-  <rect x="25" y="10" width="4" height="1" fill="#30202a"/>
-  <rect x="27" y="11" width="2" height="2" fill="#30202a"/>
-  <rect x="28" y="11" width="1" height="1" fill="#fff0df"/>
-  <rect x="22" y="14" width="2" height="1" fill="#e5a17a"/>
+  <rect x="20" y="16" width="9" height="6" fill="#b97855"/><rect x="21" y="17" width="7" height="4" fill="#d9946c"/>
+  <rect x="18" y="8" width="13" height="11" fill="#c9825d"/><rect x="20" y="8" width="9" height="9" fill="#d9946c"/>
+  <rect x="18" y="11" width="2" height="5" fill="#b56c4e"/><rect x="28" y="12" width="3" height="3" fill="#c9825d"/>
+  <rect x="29" y="13" width="2" height="2" fill="#b97855"/><rect x="23" y="16" width="5" height="1" fill="#b97855"/>
+  <rect x="17" y="6" width="14" height="4" fill="#171722"/><rect x="16" y="8" width="4" height="5" fill="#171722"/>
+  <rect x="19" y="5" width="9" height="2" fill="#252433"/><rect x="22" y="6" width="6" height="2" fill="#302d43"/>
+  <rect x="27" y="7" width="4" height="3" fill="#171722"/><rect x="20" y="8" width="4" height="1" fill="#39364f"/>
+  <rect x="25" y="10" width="4" height="1" fill="#30202a"/><rect x="27" y="11" width="2" height="2" fill="#30202a"/>
+  <rect x="28" y="11" width="1" height="1" fill="#fff0df"/><rect x="22" y="14" width="2" height="1" fill="#e5a17a"/>
  </g>
- <g id="hoodie">
-  <rect x="15" y="19" width="18" height="20" fill="#252436"/>
-  <rect x="16" y="20" width="16" height="17" fill="#39364f"/>
-  <rect x="17" y="21" width="12" height="14" fill="#45405f"/>
-  <rect x="18" y="22" width="3" height="11" fill="#5b527b"/>
-  <rect x="22" y="23" width="7" height="2" fill="#8d69d6"/>
-  <rect x="23" y="25" width="2" height="7" fill="#7560a9"/>
-  <rect x="25" y="27" width="4" height="3" fill="#b18cff"/>
-  <rect x="20" y="33" width="10" height="3" fill="#29263d"/>
-  <rect x="19" y="20" width="2" height="3" fill="#6c5b91"/>
-  <rect x="21" y="31" width="8" height="3" fill="#302d45"/>
-  <rect x="22" y="31" width="1" height="2" fill="#c5a8ff"/>
-  <rect x="27" y="31" width="1" height="2" fill="#c5a8ff"/>
+ <g id="body">
+  <!-- arms hang outside torso so the swing is easy to read -->
+  <rect x="11" y="23" width="6" height="9" fill="#252436"/><rect x="11" y="30" width="5" height="5" fill="#39364f"/>
+  <rect x="10" y="34" width="5" height="4" fill="#c9825d"/><rect x="11" y="35" width="4" height="2" fill="#d9946c"/>
+  <rect x="30" y="23" width="6" height="9" fill="#252436"/><rect x="31" y="30" width="5" height="5" fill="#39364f"/>
+  <rect x="33" y="34" width="5" height="4" fill="#c9825d"/><rect x="33" y="35" width="4" height="2" fill="#d9946c"/>
+  <!-- hoodie -->
+  <rect x="15" y="19" width="18" height="20" fill="#252436"/><rect x="16" y="20" width="16" height="17" fill="#39364f"/>
+  <rect x="17" y="21" width="12" height="14" fill="#45405f"/><rect x="18" y="22" width="3" height="11" fill="#5b527b"/>
+  <rect x="22" y="23" width="7" height="2" fill="#8d69d6"/><rect x="23" y="25" width="2" height="7" fill="#7560a9"/>
+  <rect x="25" y="27" width="4" height="3" fill="#b18cff"/><rect x="20" y="33" width="10" height="3" fill="#29263d"/>
+  <rect x="19" y="20" width="2" height="3" fill="#6c5b91"/><rect x="21" y="31" width="8" height="3" fill="#302d45"/>
+  <rect x="22" y="31" width="1" height="2" fill="#c5a8ff"/><rect x="27" y="31" width="1" height="2" fill="#c5a8ff"/>
   <rect x="16" y="36" width="16" height="2" fill="#242332"/>
  </g>
- <g id="armsA">
-  <!-- near arm swings back -->
-  <rect x="12" y="23" width="6" height="9" fill="#252436"/>
-  <rect x="11" y="29" width="5" height="5" fill="#39364f"/>
-  <rect x="10" y="33" width="5" height="4" fill="#c9825d"/>
-  <rect x="11" y="34" width="4" height="2" fill="#d9946c"/>
-  <!-- far arm swings forward -->
-  <rect x="29" y="23" width="6" height="8" fill="#252436"/>
-  <rect x="31" y="28" width="5" height="5" fill="#39364f"/>
-  <rect x="33" y="32" width="5" height="4" fill="#c9825d"/>
-  <rect x="33" y="33" width="4" height="2" fill="#d9946c"/>
+ <!-- Shoes are compact, white, and point right. Leg shapes deliberately spread apart. -->
+ <g id="pose1">
+  <path d="M18 35h7v7l-3 6-5 2-5-1 2-5z" fill="#39364f"/><path d="M26 35h6v8l4 5 7 2-1 3H31l-5-5z" fill="#29283d"/>
+  <path d="M14 47l7 1 3 3-1 3H9v-3l5-1z" fill="#e8eaf4"/><rect x="11" y="52" width="13" height="2" fill="#aeb6d0"/><rect x="13" y="49" width="6" height="1" fill="#fff"/>
+  <path d="M34 48l7 1 4 3v2H32l-2-2z" fill="#f2f3fa"/><rect x="32" y="53" width="13" height="2" fill="#b9c2dc"/><rect x="35" y="50" width="6" height="1" fill="#fff"/>
  </g>
- <g id="armsB">
-  <!-- near arm swings forward -->
-  <rect x="12" y="23" width="6" height="8" fill="#252436"/>
-  <rect x="14" y="28" width="5" height="5" fill="#39364f"/>
-  <rect x="15" y="32" width="5" height="4" fill="#c9825d"/>
-  <rect x="15" y="33" width="4" height="2" fill="#d9946c"/>
-  <!-- far arm swings back -->
-  <rect x="29" y="23" width="6" height="9" fill="#252436"/>
-  <rect x="28" y="29" width="5" height="5" fill="#39364f"/>
-  <rect x="28" y="33" width="5" height="4" fill="#c9825d"/>
-  <rect x="28" y="34" width="4" height="2" fill="#d9946c"/>
+ <g id="pose2">
+  <path d="M18 35h7v8l-1 7-4 3-5-1 2-6z" fill="#39364f"/><path d="M26 35h6v8l2 6 6 2-1 3H29l-4-6z" fill="#29283d"/>
+  <path d="M14 50l7 1 3 2v2H9v-2l5-1z" fill="#e8eaf4"/><rect x="10" y="54" width="14" height="2" fill="#aeb6d0"/>
+  <path d="M33 49l7 1 4 3v2H31l-2-2z" fill="#f2f3fa"/><rect x="31" y="54" width="13" height="2" fill="#b9c2dc"/>
  </g>
- <!-- Four lower-body poses; compact sneakers point right, in the direction the character faces -->
- <g id="legsA">
-  <!-- back leg trailing -->
-  <path d="M18 36h7v10h-3v5h-6v-5h2z" fill="#39364f"/>
-  <rect x="18" y="39" width="3" height="8" fill="#51486f"/>
-  <rect x="14" y="49" width="9" height="4" fill="#e8eaf4"/>
-  <rect x="15" y="50" width="7" height="2" fill="#ffffff"/>
-  <rect x="13" y="53" width="11" height="2" fill="#aeb6d0"/>
-  <!-- front leg extended -->
-  <path d="M25 36h7v8h-2v5h-4v-5h-1z" fill="#29283d"/>
-  <rect x="25" y="43" width="6" height="7" fill="#39364f"/>
-  <rect x="28" y="49" width="8" height="4" fill="#f2f3fa"/>
-  <rect x="29" y="50" width="6" height="2" fill="#ffffff"/>
-  <rect x="27" y="53" width="10" height="2" fill="#b9c2dc"/>
+ <g id="pose3">
+  <path d="M18 35h7v7l-2 7 1 3-5 1-4-4 2-7z" fill="#39364f"/><path d="M26 35h6v7l-2 7-3 3-4-2 3-7z" fill="#29283d"/>
+  <path d="M15 50l7 1 3 2v2H10v-2l5-1z" fill="#e8eaf4"/><rect x="11" y="54" width="14" height="2" fill="#aeb6d0"/>
+  <path d="M23 49l7 1 3 3v2H20v-2l3-1z" fill="#f2f3fa"/><rect x="21" y="54" width="12" height="2" fill="#b9c2dc"/>
  </g>
- <g id="legsB">
-  <!-- weight passing over feet -->
-  <path d="M18 36h7v11h-2v5h-5v-5h-1z" fill="#39364f"/>
-  <rect x="17" y="43" width="6" height="8" fill="#51486f"/>
-  <rect x="16" y="50" width="8" height="4" fill="#e8eaf4"/>
-  <rect x="17" y="51" width="6" height="2" fill="#ffffff"/>
-  <rect x="15" y="54" width="10" height="2" fill="#aeb6d0"/>
-  <path d="M25 36h7v10h-2v5h-5v-5z" fill="#29283d"/>
-  <rect x="26" y="44" width="6" height="7" fill="#39364f"/>
-  <rect x="28" y="50" width="8" height="4" fill="#f2f3fa"/>
-  <rect x="29" y="51" width="6" height="2" fill="#ffffff"/>
-  <rect x="27" y="54" width="10" height="2" fill="#b9c2dc"/>
+ <g id="pose4">
+  <path d="M18 35h7v8l-3 5-5 2-4-1 2-5z" fill="#39364f"/><path d="M26 35h6v8l4 5 7 2-1 3H31l-5-5z" fill="#29283d"/>
+  <path d="M14 47l7 1 3 3-1 3H9v-3l5-1z" fill="#e8eaf4"/><rect x="11" y="52" width="13" height="2" fill="#aeb6d0"/>
+  <path d="M34 48l7 1 4 3v2H32l-2-2z" fill="#f2f3fa"/><rect x="32" y="53" width="13" height="2" fill="#b9c2dc"/>
  </g>
- <g id="legsC">
-  <!-- back leg moves forward -->
-  <path d="M18 36h7v8h-2v6h-5v-6h-1z" fill="#39364f"/>
-  <rect x="18" y="43" width="6" height="7" fill="#51486f"/>
-  <rect x="19" y="49" width="8" height="4" fill="#e8eaf4"/>
-  <rect x="20" y="50" width="6" height="2" fill="#ffffff"/>
-  <rect x="18" y="53" width="10" height="2" fill="#aeb6d0"/>
-  <!-- front leg trails -->
-  <path d="M25 36h7v10h-2v5h-5v-5h-1z" fill="#29283d"/>
-  <rect x="25" y="43" width="6" height="8" fill="#39364f"/>
-  <rect x="23" y="50" width="8" height="4" fill="#f2f3fa"/>
-  <rect x="24" y="51" width="6" height="2" fill="#ffffff"/>
-  <rect x="22" y="54" width="10" height="2" fill="#b9c2dc"/>
+ <g id="armsBack">
+  <rect x="10" y="23" width="6" height="10" fill="#252436"/><rect x="9" y="30" width="5" height="5" fill="#39364f"/><rect x="8" y="34" width="5" height="4" fill="#c9825d"/>
+  <rect x="31" y="23" width="6" height="8" fill="#252436"/><rect x="33" y="28" width="5" height="5" fill="#39364f"/><rect x="35" y="32" width="5" height="4" fill="#c9825d"/>
  </g>
- <g id="legsD">
-  <!-- mid-stride with small gap between legs -->
-  <path d="M18 36h7v9h-2v5h-5v-5h-1z" fill="#39364f"/>
-  <rect x="18" y="43" width="6" height="7" fill="#51486f"/>
-  <rect x="17" y="49" width="8" height="4" fill="#e8eaf4"/>
-  <rect x="18" y="50" width="6" height="2" fill="#ffffff"/>
-  <rect x="16" y="53" width="10" height="2" fill="#aeb6d0"/>
-  <path d="M26 36h7v9h-2v5h-5v-5h-1z" fill="#29283d"/>
-  <rect x="27" y="43" width="6" height="7" fill="#39364f"/>
-  <rect x="29" y="49" width="8" height="4" fill="#f2f3fa"/>
-  <rect x="30" y="50" width="6" height="2" fill="#ffffff"/>
-  <rect x="28" y="53" width="10" height="2" fill="#b9c2dc"/>
+ <g id="armsForward">
+  <rect x="10" y="23" width="6" height="8" fill="#252436"/><rect x="12" y="28" width="5" height="5" fill="#39364f"/><rect x="14" y="32" width="5" height="4" fill="#c9825d"/>
+  <rect x="31" y="23" width="6" height="10" fill="#252436"/><rect x="29" y="30" width="5" height="5" fill="#39364f"/><rect x="28" y="34" width="5" height="4" fill="#c9825d"/>
  </g>
 </defs>
-<!-- 8-frame loop. Body bob and opposing arm/leg swings create a walk cycle. -->
-<g transform="translate(0,0)"><use href="#legsA"/><use href="#hoodie"/><use href="#armsA"/><use href="#head"/></g>
-<g transform="translate(48,0)"><use href="#legsB"/><use href="#hoodie" transform="translate(0,-1)"/><use href="#armsB" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
-<g transform="translate(96,0)"><use href="#legsC"/><use href="#hoodie"/><use href="#armsB"/><use href="#head"/></g>
-<g transform="translate(144,0)"><use href="#legsD"/><use href="#hoodie" transform="translate(0,-1)"/><use href="#armsA" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
-<g transform="translate(192,0)"><use href="#legsA" transform="translate(0,0)"/><use href="#hoodie"/><use href="#armsA"/><use href="#head"/></g>
-<g transform="translate(240,0)"><use href="#legsB"/><use href="#hoodie" transform="translate(0,-1)"/><use href="#armsB" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
-<g transform="translate(288,0)"><use href="#legsC"/><use href="#hoodie"/><use href="#armsB"/><use href="#head"/></g>
-<g transform="translate(336,0)"><use href="#legsD"/><use href="#hoodie" transform="translate(0,-1)"/><use href="#armsA" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
+<!-- Exaggerated stride: legs reach forward/back; alternating arms; small vertical body bob. -->
+<g transform="translate(0,0)"><use href="#pose1"/><use href="#body"/><use href="#head"/></g>
+<g transform="translate(64,0)"><use href="#pose2"/><use href="#body" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
+<g transform="translate(128,0)"><use href="#pose3"/><use href="#armsForward"/><use href="#body"/><use href="#head"/></g>
+<g transform="translate(192,0)"><use href="#pose4"/><use href="#body" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
+<g transform="translate(256,0)"><use href="#pose1" transform="translate(0,0)"/><use href="#armsForward"/><use href="#body"/><use href="#head"/></g>
+<g transform="translate(320,0)"><use href="#pose2"/><use href="#body" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
+<g transform="translate(384,0)"><use href="#pose3"/><use href="#body"/><use href="#head"/></g>
+<g transform="translate(448,0)"><use href="#pose4"/><use href="#body" transform="translate(0,-1)"/><use href="#head" transform="translate(0,-1)"/></g>
 </svg>
