@@ -12,17 +12,24 @@ var finish_x := 999999.0
 var respawn_point := Vector2(640, 480)
 
 func _ready() -> void:
+	_log_info("Main.gd iniciou. Cena principal: " + str(get_tree().current_scene.scene_file_path))
 	_build_background()
 	_build_level()
 	_build_player()
 	_build_hud()
+	_log_info("Inicialização concluída. Player=" + str(player != null) + ", câmera=" + str(camera != null))
 
 func _build_background() -> void:
 	# Detailed pixel-art rooftop scene; the artwork is authored at 320x180.
-	var rooftop := preload("res://rooftop_start.tscn").instantiate()
+	var rooftop_scene: PackedScene = load("res://rooftop_start.tscn")
+	if rooftop_scene == null:
+		_log_error("Não foi possível carregar res://rooftop_start.tscn")
+		return
+	var rooftop := rooftop_scene.instantiate()
 	rooftop.scale = Vector2(4.0, 4.0)
 	rooftop.z_index = -20
 	add_child(rooftop)
+	_log_info("Cenário carregado: " + str(rooftop_scene.resource_path))
 
 func _build_level() -> void:
 	# Invisible collision follows the artwork so the detailed pixel floor stays visible.
@@ -110,6 +117,12 @@ func _build_player() -> void:
 	idle.visible = true
 	idle.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	player.add_child(idle)
+	if idle.texture == null:
+		_log_error("FALHA: load(res://idle_spritesheet.svg) retornou null; o personagem não terá imagem.")
+	else:
+		_log_info("Sprite carregado: %s; tamanho=%s; frames=%d" % [idle.texture.resource_path, str(idle.texture.get_size()), idle.hframes])
+		if idle.texture.get_size().x < 8 or idle.texture.get_size().y < 8:
+			_log_error("Textura do personagem tem tamanho inválido: " + str(idle.texture.get_size()))
 
 	camera = Camera2D.new()
 	camera.position_smoothing_enabled = true
@@ -120,9 +133,11 @@ func _build_player() -> void:
 	camera.limit_bottom = 720
 	player.add_child(camera)
 	camera.make_current()
+	_log_info("Player criado em %s; sprite visível=%s; câmera atual=%s" % [str(player.global_position), str(idle.visible), str(camera.is_current())])
 
 func _build_hud() -> void:
 	var hud := CanvasLayer.new()
+	hud.name = "DiagnosticLayer"
 	add_child(hud)
 
 	var title := Label.new()
@@ -139,9 +154,26 @@ func _build_hud() -> void:
 	status_label.add_theme_color_override("font_color", Color("#e6ecff"))
 	hud.add_child(status_label)
 
+	var diagnostic := Label.new()
+	diagnostic.name = "DiagnosticLabel"
+	diagnostic.position = Vector2(30, 92)
+	diagnostic.add_theme_font_size_override("font_size", 14)
+	diagnostic.add_theme_color_override("font_color", Color("#ffe08a"))
+	diagnostic.text = "DEBUG: iniciando..."
+	hud.add_child(diagnostic)
+
 func _process(delta: float) -> void:
 	if player == null:
 		return
+	var diagnostic := get_node_or_null("DiagnosticLayer/DiagnosticLabel")
+	if diagnostic != null:
+		var sprite_check := player.get_node_or_null("IdleSprite") as Sprite2D
+		diagnostic.text = "DEBUG | player=%s | sprite=%s | textura=%s | pos=%s" % [
+			str(is_instance_valid(player)),
+			str(sprite_check != null and sprite_check.visible),
+			str(sprite_check != null and sprite_check.texture != null),
+			str(player.position.round())
+		]
 	var idle := player.get_node_or_null("IdleSprite") as Sprite2D
 	if idle == null:
 		return
@@ -180,3 +212,15 @@ func _physics_process(delta: float) -> void:
 		player.position = respawn_point
 		player.velocity = Vector2.ZERO
 
+
+func _log_info(message: String) -> void:
+	if get_node_or_null("/root/DebugLogger") != null:
+		get_node("/root/DebugLogger").log(message)
+	else:
+		print("[Kings Parkour] ", message)
+
+func _log_error(message: String) -> void:
+	if get_node_or_null("/root/DebugLogger") != null:
+		get_node("/root/DebugLogger").error(message)
+	else:
+		push_error(message)
