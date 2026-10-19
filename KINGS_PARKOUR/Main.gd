@@ -215,12 +215,12 @@ func _physics_process(delta: float) -> void:
 
 func _log_info(message: String) -> void:
 	if get_node_or_null("/root/DebugLogger") != null:
-		get_node("/root/DebugLogger").log(message)
+		get_node("/root/DebugLogger").write_info(message)
 	else:
 		print("[Kings Parkour] ", message)
 
 func _log_error(message: String) -> void:
 	if get_node_or_null("/root/DebugLogger") != null:
-		get_node("/root/DebugLogger").error(message)
+		get_node("/root/DebugLogger").write_error(message)
 	else:
 		push_error(message)
