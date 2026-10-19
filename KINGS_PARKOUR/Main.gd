@@ -9,7 +9,7 @@ var player: CharacterBody2D
 var camera: Camera2D
 var status_label: Label
 var finish_x := 999999.0
-var respawn_point := Vector2(100, 480)
+var respawn_point := Vector2(640, 480)
 
 func _ready() -> void:
 	_build_background()
@@ -106,6 +106,8 @@ func _build_player() -> void:
 	idle.vframes = 1
 	idle.frame = 0
 	idle.position = Vector2(0, -6)
+	idle.z_index = 10
+	idle.visible = true
 	idle.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	player.add_child(idle)
 
