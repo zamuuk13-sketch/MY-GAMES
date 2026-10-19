@@ -98,18 +98,16 @@ func _build_player() -> void:
 	collision.shape = shape
 	player.add_child(collision)
 
-	var body := ColorRect.new()
-	body.name = "Visual"
-	body.color = Color("#f4f7ff")
-	body.size = PLAYER_SIZE
-	body.position = -PLAYER_SIZE / 2.0
-	player.add_child(body)
-
-	var visor := ColorRect.new()
-	visor.color = Color("#19c6b4")
-	visor.size = Vector2(22, 8)
-	visor.position = Vector2(-11, -15)
-	player.add_child(visor)
+	# 8-frame idle sprite animation, each cell is 48x64 pixels.
+	var idle := Sprite2D.new()
+	idle.name = "IdleSprite"
+	idle.texture = load("res://idle_spritesheet.svg")
+	idle.hframes = 8
+	idle.vframes = 1
+	idle.frame = 0
+	idle.position = Vector2(0, -6)
+	idle.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	player.add_child(idle)
 
 	camera = Camera2D.new()
 	camera.position_smoothing_enabled = true
@@ -139,11 +137,26 @@ func _build_hud() -> void:
 	status_label.add_theme_color_override("font_color", Color("#e6ecff"))
 	hud.add_child(status_label)
 
+func _process(delta: float) -> void:
+	if player == null:
+		return
+	var idle := player.get_node_or_null("IdleSprite") as Sprite2D
+	if idle == null:
+		return
+	idle.set_meta("frame_clock", float(idle.get_meta("frame_clock", 0.0)) + delta)
+	var clock := float(idle.get_meta("frame_clock"))
+	if clock >= 0.12:
+		idle.set_meta("frame_clock", fmod(clock, 0.12))
+		idle.frame = (idle.frame + 1) % 8
+
 func _physics_process(delta: float) -> void:
 	if player == null:
 		return
 
 	var direction := Input.get_axis("move_left", "move_right")
+	var idle := player.get_node_or_null("IdleSprite") as Sprite2D
+	if idle != null and absf(direction) > 0.01:
+		idle.flip_h = direction < 0.0
 	player.velocity.x = direction * RUN_SPEED
 
 	if not player.is_on_floor():
