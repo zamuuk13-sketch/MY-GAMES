@@ -143,6 +143,11 @@ func _process(delta: float) -> void:
 	var idle := player.get_node_or_null("IdleSprite") as Sprite2D
 	if idle == null:
 		return
+	# Play the breathing/blinking idle only while the player is standing still.
+	if absf(Input.get_axis("move_left", "move_right")) > 0.01:
+		idle.frame = 0
+		idle.set_meta("frame_clock", 0.0)
+		return
 	idle.set_meta("frame_clock", float(idle.get_meta("frame_clock", 0.0)) + delta)
 	var clock := float(idle.get_meta("frame_clock"))
 	if clock >= 0.12:
